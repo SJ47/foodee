@@ -1,19 +1,37 @@
 package com.ialcoholic.foodees.foodee_service.models.restaurant;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ialcoholic.foodees.foodee_service.models.people.Customer;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@javax.persistence.Table(name = "tables")
 public class Table {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long restaurantId;
+
+    @ManyToOne
+    @JsonIgnoreProperties({"tables"})
+    @JoinColumn(name = "restaurant_id", nullable = false)
+    private Restaurant restaurant;
+
+    @Column(name = "table_number")
     private int tableNumber;
+
+    @Column(name = "capacity")
     private int capacity;
+
+    @JsonIgnoreProperties(value="table")
+    @OneToMany(mappedBy = "table", fetch = FetchType.LAZY)
     private List<Customer> customers;
 
-    public Table(int tableNumber, int capacity) {
+    public Table(Restaurant restaurant, int tableNumber, int capacity) {
+        this.restaurant = restaurant;
         this.tableNumber = tableNumber;
         this.capacity = capacity;
         this.customers = new ArrayList<>();
@@ -30,12 +48,12 @@ public class Table {
         this.id = id;
     }
 
-    public Long getRestaurantId() {
-        return restaurantId;
+    public Restaurant getRestaurant() {
+        return restaurant;
     }
 
-    public void setRestaurantId(Long restaurantId) {
-        this.restaurantId = restaurantId;
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
     }
 
     public int getTableNumber() {

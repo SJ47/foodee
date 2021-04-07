@@ -1,10 +1,21 @@
 package com.ialcoholic.foodees.foodee_service.models.people;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "admins")
 public class Admin {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long employeeId;
+
+    @Column(name = "username")
     private String username;
+
+    @Column(name = "password")
     private String password;
+//    probably shouldn't be saved at our end? ^^"
 
     public Admin(String username, String password) {
         this.username = username;

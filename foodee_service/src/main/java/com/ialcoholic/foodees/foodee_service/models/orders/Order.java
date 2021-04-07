@@ -1,22 +1,45 @@
 package com.ialcoholic.foodees.foodee_service.models.orders;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ialcoholic.foodees.foodee_service.models.menu.MenuItem;
+import com.ialcoholic.foodees.foodee_service.models.people.Customer;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "orders")
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long customerId;
+
+    @ManyToOne
+    @JsonIgnoreProperties({"orders"})
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
+
+    @Column(name = "special_notes")
     private String specialNotes;
+
+    @JsonIgnoreProperties(value="order")
+    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
     private List<MenuItem> orderItems;
+
+    @Column(name = "quantity")
     private int quantity;
 //    quantity or just List.size?
+
+    @Column(name = "total")
     private double total;
+
+    @Column(name = "rating")
     private Rating rating;
 
-    public Order() {
+    public Order(Customer customer) {
+        this.customer = customer;
         this.specialNotes = "";
         this.orderItems = new ArrayList<>();
         this.quantity = 0;
@@ -24,7 +47,10 @@ public class Order {
         this.rating = null;
     }
 
-//    Not sure about the constructor set up ^^^
+    public Order() {
+    }
+
+    //    Not sure about the constructor set up ^^^
 //    Let me know your thoughts
 
 //    NOTE: won't let me create an empty constructor
@@ -37,12 +63,12 @@ public class Order {
         this.id = id;
     }
 
-    public Long getCustomerId() {
-        return customerId;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public String getSpecialNotes() {

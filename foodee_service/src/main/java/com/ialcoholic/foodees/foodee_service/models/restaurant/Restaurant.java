@@ -1,15 +1,28 @@
 package com.ialcoholic.foodees.foodee_service.models.restaurant;
-import com.ialcoholic.foodees.foodee_service.models.restaurant.Table;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ialcoholic.foodees.foodee_service.models.menu.MenuItem;
 
-
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@javax.persistence.Table(name = "restaurants")
+//otherwise it is recognised as the Table class
 public class Restaurant {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @JsonIgnoreProperties(value="restaurant")
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
     private List<Table> tables;
+
+    @JsonIgnoreProperties(value="restaurant")
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
     private List<MenuItem> menu;
 
     public Restaurant(String name) {

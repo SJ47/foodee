@@ -1,23 +1,45 @@
 package com.ialcoholic.foodees.foodee_service.models.people;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ialcoholic.foodees.foodee_service.models.orders.Order;
+import com.ialcoholic.foodees.foodee_service.models.restaurant.Table;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@javax.persistence.Table(name = "customers")
 public class Customer {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long tableId;
+
+    @ManyToOne
+    @JsonIgnoreProperties({"customers"})
+    @JoinColumn(name = "table_id", nullable = false)
+    private Table table;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "email")
     private String email;
+
+    @JsonIgnoreProperties(value="customer")
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Order> orders;
 
     public Customer(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.table = null;
+//        if customer persists, we can't initiate them with a table, can we?
         this.orders = new ArrayList<>();
     }
 
@@ -32,12 +54,12 @@ public class Customer {
         this.id = id;
     }
 
-    public Long getTableId() {
-        return tableId;
+    public Table getTable() {
+        return table;
     }
 
-    public void setTableId(Long tableId) {
-        this.tableId = tableId;
+    public void setTable(Table table) {
+        this.table = table;
     }
 
     public String getFirstName() {

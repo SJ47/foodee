@@ -1,18 +1,47 @@
 package com.ialcoholic.foodees.foodee_service.models.menu;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.ialcoholic.foodees.foodee_service.models.restaurant.Restaurant;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 
+@Entity
+@Table(name = "menu_items")
 public abstract class MenuItem {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long restaurantId;
+
+    @ManyToOne
+    @JsonIgnoreProperties({"menu_items"})
+    @JoinColumn(name = "restaurant_id", nullable = false)
+    private Restaurant restaurant;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "price")
     private double price;
+
+    @Column(name = "image")
     private String image;
+
+    @Column(name = "gluten_free")
     private boolean isGlutenFree;
+
+    @Column(name = "vegetarian")
     private boolean isVegetarian;
+
+    @Column(name = "vegan")
     private boolean isVegan;
+
+//    can we have this in the db if it's an enum?
+    @Column(name = "allergens")
     private ArrayList<Allergen> allergens;
 
     public MenuItem(String name, String description, double price, String image, boolean isGlutenFree,
@@ -41,12 +70,12 @@ public abstract class MenuItem {
         this.id = id;
     }
 
-    public Long getRestaurantId() {
-        return restaurantId;
+    public Restaurant getRestaurant() {
+        return restaurant;
     }
 
-    public void setRestaurantId(Long restaurantId) {
-        this.restaurantId = restaurantId;
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
     }
 
     public String getName() {
