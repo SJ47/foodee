@@ -1,4 +1,7 @@
 package com.ialcoholic.foodees.foodee_service.repositories.restaurant;
 
-public class TableRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TableRepository extends JpaRepository<TableRepository, Long> {
+
 }
