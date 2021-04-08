@@ -1,5 +1,10 @@
 package com.ialcoholic.foodees.foodee_service.models.menu;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "soft_drinks")
 public class SoftDrink extends Drink {
 
     public SoftDrink(String name, String description, double price, String image, boolean isGlutenFree,

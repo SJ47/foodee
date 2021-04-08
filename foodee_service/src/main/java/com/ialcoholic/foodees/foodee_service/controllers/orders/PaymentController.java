@@ -1,4 +1,4 @@
-package com.ialcoholic.foodees.foodee_service.controller.orders;
+package com.ialcoholic.foodees.foodee_service.controllers.orders;
 
 import com.ialcoholic.foodees.foodee_service.models.orders.Payment;
 import com.ialcoholic.foodees.foodee_service.repositories.orders.PaymentRepository;

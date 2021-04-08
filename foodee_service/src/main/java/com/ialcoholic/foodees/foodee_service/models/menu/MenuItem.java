@@ -1,6 +1,7 @@
 package com.ialcoholic.foodees.foodee_service.models.menu;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.ialcoholic.foodees.foodee_service.models.orders.Order;
 import com.ialcoholic.foodees.foodee_service.models.restaurant.Restaurant;
 
 import javax.persistence.*;
@@ -18,6 +19,11 @@ public abstract class MenuItem {
     @JsonIgnoreProperties({"menu_items"})
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
+
+    @ManyToOne
+    @JsonIgnoreProperties({"menu_items"})
+    @JoinColumn(name = "order_id", nullable = false)
+    private Order order;
 
     @Column(name = "name")
     private String name;
@@ -76,6 +82,14 @@ public abstract class MenuItem {
 
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public String getName() {

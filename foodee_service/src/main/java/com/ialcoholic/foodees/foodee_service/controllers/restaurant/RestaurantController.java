@@ -1,4 +1,4 @@
-package com.ialcoholic.foodees.foodee_service.controller.restaurant;
+package com.ialcoholic.foodees.foodee_service.controllers.restaurant;
 
 import com.ialcoholic.foodees.foodee_service.models.restaurant.Restaurant;
 import com.ialcoholic.foodees.foodee_service.repositories.restaurant.RestaurantRepository;

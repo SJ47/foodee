@@ -11,7 +11,8 @@ public class Payment {
     private Long id;
 
     //    Should this be a one to one with the order?
-    @Column(name = "order")
+//    @JsonIgnoreProperties(value="payment") ??
+    @OneToOne(mappedBy = "payment") //fetch type?
     private Order order;
 
     @Column(name = "credit_card_info")

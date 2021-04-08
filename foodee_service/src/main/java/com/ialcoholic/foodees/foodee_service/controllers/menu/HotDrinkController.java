@@ -1,4 +1,4 @@
-package com.ialcoholic.foodees.foodee_service.controller.menu;
+package com.ialcoholic.foodees.foodee_service.controllers.menu;
 
 import com.ialcoholic.foodees.foodee_service.models.menu.HotDrink;
 import com.ialcoholic.foodees.foodee_service.repositories.menu.HotDrinkRepository;

@@ -28,6 +28,10 @@ public class Order {
     @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
     private List<MenuItem> orderItems;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "payment_id")
+    private Payment payment;
+
     @Column(name = "quantity")
     private int quantity;
 //    quantity or just List.size?

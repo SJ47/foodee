@@ -1,4 +1,4 @@
-package com.ialcoholic.foodees.foodee_service.controller.people;
+package com.ialcoholic.foodees.foodee_service.controllers.people;
 
 import com.ialcoholic.foodees.foodee_service.models.people.Customer;
 import com.ialcoholic.foodees.foodee_service.repositories.people.CustomerRepository;

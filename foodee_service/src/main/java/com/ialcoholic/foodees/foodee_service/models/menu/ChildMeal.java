@@ -1,5 +1,10 @@
 package com.ialcoholic.foodees.foodee_service.models.menu;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "child_meals")
 public class ChildMeal extends Food {
 
     public ChildMeal(String name, String description, double price, String image, boolean isGlutenFree,
