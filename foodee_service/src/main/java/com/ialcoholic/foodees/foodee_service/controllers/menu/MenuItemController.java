@@ -45,9 +45,31 @@ public class MenuItemController {
     // Get ALL VEGETARIAN menu items
     @GetMapping(value="/menu_items/vegetarian")
     public ResponseEntity<List<MenuItem>> getAllVegetarianItems(){
-        return new ResponseEntity<>(menuItemRepository.findAllVegetariansNative(), HttpStatus.OK);
+        return new ResponseEntity<>(menuItemRepository.findByIsVegetarianTrue(), HttpStatus.OK);
+//        return new ResponseEntity<>(menuItemRepository.findAllVegetariansNative(), HttpStatus.OK);
     }
 
+    // Get ALL VEGAN menu items
+    @GetMapping(value="/menu_items/vegan")
+    public ResponseEntity<List<MenuItem>> getAllVeganItems() {
+        return new ResponseEntity<>(menuItemRepository.findByIsVeganTrue(), HttpStatus.OK);
+    }
+
+    // Get ALL {CATEGORY} + VEGETARIAN menu items
+    @GetMapping(value="/menu_items/category/{category}/vegetarian")
+    public ResponseEntity<List<MenuItem>> getAllMenuItemsByCategoryAndIsVegetarianTrue(@PathVariable String category){
+        String upperCaseCategory = category.toUpperCase();
+        Category foundCategory = Category.valueOf(upperCaseCategory);
+        return new ResponseEntity<>(menuItemRepository.findAllMenuItemsByCategoryAndIsVegetarianTrue(foundCategory), HttpStatus.OK);
+    }
+
+    // Get ALL {CATEGORY} + VEGAN menu items
+    @GetMapping(value="/menu_items/category/{category}/vegan")
+    public ResponseEntity<List<MenuItem>> getAllMenuItemsByCategoryAndIsVeganTrue(@PathVariable String category){
+        String upperCaseCategory = category.toUpperCase();
+        Category foundCategory = Category.valueOf(upperCaseCategory);
+        return new ResponseEntity<>(menuItemRepository.findAllMenuItemsByCategoryAndIsVeganTrue(foundCategory), HttpStatus.OK);
+    }
 
 //    @GetMapping(value="/menu_items/params")
 //    public ResponseEntity<List<MenuItem>> getMenuItems(
