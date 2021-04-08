@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 @Entity
 @Table(name = "menu_items")
-public abstract class MenuItem {
+public class MenuItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +19,9 @@ public abstract class MenuItem {
     @JsonIgnoreProperties({"menu_items"})
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
+
+    @Column(name = "category")
+    private Category category;
 
     @ManyToOne
     @JsonIgnoreProperties({"menu_items"})
@@ -46,12 +49,23 @@ public abstract class MenuItem {
     @Column(name = "vegan")
     private boolean isVegan;
 
-//    can we have this in the db if it's an enum?
+    @Column(name = "alcoholic")
+    private boolean isAlcoholic;
+
+    @Column(name = "size")
+    private int size;
+
+    @Column(name = "abv")
+    private double abv;
+
     @Column(name = "allergens")
     private ArrayList<Allergen> allergens;
 
-    public MenuItem(String name, String description, double price, String image, boolean isGlutenFree,
-                    boolean isVegetarian, boolean isVegan) {
+    public MenuItem(Restaurant restaurant, Category category, String name, String description,
+                    double price, String image, boolean isGlutenFree, boolean isVegetarian, boolean isVegan,
+                    boolean isAlcoholic, int size, double abv) {
+        this.restaurant = restaurant;
+        this.category = category;
         this.name = name;
         this.description = description;
         this.price = price;
@@ -59,10 +73,11 @@ public abstract class MenuItem {
         this.isGlutenFree = isGlutenFree;
         this.isVegetarian = isVegetarian;
         this.isVegan = isVegan;
+        this.isAlcoholic = isAlcoholic;
+        this.size = size;
+        this.abv = abv;
         this.allergens = new ArrayList<>();
-
-//        TEAM NOTE: can we initiate with populated array list of allergens?
-
+        this.order = null;
     }
 
     public MenuItem() {
@@ -74,6 +89,38 @@ public abstract class MenuItem {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public boolean isAlcoholic() {
+        return isAlcoholic;
+    }
+
+    public void setAlcoholic(boolean alcoholic) {
+        isAlcoholic = alcoholic;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public double getAbv() {
+        return abv;
+    }
+
+    public void setAbv(double abv) {
+        this.abv = abv;
     }
 
     public Restaurant getRestaurant() {
