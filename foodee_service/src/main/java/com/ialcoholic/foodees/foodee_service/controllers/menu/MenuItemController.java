@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -70,6 +72,22 @@ public class MenuItemController {
         Category foundCategory = Category.valueOf(upperCaseCategory);
         return new ResponseEntity<>(menuItemRepository.findAllMenuItemsByCategoryAndIsVeganTrue(foundCategory), HttpStatus.OK);
     }
+
+    // Get ALL DRINKS (Hot, Soft, and Hard)
+    @GetMapping(value="/menu_items/drinks")
+    public ResponseEntity<List<MenuItem>> getAllDrinks(){
+        List<MenuItem> allHotDrinks = menuItemRepository.findAllByCategory(Category.HOT_DRINK);
+        List<MenuItem> allSoftDrinks = menuItemRepository.findAllByCategory(Category.SOFT_DRINK);
+        List<MenuItem> allHardDrinks = menuItemRepository.findAllByCategory(Category.HARD_DRINK);
+
+        ArrayList allDrinks = new ArrayList<MenuItem>();
+        allDrinks.add(allHotDrinks);
+        allDrinks.add(allSoftDrinks);
+        allDrinks.add(allHardDrinks);
+
+        return new ResponseEntity(allDrinks, HttpStatus.OK);
+    }
+
 
 //    @GetMapping(value="/menu_items/params")
 //    public ResponseEntity<List<MenuItem>> getMenuItems(
