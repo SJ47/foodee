@@ -29,7 +29,7 @@ public class Order {
     private List<MenuItem> orderItems;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "payment_id")
+    @JoinColumn(name = "payment_id", nullable = false)
     private Payment payment;
 
     @Column(name = "quantity")

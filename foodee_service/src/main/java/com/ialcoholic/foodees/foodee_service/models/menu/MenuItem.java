@@ -25,7 +25,7 @@ public class MenuItem {
 
     @ManyToOne
     @JsonIgnoreProperties({"menu_items"})
-    @JoinColumn(name = "order_id", nullable = false)
+    @JoinColumn(name = "order_id")
     private Order order;
 
     @Column(name = "name")
@@ -201,5 +201,9 @@ public class MenuItem {
 
     public void setAllergens(ArrayList<Allergen> allergens) {
         this.allergens = allergens;
+    }
+
+    public void addAllergen(Allergen allergen){
+        this.allergens.add(allergen);
     }
 }
