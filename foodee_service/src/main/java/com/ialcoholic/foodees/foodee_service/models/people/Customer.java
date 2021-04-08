@@ -18,7 +18,7 @@ public class Customer {
 
     @ManyToOne
     @JsonIgnoreProperties({"customers"})
-    @JoinColumn(name = "table_id", nullable = false)
+    @JoinColumn(name = "table_id")
     private Table table;
 
     @Column(name = "first_name")

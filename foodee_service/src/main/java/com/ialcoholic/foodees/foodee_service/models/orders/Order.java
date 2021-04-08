@@ -29,7 +29,7 @@ public class Order {
     private List<MenuItem> orderItems;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "payment_id", nullable = false)
+    @JoinColumn(name = "payment_id")
     private Payment payment;
 
     @Column(name = "quantity")
@@ -113,5 +113,12 @@ public class Order {
 
     public void setRating(Rating rating) {
         this.rating = rating;
+    }
+
+    public void addItemToOrder(MenuItem item) {
+        this.orderItems.add(item);
+        this.quantity += 1;
+        this.total += item.getPrice();
+
     }
 }

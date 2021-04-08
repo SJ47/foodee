@@ -53,7 +53,7 @@ public class MenuItem {
     private boolean isAlcoholic;
 
     @Column(name = "size")
-    private int size;
+    private String size;
 
     @Column(name = "abv")
     private double abv;
@@ -63,7 +63,7 @@ public class MenuItem {
 
     public MenuItem(Restaurant restaurant, Category category, String name, String description,
                     double price, String image, boolean isGlutenFree, boolean isVegetarian, boolean isVegan,
-                    boolean isAlcoholic, int size, double abv) {
+                    boolean isAlcoholic, String size, double abv) {
         this.restaurant = restaurant;
         this.category = category;
         this.name = name;
@@ -107,11 +107,11 @@ public class MenuItem {
         isAlcoholic = alcoholic;
     }
 
-    public int getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(String size) {
         this.size = size;
     }
 

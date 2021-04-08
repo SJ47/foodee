@@ -3,6 +3,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ialcoholic.foodees.foodee_service.models.menu.MenuItem;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,6 +28,8 @@ public class Restaurant {
 
     public Restaurant(String name) {
         this.name = name;
+        this.menu = new ArrayList<>();
+        this.tables = new ArrayList<>();
     }
 
     public Restaurant() {
@@ -62,5 +65,13 @@ public class Restaurant {
 
     public void setMenu(List<MenuItem> menu) {
         this.menu = menu;
+    }
+
+    public void addTable(Table table) {
+        this.tables.add(table);
+    }
+
+    public void addMenuItem(MenuItem item) {
+        this.menu.add(item);
     }
 }
