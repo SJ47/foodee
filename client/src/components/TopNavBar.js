@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import FooDeeLogo from '../components/FooDeeLogo';
 import HamburgerMenu from './HamburgerMenu';
 import ShoppingBasket from './ShoppingBasket';
@@ -6,12 +6,16 @@ import ShoppingBasket from './ShoppingBasket';
 const TopNavBar = () => {
     return (
         <>
-        <FooDeeLogo></FooDeeLogo>
-        <ShoppingBasket></ShoppingBasket>
-        <HamburgerMenu></HamburgerMenu>
+            <div className="top-nav-bar-container">
+                <FooDeeLogo></FooDeeLogo>
+                <ShoppingBasket></ShoppingBasket>
+                <HamburgerMenu></HamburgerMenu>
+
+            </div>
+            <hr />
         </>
     )
 
 };
-    
-    export default TopNavBar;
+
+export default TopNavBar;

@@ -5,27 +5,23 @@ import MenuItemList from '../components/MenuItemList';
 import HomePage from '../components/HomePage';
 import LoginPage from '../components/LoginPage';
 import MenuCategoryNavBar from '../components/MenuCategoryNavBar';
+import TopNavBar from '../components/TopNavBar.js';
 
 const MainContainer = () => {
 
     const [currentItems, setCurrentItems] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState("/menu_items")
-
-    // const getCurrentItems = () => {
-
-    // }
+    const [selectedCategory, setSelectedCategory] = useState("menu_items/category/main")
 
     useEffect(() => {
         console.log("Fetching menu items...")
-        let categoryUrl = selectedCategory;
+        // let categoryUrl = selectedCategory;
         const request = new Request();
-        const allItemsPromise = request.get(categoryUrl)
+        const allItemsPromise = request.get(selectedCategory)
 
         Promise.all([allItemsPromise])
             .then((data) => {
                 setCurrentItems(data[0]);
             })
-        // getCurrentItems()
     }, [selectedCategory])
 
     if (!currentItems) {
@@ -33,24 +29,29 @@ const MainContainer = () => {
     }
     const handleCategoryNavClick = (category) => {
         setSelectedCategory(category);
-        // event.preventDefault()
-        console.log("Hey, you clicked me", category)
-
     }
     return (
         <>
 
-                <header>
-                    <MenuCategoryNavBar onCategoryNavClick={handleCategoryNavClick} />
-                </header>
+            <header>
+                {/* <TopNavBar /> */}
+                {/* <Switch>
+                    <Route> */}
+                <MenuCategoryNavBar onCategoryNavClick={handleCategoryNavClick} />
+                {/* </Route>
+                </Switch> */}
+            </header>
+            <main>
+                <MenuItemList currentItems={currentItems} category={selectedCategory} />
+            </main>
 
-            <Switch>
-                    <Route render={() => {
-                        return <MenuItemList currentItems={currentItems} />
-                    }} />
-                    <Route exact path="/login" component={LoginPage} />
-                    <Route exact path="/home" component={HomePage} />
-            </Switch>
+            {/* <Switch>
+                <Route render={() => {
+                    return <MenuItemList currentItems={currentItems} />
+                }} />
+                <Route exact path="/login" component={LoginPage} />
+                <Route exact path="/home" component={HomePage} />
+            </Switch> */}
         </>
     )
 

@@ -6,26 +6,22 @@ const MenuCategoryNavBar = ({ onCategoryNavClick }) => {
         <div>
             <ul className="category-nav-container">
                 <li className="category-nav-link" >
-                    {/* <Link to="/">Mains</Link> */}
-
-
-                    <Link to="/" onClick={() => { onCategoryNavClick("menu_items/category/main") }}>Mains</Link>
-
+                    <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/main") }}>Mains</Link>
                 </li>
                 <li className="category-nav-link" >
-                    <Link to="/" onClick={() => { onCategoryNavClick("menu_items/category/side") }}>Side</Link>
+                    <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/side") }}>Side</Link>
                 </li>
                 <li className="category-nav-link" >
-                    Snacks
+                    <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/snack") }}>Snacks</Link>
                 </li>
                 <li className="category-nav-link" >
-                    Desserts
+                    <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/dessert") }}>Desserts</Link>
                 </li>
                 <li className="category-nav-link" >
-                    Kids
+                    <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/child_meal") }}>Kids</Link>
                 </li>
                 <li className="category-nav-link" >
-                    Drinks
+                    <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/drinks") }}>Drinks</Link>
                 </li>
             </ul>
         </div >
