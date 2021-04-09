@@ -4,7 +4,7 @@ import TopNavBar from '../components/TopNavBar';
 const HomePage = () => {
     return (
         <>
-        <TopNavBar></TopNavBar>
+        <TopNavBar/>
         </>
     )
 

@@ -33,7 +33,10 @@ const MainContainer = () => {
 
     return (
         <>
-        <HomePage></HomePage>
+        
+        <nav>
+            <HomePage/>
+        </nav>
         <Switch>
             <Route render={() => {
                 return <MenuItemList currentItems={currentItems} />

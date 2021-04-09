@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/fooDeeLogo.css'
-import logoFull from '../media/fooDeeLogo_full.png'
+import logoFull from '../media/foodDeeLogoFull.png'
 
 
 const FooDeeLogo = () => {
