@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Route, Switch } from 'react-router';
 import Request from '../helpers/request.js';
 import MenuItemList from '../components/MenuItemList';
+import LoginPage from '../components/LoginPage';
 
 const MainContainer = () => {
 
@@ -31,9 +32,10 @@ const MainContainer = () => {
     return (
         <>
         <Switch>
-            <Route render={() => {
+            <Route exact path="/" render={() => {
                 return <MenuItemList currentItems={currentItems} />
             }} />
+            <Route exact path="/login" component={LoginPage} />
         </Switch>
         </>
     )

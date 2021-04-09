@@ -6,10 +6,7 @@ import LoginPage from './components/LoginPage';
 function App() {
   return (
     <div className="App">
-      <Switch>
-        <Route exact path="/" component={MainContainer} />
-        <Route exact path="/login" component={LoginPage} />
-      </Switch>
+      <MainContainer/>
     </div>
   );
 }
