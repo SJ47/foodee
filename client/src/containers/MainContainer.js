@@ -10,7 +10,11 @@ const MainContainer = () => {
     const [currentItems, setCurrentItems] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("/menu_items")
 
-    const getCurrentItems = () => {
+    // const getCurrentItems = () => {
+
+    // }
+
+    useEffect(() => {
         console.log("Fetching menu items...")
         let categoryUrl = selectedCategory;
         const request = new Request();
@@ -20,10 +24,7 @@ const MainContainer = () => {
             .then((data) => {
                 setCurrentItems(data[0]);
             })
-    }
-
-    useEffect(() => {
-        getCurrentItems()
+        // getCurrentItems()
     }, [selectedCategory])
 
     if (!currentItems) {
@@ -37,10 +38,12 @@ const MainContainer = () => {
     }
     return (
         <>
-            <Switch>
+
                 <header>
                     <MenuCategoryNavBar onCategoryNavClick={handleCategoryNavClick} />
                 </header>
+
+            <Switch>
                     <Route render={() => {
                         return <MenuItemList currentItems={currentItems} />
                     }} />
