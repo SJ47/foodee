@@ -1,48 +1,56 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router';
 import Request from '../helpers/request.js';
 import MenuItemList from '../components/MenuItemList';
 import HomePage from '../components/HomePage';
+import LoginPage from '../components/LoginPage';
+import MenuCategoryNavBar from '../components/MenuCategoryNavBar';
 
 const MainContainer = () => {
 
     const [currentItems, setCurrentItems] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState("/menu_items")
 
-    const getCurrentItems = () => {
-        console.log("Fetching menu items...")
-        let categoryUrl = '/menu_items/'
-        const request = new Request();
-        const allItemsPromise =  request.get(categoryUrl)
+    // const getCurrentItems = () => {
 
-
-
-        Promise.all([allItemsPromise])
-        .then((data) => {
-            setCurrentItems(data[0]);
-        })
-
-    }
+    // }
 
     useEffect(() => {
-        getCurrentItems()
-    }, [])
+        console.log("Fetching menu items...")
+        let categoryUrl = selectedCategory;
+        const request = new Request();
+        const allItemsPromise = request.get(categoryUrl)
 
-    if(!currentItems){
+        Promise.all([allItemsPromise])
+            .then((data) => {
+                setCurrentItems(data[0]);
+            })
+        // getCurrentItems()
+    }, [selectedCategory])
+
+    if (!currentItems) {
         return <p>nothing</p>
     }
+    const handleCategoryNavClick = (category) => {
+        setSelectedCategory(category);
+        // event.preventDefault()
+        console.log("Hey, you clicked me", category)
 
+    }
     return (
         <>
-        
-        <nav>
-            <HomePage/>
-        </nav>
-        <Switch>
-            <Route render={() => {
-                return <MenuItemList currentItems={currentItems} />
-            }} />
 
-        </Switch>
+                <header>
+                    <MenuCategoryNavBar onCategoryNavClick={handleCategoryNavClick} />
+                </header>
+
+            <Switch>
+                    <Route render={() => {
+                        return <MenuItemList currentItems={currentItems} />
+                    }} />
+                    <Route exact path="/login" component={LoginPage} />
+                    <Route exact path="/home" component={HomePage} />
+            </Switch>
         </>
     )
 

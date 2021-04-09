@@ -3,3 +3,16 @@
         background-color: #143D59;
         color: antiquewhite;
 }
+
+/**********************/
+/* Navigation section */
+/**********************/
+
+.category-nav-container {
+    display: flex;
+}
+
+.category-nav-link {
+    list-style: none;
+    padding: 1em;
+}
