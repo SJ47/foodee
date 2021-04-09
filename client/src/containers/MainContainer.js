@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Route, Switch } from 'react-router';
 import Request from '../helpers/request.js';
 import MenuItemList from '../components/MenuItemList';
+import HomePage from '../components/HomePage';
 
 const MainContainer = () => {
 
@@ -32,10 +33,12 @@ const MainContainer = () => {
 
     return (
         <>
+        <HomePage></HomePage>
         <Switch>
             <Route render={() => {
                 return <MenuItemList currentItems={currentItems} />
             }} />
+
         </Switch>
         </>
     )
