@@ -13,8 +13,6 @@ const MainContainer = () => {
         const request = new Request();
         const allItemsPromise =  request.get(categoryUrl)
 
-
-
         Promise.all([allItemsPromise])
         .then((data) => {
             setCurrentItems(data[0]);
