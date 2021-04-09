@@ -1,12 +1,12 @@
-import './App.css';
+import './css/App.css';
 import { Route, Switch } from 'react-router';
-import TestContainer from './containers/TestContainer';
+import MainContainer from './containers/MainContainer';
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" component={TestContainer} />
+        <Route exact path="/" component={MainContainer} />
       </Switch>
     </div>
   );
