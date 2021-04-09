@@ -1,11 +1,11 @@
 import React from 'react';
-import '../css/fooDeeLogo.css'
-import logoFull from '../media/foodDeeLogoFull.png'
+import '../css/homePage.css'
+import FoodeeLogoFull from '../media/foodDeeLogoFull.png'
 
 
 const FooDeeLogo = () => {
     return (
-            <img id="logo" src={logoFull}/>
+            <img id="foodee-logo-full" src={FoodeeLogoFull}/>
         )
     };
     

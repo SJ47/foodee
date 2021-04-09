@@ -1,4 +1,5 @@
 import './css/App.css';
+import './css/base.css'
 import { Route, Switch } from 'react-router';
 import MainContainer from './containers/MainContainer';
 
