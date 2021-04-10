@@ -134,3 +134,31 @@ hr {
     /* padding: 0.3em; */
     border-radius: 25px;
 }
+
+/********************/
+/* Checkout section */
+/********************/
+
+.checkout-container {
+    background: var(--primary-color);
+    padding: 2em;
+    margin: 2em;
+    border-radius: 25px;
+    border: 1px solid grey;
+}
+
+.fa-shopping-cart {
+    font-size: 3em;
+}
+
+.item-count {
+    background: red;
+    padding: 0.5em;
+    width: 32px;
+    border-radius: 50%;
+    position: relative;
+    left: 30px;
+    bottom: 70px;
+    text-align: center;
+    font-weight: bold;
+}

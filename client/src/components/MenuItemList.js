@@ -1,4 +1,4 @@
-const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSelectedItemRemove }) => {
+const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSelectedItemRemove, basket, basketValue }) => {
 
     const menuListItems = currentItems.map((item, index) => {
         return <li className="menu-list-item" key={index}>
@@ -10,7 +10,7 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
                     onClick={() => { handleSelectedItemRemove(item) }}
                     className="btn minus-button">-
                 </button>
-                <div className="item-quantity">Qty: <span className="item-quantity-value">0</span></div>
+                <div className="item-quantity">Qty: <span className="item-quantity-value">{basket.length}</span></div>
                 <button
                     onClick={() => { handleSelectedItemAdd(item) }}
                     className="btn plus-button">+

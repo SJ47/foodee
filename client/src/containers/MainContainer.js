@@ -49,7 +49,17 @@ const MainContainer = () => {
     }
 
     const handleSelectedItemRemove = (item) => {
+        // Update contents of the basket
+        const currentBasket = [...basket, item]
+        setBasket(currentBasket)
         console.log("Removed item", item)
+        console.log("Current basket: ", currentBasket);
+
+        // Update total value of basket
+        let currentValue = basketValue;
+        currentValue -= item.price;
+        setBasketValue(currentValue);
+        console.log("Current basket Value: ", currentValue);
     }
 
     return (
@@ -67,6 +77,8 @@ const MainContainer = () => {
                         category={selectedCategory}
                         handleSelectedItemAdd={handleSelectedItemAdd}
                         handleSelectedItemRemove={handleSelectedItemRemove}
+                        basket={basket}
+                        basketValue={basketValue}
                     />
                 }} />
             </Switch>
