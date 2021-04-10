@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/Checkout.css';
 
 const Checkout = ({ basket, basketValue }) => {
     return (

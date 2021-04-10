@@ -1,0 +1,36 @@
+/********************/
+/* Checkout section */
+/********************/
+
+.checkout-container {
+    background: var(--primary-color);
+    padding: 2em;
+    margin: 2em;
+    border-radius: 25px;
+    border: 1px solid grey;
+}
+
+.fa-shopping-cart {
+    font-size: 3em;
+}
+
+.basket-item-count {
+    display: inline-block;
+    background: red;
+    padding: 0.5em;
+    width: 32px;
+    border-radius: 50%;
+    position: relative;
+    left: -15px;
+    bottom: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.checkout-text,
+.checkout-total {
+    display: inline;
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: 1em;
+}
