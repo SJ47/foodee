@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router';
 import Request from '../helpers/request.js';
-import MenuItemList from '../components/MenuItemList';
 import HomePage from '../components/HomePage';
 import LoginPage from '../components/LoginPage';
-import MenuCategoryNavBar from '../components/MenuCategoryNavBar';
+import MenuPage from '../components/MenuPage';
+// import TopNavBar from '../components/TopNavBar';
 
 const MainContainer = () => {
 
     const [currentItems, setCurrentItems] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("/menu_items")
-
-    // const getCurrentItems = () => {
-
-    // }
 
     useEffect(() => {
         console.log("Fetching menu items...")
@@ -25,31 +21,29 @@ const MainContainer = () => {
             .then((data) => {
                 setCurrentItems(data[0]);
             })
-        // getCurrentItems()
+
     }, [selectedCategory])
 
     if (!currentItems) {
         return <p>nothing</p>
     }
+
     const handleCategoryNavClick = (category) => {
         setSelectedCategory(category);
-        // event.preventDefault()
         console.log("Hey, you clicked me", category)
-
     }
+
     return (
         <>
-
-                <header>
-                    <MenuCategoryNavBar onCategoryNavClick={handleCategoryNavClick} />
-                </header>
+            {/* <TopNavBar /> */}
+            {/* HAVE TOPNAVBAR HERE IF YOU WANT IT ON ALL PAGES */}
 
             <Switch>
-                    <Route render={() => {
-                        return <MenuItemList currentItems={currentItems} />
+                <Route exact path="/login" component={LoginPage} />
+                <Route exact path="/home" component={HomePage} />
+                <Route exact path ="/menu" render={() => {
+                    return <MenuPage currentItems={currentItems} handleCategoryNavClick={handleCategoryNavClick}/>
                     }} />
-                    <Route exact path="/login" component={LoginPage} />
-                    <Route exact path="/home" component={HomePage} />
             </Switch>
         </>
     )

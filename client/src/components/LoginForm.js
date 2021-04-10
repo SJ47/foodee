@@ -23,17 +23,15 @@ const LoginForm = () => {
     const handleCustomerPost = function(customer){
         const request = new Request();
         request.post("/customers", customer)
-        .then(() => window.location = '/')
+        .then(() => window.location = '/home')
         // change '/' to whichever route the home page is called
       }
     ///////////////////////////////////////////////
-
 
     const handleSubmit = function(event){
         event.preventDefault();
         handleCustomerPost(stateCustomer); 
     }
-
 
     return (
         <>
