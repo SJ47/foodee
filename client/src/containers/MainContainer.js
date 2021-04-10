@@ -38,10 +38,12 @@ const MainContainer = () => {
 
             <Switch>
                 <Route exact path="/login" component={LoginPage} />
-                <Route exact path="/home" component={HomePage} />
+                <Route exact path="/home" render={() => {
+                    return <HomePage currentItems={currentItems} handleCategoryNavClick={handleCategoryNavClick} />
+                }} />
                 <Route exact path ="/menu" render={() => {
                     return <MenuPage currentItems={currentItems} handleCategoryNavClick={handleCategoryNavClick}/>
-                    }} />
+                }} />
             </Switch>
         </>
     )

@@ -1,6 +1,8 @@
 import TopNavBar from '../components/TopNavBar';
+import '../css/homePage.css';
+import { Link } from 'react-router-dom';
 
-const HomePage = () => {
+const HomePage = ({handleCategoryNavClick, currentItems}) => {
     return (
         <>
         <TopNavBar />
@@ -17,6 +19,9 @@ Occaecat ex adipisicing deserunt reprehenderit. Sunt voluptate velit amet aliqua
 Anim non aute tempor nisi incididunt sunt reprehenderit. Nulla elit dolor exercitation ex Lorem magna est in. Occaecat minim exercitation consequat ea fugiat esse velit.
 
 Reprehenderit incididunt laborum nostrud do irure pariatur sunt ea do. Veniam enim ea do est. Labore minim in occaecat magna excepteur non tempor reprehenderit Lorem eu mollit. Elit eu in laboris laborum labore labore cillum laboris aliqua deserunt laboris aute.
+        </div>
+        <div className="home-button">
+            <button><Link to="/menu" onClick={() => { handleCategoryNavClick("menu_items/category/main") }}>MENU</Link></button>
         </div>
         </>
     )

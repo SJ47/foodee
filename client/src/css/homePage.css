@@ -1,3 +1,8 @@
 #foodee-logo-full {
     height: 300px;
 }
+
+.home-button {
+    /* whatever styling */
+    border-radius: 20%;
+}
