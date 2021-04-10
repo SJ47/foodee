@@ -1,7 +1,19 @@
 const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSelectedItemRemove, basket, basketValue }) => {
 
-    const menuListItems = currentItems.map((item, index) => {
+    const copiedCurrentItems = [...currentItems]
+
+    for (const item of copiedCurrentItems) {
+        for (let count = 0; count < basket.length; count++) {
+            if (item.name === basket[count].name) {
+                item.quantity = basket[count].quantity
+            }
+        }
+    }
+
+
+    const menuListItems = copiedCurrentItems.map((item, index) => {
         return <li className="menu-list-item" key={index}>
+
             <div>
                 <h3>{item.name}</h3>
                 <p><em>{item.description}</em></p>
