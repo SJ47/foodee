@@ -1,17 +1,21 @@
-import FooDeeLogo from '../components/FooDeeLogo';
-import HamburgerMenu from './HamburgerMenu';
-import ShoppingBasket from './ShoppingBasket';
+import FooDeeLogo from './FooDeeLogo'
+import HamburgerLogo from './HamburgerLogo';
+import HomeLogo from './HomeButtonLogo';
+import BasketLogo from './BasketLogo';
 
 const TopNavBar = () => {
     return (
         <>
-            <div className="top-nav-bar-container">
+        <div className="top-navbar-container-all">
+            <div className="top-navbar-container-left">
                 <FooDeeLogo></FooDeeLogo>
-                <ShoppingBasket></ShoppingBasket>
-                <HamburgerMenu></HamburgerMenu>
-
             </div>
-            {/* <hr /> */}
+            <div className="top-navbar-container-right">
+                <HomeLogo></HomeLogo>
+                <BasketLogo></BasketLogo>
+                <HamburgerLogo></HamburgerLogo>
+            </div>
+        </div>
         </>
     )
 
