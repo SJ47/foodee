@@ -8,8 +8,10 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
                 item.quantity = basket[count].quantity
             }
         }
+        if (!item.quantity) {
+            item.quantity = 0;
+        }
     }
-
 
     const menuListItems = copiedCurrentItems.map((item, index) => {
         return <li className="menu-list-item" key={index}>

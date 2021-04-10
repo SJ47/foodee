@@ -14,6 +14,7 @@ const Checkout = ({ basket, basketValue }) => {
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         qtyInBasket = itemsInBasket.reduce(reducer);
     }
+    console.log("Basket contents", basket)
 
     return (
         <div className="checkout-container">

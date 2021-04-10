@@ -50,20 +50,16 @@ const MainContainer = () => {
     const handleSelectedItemAdd = (item) => {
         // Update contents of the basket
         // Add a quantity field to the object and append by 1 if already exist and > 0
-        if (item.quantity && item.quantity > 0) {
+        // console.log("ITEM QTY: ", item.quantity + 1);
+        if (item.quantity > 0) {
             item.quantity += 1;
         } else {
             item.quantity = 1;
             setBasket([...basket, item])
         }
 
-        // setBasket([...basket, item])
-
-        console.log("Item quantity: ", item.quantity);
-
         // Update value of basket 
         setBasketValue(basketValue + item.price)
-        console.log(basket)
     }
 
     const handleSelectedItemRemove = (item) => {
@@ -92,6 +88,7 @@ const MainContainer = () => {
         console.log("handle customer login triggered");
         setLoggedIn(true);
     }
+
 
     return (
         <>
