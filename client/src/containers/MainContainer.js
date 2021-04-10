@@ -54,26 +54,28 @@ const MainContainer = () => {
         console.log("Removed item", item)
     }
 
+    const handleCustomerLogIn = () => {
+        console.log("handle customer login triggered");
+        setLoggedIn(true);
+    }
+
     return (
         <>
             {/* HAVE TOPNAVBAR HERE IF YOU WANT IT ON ALL PAGES */}
             <Switch>
-{/*                
-                <Route exact path="/" render={() => {
-                    return(
-                        loggedIn={loggedIn} ? 
-                        <Redirect to="/home" />:
-                        <Redirect to="/login"/> )}  */}
-                
                 <Route exact path="/" render={() => {
                     return (
                         loggedIn?
                         <Redirect to="/home"/>:
                         <Redirect to="/login"/>   
                     )}}/>
-                <Route exact path="/login" component={LoginPage} />
+                <Route exact path="/login" render={() => {
+                    return <LoginPage handleCustomerLogIn={handleCustomerLogIn} />
+
+                }} />
+                {/* <Route exact path="/login" component={LoginPage} /> */}
                 <Route exact path="/home" render={() => {
-                    return <HomePage currentItems={currentItems} handleCategoryNavClick={handleCategoryNavClick}/>
+                    return <HomePage handleCategoryNavClick={handleCategoryNavClick}/>
                 }} />
                 <Route exact path="/menu" render={() => {
                     return (
