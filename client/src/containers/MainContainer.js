@@ -26,6 +26,16 @@ const MainContainer = () => {
 
     }, [selectedCategory])
 
+    // useEffect to update cart value when cart items change
+    // useEffect(() => {
+    //     console.log("Basket has changed contents")
+    //     let total = 0;
+    //     total = basket.map((basketItem) => {
+    //         return total -= basketItem.price
+    //     })
+    //     console.log("Basket total: ", basketValue);
+    // }, [basket])
+
     if (!currentItems) {
         return <p>nothing</p>
     }
@@ -36,30 +46,40 @@ const MainContainer = () => {
 
     const handleSelectedItemAdd = (item) => {
         // Update contents of the basket
-        const currentBasket = [...basket, item]
-        setBasket(currentBasket)
-        console.log("Added item", item)
-        console.log("Current basket: ", currentBasket);
+        // Add a quantity field to the object and append by 1 if already exist
+        if (item.quantity) {
+            item.quantity += 1;
+        } else {
+            item.quantity = 1;
+        }
 
-        // Update total value of basket
-        let currentValue = basketValue;
-        currentValue += item.price;
-        setBasketValue(currentValue);
-        console.log("Current basket Value: ", currentValue);
+        setBasket([...basket, item])
+
+        console.log("Item quantity: ", item.quantity);
+
+        // Update value of basket 
+        setBasketValue(basketValue + item.price)
+        console.log(basket)
     }
 
     const handleSelectedItemRemove = (item) => {
-        // Update contents of the basket
-        const currentBasket = [...basket, item]
-        setBasket(currentBasket)
-        console.log("Removed item", item)
-        console.log("Current basket: ", currentBasket);
+        // Update contents of the basket if item qty > 0
+        if (!item.quantity) {
+            return
+        }
 
-        // Update total value of basket
-        let currentValue = basketValue;
-        currentValue -= item.price;
-        setBasketValue(currentValue);
-        console.log("Current basket Value: ", currentValue);
+        // // Remove item from basket
+        const updatedBasket = basket.filter((basketItem) => {
+            if (basketItem === item) {
+                // Remove item price from basket if item to remove is found
+                setBasketValue(basketValue - basketItem.price)
+                console.log("basket value: ", basketValue)
+
+            }
+            return basketItem !== item
+        })
+        setBasket(updatedBasket);
+        console.log(updatedBasket);
     }
 
     return (

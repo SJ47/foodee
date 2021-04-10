@@ -10,7 +10,7 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
                     onClick={() => { handleSelectedItemRemove(item) }}
                     className="btn minus-button">-
                 </button>
-                <div className="item-quantity">Qty: <span className="item-quantity-value">{basket.length}</span></div>
+                <div className="item-quantity">Qty: <span className="item-quantity-value">{item.quantity}</span></div>
                 <button
                     onClick={() => { handleSelectedItemAdd(item) }}
                     className="btn plus-button">+
