@@ -21,7 +21,7 @@ const MenuCategoryNavBar = ({ onCategoryNavClick }) => {
                     <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/child_meal") }}>Kids</Link>
                 </li>
                 <li className="category-nav-link" >
-                    <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/drinks") }}>Drinks</Link>
+                    <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/hard_drink") }}>Drinks</Link>
                 </li>
             </ul>
         </div >

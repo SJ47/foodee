@@ -42,7 +42,7 @@ const MainContainer = () => {
                     return <HomePage currentItems={currentItems} handleCategoryNavClick={handleCategoryNavClick} />
                 }} />
                 <Route exact path ="/menu" render={() => {
-                    return <MenuPage currentItems={currentItems} handleCategoryNavClick={handleCategoryNavClick}/>
+                    return <MenuPage category={selectedCategory} currentItems={currentItems} handleCategoryNavClick={handleCategoryNavClick}/>
                 }} />
             </Switch>
         </>
