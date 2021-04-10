@@ -1,12 +1,11 @@
 import React from 'react';
-import '../css/homePage.css'
-import FoodeeLogoFull from '../media/foodDeeLogoFull.png'
-
+import '../css/TopNavBar.css'
+import FooDeeLogoTransparent from '../media/fooDeeLogoTransparent.png'
 
 const FooDeeLogo = () => {
     return (
-            <img id="foodee-logo-full" src={FoodeeLogoFull} alt="logo"/>
-        )
+        <img id="foodee-logo" src={FooDeeLogoTransparent} alt="logo"/>
+    )
     };
     
     export default FooDeeLogo;

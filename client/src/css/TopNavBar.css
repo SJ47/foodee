@@ -1,0 +1,23 @@
+.top-navbar-container-all {
+    display: flex;
+    justify-content: space-between;
+    background: var(--primary-color);
+}
+
+
+
+.top-navbar-container-right > img {
+
+
+    padding:20px 10px 10px 10px;
+    max-width: 50px;
+    max-height: 100px;
+}
+
+.top-navbar-container-left > img{
+
+
+    padding: 10px;
+    max-width: 50px;
+    max-height: 100px;
+}

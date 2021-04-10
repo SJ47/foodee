@@ -2,7 +2,7 @@ import TopNavBar from '../components/TopNavBar';
 import '../css/homePage.css';
 import { Link } from 'react-router-dom';
 
-const HomePage = ({handleCategoryNavClick, currentItems}) => {
+const HomePage = ({handleCategoryNavClick}) => {
     return (
         <>
         <TopNavBar />
