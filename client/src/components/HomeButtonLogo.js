@@ -4,7 +4,7 @@ import HomeYellow from '../media/HomeYellow.png'
 
 const HomeButtonLogo = () => {
     return (
-        <img id="home-button" src={HomeYellow} alt="home button"/>
+        <img id="home-button" className="grow" src={HomeYellow} alt="home button"/>
     )
     };
     

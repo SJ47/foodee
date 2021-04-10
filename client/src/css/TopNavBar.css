@@ -4,19 +4,20 @@
     background: var(--primary-color);
 }
 
-.top-navbar-container-right, .top-navbar-container-left{
-    display: flex;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 2em;
-}
 
-.top-navbar-container-right > img, .top-navbar-container-left > img{
-    display: block;
-    padding: 10px;
-    max-width: 80px;
+
+.top-navbar-container-right > img {
+
+
+    padding:20px 10px 10px 10px;
+    max-width: 50px;
     max-height: 100px;
 }
 
+.top-navbar-container-left > img{
 
+
+    padding: 10px;
+    max-width: 50px;
+    max-height: 100px;
+}
