@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router';
 import Request from '../helpers/request.js';
-import MenuItemList from '../components/MenuItemList';
 import HomePage from '../components/HomePage';
 import LoginPage from '../components/LoginPage';
-import MenuCategoryNavBar from '../components/MenuCategoryNavBar';
-import TopNavBar from '../components/TopNavBar.js';
+import MenuPage from '../components/MenuPage';
+// import TopNavBar from '../components/TopNavBar';
 
 const MainContainer = () => {
 
@@ -24,6 +23,7 @@ const MainContainer = () => {
             .then((data) => {
                 setCurrentItems(data[0]);
             })
+
     }, [selectedCategory])
 
     if (!currentItems) {
@@ -54,34 +54,24 @@ const MainContainer = () => {
 
     return (
         <>
-
-            <header>
-                {/* <TopNavBar /> */}
-                {/* <Switch>
-                    <Route> */}
-                <MenuCategoryNavBar onCategoryNavClick={handleCategoryNavClick} />
-                {/* </Route>
-                </Switch> */}
-            </header>
-            <main>
-                <MenuItemList
-                    currentItems={currentItems}
-                    category={selectedCategory}
-                    onSelectedItemAdd={handleSelectedItemAdd}
-                    onSelectedItemRemove={handleSelectedItemRemove}
-                />
-            </main>
-
-            {/* <Switch>
-                <Route render={() => {
-                    return <MenuItemList currentItems={currentItems} />
-                }} />
+            {/* HAVE TOPNAVBAR HERE IF YOU WANT IT ON ALL PAGES */}
+            <Switch>
                 <Route exact path="/login" component={LoginPage} />
-                <Route exact path="/home" component={HomePage} />
-            </Switch> */}
+                <Route exact path="/home" render={() => {
+                    return <HomePage currentItems={currentItems} handleCategoryNavClick={handleCategoryNavClick} />
+                }} />
+                <Route exact path="/menu" render={() => {
+                    return <MenuPage
+                        currentItems={currentItems}
+                        handleCategoryNavClick={handleCategoryNavClick}
+                        category={selectedCategory}
+                        onSelectedItemAdd={handleSelectedItemAdd}
+                        onSelectedItemRemove={handleSelectedItemRemove}
+                    />
+                }} />
+            </Switch>
         </>
     )
-
 }
 
 export default MainContainer;

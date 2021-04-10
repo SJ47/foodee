@@ -5,7 +5,7 @@ import FoodeeLogoFull from '../media/foodDeeLogoFull.png'
 
 const FooDeeLogo = () => {
     return (
-            <img id="foodee-logo-full" src={FoodeeLogoFull}/>
+            <img id="foodee-logo-full" src={FoodeeLogoFull} alt="logo"/>
         )
     };
     
