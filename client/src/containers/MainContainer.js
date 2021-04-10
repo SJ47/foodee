@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Switch } from 'react-router';
+import { Route, Switch, Redirect } from 'react-router';
 import Request from '../helpers/request.js';
 import HomePage from '../components/HomePage';
 import LoginPage from '../components/LoginPage';
@@ -12,6 +12,8 @@ const MainContainer = () => {
     const [selectedCategory, setSelectedCategory] = useState("menu_items/category/main")
     const [basket, setBasket] = useState([])
     const [basketValue, setBasketValue] = useState(0)
+    const [loggedIn, setLoggedIn] = useState(false)
+    // const [customer, setCustomer] = useState({});
 
     useEffect(() => {
         console.log("Fetching menu items...")
@@ -56,19 +58,31 @@ const MainContainer = () => {
         <>
             {/* HAVE TOPNAVBAR HERE IF YOU WANT IT ON ALL PAGES */}
             <Switch>
+{/*                
+                <Route exact path="/" render={() => {
+                    return(
+                        loggedIn={loggedIn} ? 
+                        <Redirect to="/home" />:
+                        <Redirect to="/login"/> )}  */}
+                
+                <Route exact path="/" render={() => {
+                    return (
+                        loggedIn?
+                        <Redirect to="/home"/>:
+                        <Redirect to="/login"/>   
+                    )}}/>
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/home" render={() => {
-                    return <HomePage currentItems={currentItems} handleCategoryNavClick={handleCategoryNavClick} />
+                    return <HomePage currentItems={currentItems} handleCategoryNavClick={handleCategoryNavClick}/>
                 }} />
                 <Route exact path="/menu" render={() => {
-                    return <MenuPage
-                        currentItems={currentItems}
+                    return (
+                        <MenuPage currentItems={currentItems} 
                         handleCategoryNavClick={handleCategoryNavClick}
                         category={selectedCategory}
                         onSelectedItemAdd={handleSelectedItemAdd}
-                        onSelectedItemRemove={handleSelectedItemRemove}
-                    />
-                }} />
+                        onSelectedItemRemove={handleSelectedItemRemove}/>
+                    )}} />
             </Switch>
         </>
     )
