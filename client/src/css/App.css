@@ -113,3 +113,24 @@ hr {
     color: var(--primary-color);
     padding: 1em;
 }
+
+.item-quantity {
+    display: inline-block;
+    padding: 0 1em;
+    /* font-size: 1.3em; */
+}
+
+.item-quantity-value {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.btn {
+    /* padding: 0.5em; */
+    font-size: 2em;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    /* padding: 0.3em; */
+    border-radius: 25px;
+}

@@ -11,6 +11,8 @@ const MainContainer = () => {
 
     const [currentItems, setCurrentItems] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("menu_items/category/main")
+    const [basket, setBasket] = useState([])
+    const [basketValue, setBasketValue] = useState(0)
 
     useEffect(() => {
         console.log("Fetching menu items...")
@@ -27,9 +29,29 @@ const MainContainer = () => {
     if (!currentItems) {
         return <p>nothing</p>
     }
+
     const handleCategoryNavClick = (category) => {
         setSelectedCategory(category);
     }
+
+    const handleSelectedItemAdd = (item) => {
+        // Update contents of the basket
+        const currentBasket = [...basket, item]
+        setBasket(currentBasket)
+        console.log("Added item", item)
+        console.log("Current basket: ", currentBasket);
+
+        // Update total value of basket
+        let currentValue = basketValue;
+        currentValue += item.price;
+        setBasketValue(currentValue);
+        console.log("Current basket Value: ", currentValue);
+    }
+
+    const handleSelectedItemRemove = (item) => {
+        console.log("Removed item", item)
+    }
+
     return (
         <>
 
@@ -42,7 +64,12 @@ const MainContainer = () => {
                 </Switch> */}
             </header>
             <main>
-                <MenuItemList currentItems={currentItems} category={selectedCategory} />
+                <MenuItemList
+                    currentItems={currentItems}
+                    category={selectedCategory}
+                    onSelectedItemAdd={handleSelectedItemAdd}
+                    onSelectedItemRemove={handleSelectedItemRemove}
+                />
             </main>
 
             {/* <Switch>
