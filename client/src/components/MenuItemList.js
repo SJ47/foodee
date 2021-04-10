@@ -1,4 +1,4 @@
-const MenuItemList = ({ currentItems, category, onSelectedItemAdd, onSelectedItemRemove }) => {
+const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSelectedItemRemove }) => {
 
     const menuListItems = currentItems.map((item, index) => {
         return <li className="menu-list-item" key={index}>
@@ -7,12 +7,12 @@ const MenuItemList = ({ currentItems, category, onSelectedItemAdd, onSelectedIte
                 <p><em>{item.description}</em></p>
                 <h3>£{item.price}</h3>
                 <button
-                    onClick={() => { onSelectedItemRemove(item) }}
+                    onClick={() => { handleSelectedItemRemove(item) }}
                     className="btn minus-button">-
                 </button>
                 <div className="item-quantity">Qty: <span className="item-quantity-value">0</span></div>
                 <button
-                    onClick={() => { onSelectedItemAdd(item) }}
+                    onClick={() => { handleSelectedItemAdd(item) }}
                     className="btn plus-button">+
                     </button>
 

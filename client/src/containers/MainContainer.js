@@ -65,8 +65,8 @@ const MainContainer = () => {
                         currentItems={currentItems}
                         handleCategoryNavClick={handleCategoryNavClick}
                         category={selectedCategory}
-                        onSelectedItemAdd={handleSelectedItemAdd}
-                        onSelectedItemRemove={handleSelectedItemRemove}
+                        handleSelectedItemAdd={handleSelectedItemAdd}
+                        handleSelectedItemRemove={handleSelectedItemRemove}
                     />
                 }} />
             </Switch>
