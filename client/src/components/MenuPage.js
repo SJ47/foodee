@@ -6,11 +6,13 @@ import TopNavBar from '../components/TopNavBar';
 const MenuPage = ({currentItems, handleCategoryNavClick}) => {
     
     return (
+        <>
+        <TopNavBar />
         <div className="menu-page">
-            <TopNavBar />
             <MenuCategoryNavBar onCategoryNavClick={handleCategoryNavClick} />
             <MenuItemList currentItems={currentItems} />
         </div>
+        </>
     )
     }
     

@@ -9,13 +9,13 @@ import MenuPage from '../components/MenuPage';
 const MainContainer = () => {
 
     const [currentItems, setCurrentItems] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState("/menu_items")
+    const [selectedCategory, setSelectedCategory] = useState("menu_items/category/main")
 
     useEffect(() => {
         console.log("Fetching menu items...")
-        let categoryUrl = selectedCategory;
+        // let categoryUrl = selectedCategory;
         const request = new Request();
-        const allItemsPromise = request.get(categoryUrl)
+        const allItemsPromise = request.get(selectedCategory)
 
         Promise.all([allItemsPromise])
             .then((data) => {
@@ -30,12 +30,10 @@ const MainContainer = () => {
 
     const handleCategoryNavClick = (category) => {
         setSelectedCategory(category);
-        console.log("Hey, you clicked me", category)
     }
 
     return (
         <>
-            {/* <TopNavBar /> */}
             {/* HAVE TOPNAVBAR HERE IF YOU WANT IT ON ALL PAGES */}
 
             <Switch>

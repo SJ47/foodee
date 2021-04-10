@@ -1,18 +1,115 @@
-.App {
-        font-family: 'Raleway', sans-serif;
-        background-color: #143D59;
-        color: antiquewhite;
+/*****************/
+/* Setup section */
+/*****************/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-/**********************/
-/* Navigation section */
-/**********************/
+:root {
+    --primary-color: #143d59;
+    --secondary-color: antiquewhite;
+    --tertiary-color: white;
+
+    --ff-primary: "font-family: " Raleway ", sans-serif;";
+
+    --box-shadow-heavy: 0 4px 8px 0 rgba(0, 0, 0, 0.9),
+        0 6px 20px 0 rgba(0, 0, 0, 0.9);
+    --box-shadow-light: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --box-shadow-left-to-right: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+
+body {
+    margin: 0;
+    /* padding: 0 1em; */
+}
+
+.App {
+    font-family: var(--ff-primary);
+    background-color: var(--primary-color);
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+}
+
+/***************************/
+/* Top Navigation section */
+/***************************/
+.top-nav-bar-container {
+    /* margin-top: 3em; */
+    display: flex;
+    justify-content: space-between;
+    background: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2em;
+}
+
+hr {
+    margin-top: 2em;
+    opacity: 0.3;
+    background: var(--primary-color);
+}
+
+.top-nav-bar-container > img {
+    display: block;
+    max-width: 300px;
+    max-height: 100px;
+    /* width: auto;
+    height: auto; */
+}
+
+/***************************/
+/* Menu Navigation section */
+/***************************/
 
 .category-nav-container {
+    background: var(--primary-color);
     display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    padding-top: 0em;
+    padding-bottom: 2em;
 }
 
 .category-nav-link {
     list-style: none;
+}
+
+.category-nav-link > a {
+    box-shadow: var(--box-shadow-light);
+    padding: 0.7em 1.5em;
+    margin: 1em;
+    text-decoration: none;
+    border-radius: 25px;
+    color: var(--secondary-color);
+}
+
+.menu-list-item {
+    list-style: none;
+    padding: 1em 1em 1em 1em;
+    margin: 1em;
+    box-shadow: var(--box-shadow-light);
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 2fr 1fr;
+    border-radius: 25px;
+    color: var(--primary-color);
+}
+
+.item-info-container {
+    display: grid;
+    place-items: center;
+}
+
+.item-info-container > img {
+    box-shadow: var(--box-shadow-light);
+    border-radius: 25px;
+}
+
+.homepage-intro-text {
+    color: var(--primary-color);
     padding: 1em;
 }
