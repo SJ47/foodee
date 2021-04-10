@@ -35,7 +35,7 @@ const MainContainer = () => {
     //     total = basket.map((basketItem) => {
     //         return total -= basketItem.price
     //     })
-    //     console.log("Basket total: ", basketValue);
+    //     // console.log("Basket total: ", basketValue);
     // }, [basket])
 
     if (!currentItems) {
@@ -48,14 +48,15 @@ const MainContainer = () => {
 
     const handleSelectedItemAdd = (item) => {
         // Update contents of the basket
-        // Add a quantity field to the object and append by 1 if already exist
-        if (item.quantity) {
+        // Add a quantity field to the object and append by 1 if already exist and > 0
+        if (item.quantity && item.quantity > 0) {
             item.quantity += 1;
         } else {
             item.quantity = 1;
+            setBasket([...basket, item])
         }
 
-        setBasket([...basket, item])
+        // setBasket([...basket, item])
 
         console.log("Item quantity: ", item.quantity);
 
@@ -66,22 +67,24 @@ const MainContainer = () => {
 
     const handleSelectedItemRemove = (item) => {
         // Update contents of the basket if item qty > 0
-        if (!item.quantity) {
-            return
-        }
+        // if (!item.quantity) {
+        //     return
+        // }
 
         // // Remove item from basket
         const updatedBasket = basket.filter((basketItem) => {
-            if (basketItem === item) {
+            if (basketItem === item && item.quantity > 0) {
                 // Remove item price from basket if item to remove is found
                 setBasketValue(basketValue - basketItem.price)
-                console.log("basket value: ", basketValue)
-
+                basketItem.quantity -= 1;
+                return basketItem
+            } else {
+                return basketItem !== item
             }
-            return basketItem !== item
+
         })
         setBasket(updatedBasket);
-        console.log(updatedBasket);
+        // console.log(updatedBasket);
     }
 
     const handleCustomerLogIn = () => {
