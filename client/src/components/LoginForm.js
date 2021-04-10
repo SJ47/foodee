@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import '../css/LoginForm.css';
 import Request from '../helpers/request';
 
-const LoginForm = () => {
+const LoginForm = ({handleCustomerLogIn}) => {
     
     const [stateCustomer, setStateCustomer] = useState(
         {
@@ -31,6 +31,7 @@ const LoginForm = () => {
     const handleSubmit = function(event){
         event.preventDefault();
         handleCustomerPost(stateCustomer); 
+        handleCustomerLogIn();
     }
 
     return (
