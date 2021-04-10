@@ -12,7 +12,7 @@ const TopNavBar = () => {
                 <HamburgerMenu></HamburgerMenu>
 
             </div>
-            <hr />
+            {/* <hr /> */}
         </>
     )
 

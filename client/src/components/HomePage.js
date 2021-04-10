@@ -3,7 +3,7 @@ import TopNavBar from '../components/TopNavBar';
 
 const HomePage = () => {
     return (
-        <>
+        <div className="homepage-intro-text">
             {/* <TopNavBar /> */}
             <h1>Hello, and welcome Foodee!</h1>
             <h3>Grab a seat, order some food and drink and have it delivered to your table!</h3>
@@ -17,7 +17,7 @@ Anim non aute tempor nisi incididunt sunt reprehenderit. Nulla elit dolor exerci
 
 Reprehenderit incididunt laborum nostrud do irure pariatur sunt ea do. Veniam enim ea do est. Labore minim in occaecat magna excepteur non tempor reprehenderit Lorem eu mollit. Elit eu in laboris laborum labore labore cillum laboris aliqua deserunt laboris aute.
 
-        </>
+        </div>
     )
 
 };
