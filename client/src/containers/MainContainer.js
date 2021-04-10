@@ -28,6 +28,7 @@ const MainContainer = () => {
 
     }, [selectedCategory])
 
+
     // useEffect to update cart value when cart items change
     // useEffect(() => {
     //     console.log("Basket has changed contents")
