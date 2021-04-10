@@ -4,6 +4,8 @@ import Request from '../helpers/request.js';
 import HomePage from '../components/HomePage';
 import LoginPage from '../components/LoginPage';
 import MenuPage from '../components/MenuPage';
+import OrderPage from '../components/OrderPage';
+
 // import TopNavBar from '../components/TopNavBar';
 
 const MainContainer = () => {
@@ -118,8 +120,9 @@ const MainContainer = () => {
                             basket={basket}
                             basketValue={basketValue}
                         />
-                    )
-                }} />
+                    )}} />
+                     <Route exact path="/Basket" component={OrderPage}/>
+
             </Switch>
         </>
     )
