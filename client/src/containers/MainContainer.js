@@ -4,6 +4,8 @@ import Request from '../helpers/request.js';
 import HomePage from '../components/HomePage';
 import LoginPage from '../components/LoginPage';
 import MenuPage from '../components/MenuPage';
+import OrderPage from '../components/OrderPage';
+
 // import TopNavBar from '../components/TopNavBar';
 
 const MainContainer = () => {
@@ -103,10 +105,12 @@ const MainContainer = () => {
                     )
                 }} />
                 <Route exact path="/login" render={() => {
-                    return <LoginPage handleCustomerLogIn={handleCustomerLogIn} />
-
+                    return (
+                        loggedIn ?
+                        <Redirect to="/home" /> :
+                        <LoginPage handleCustomerLogIn={handleCustomerLogIn} />
+                    )
                 }} />
-                {/* <Route exact path="/login" component={LoginPage} /> */}
                 <Route exact path="/home" render={() => {
                     return <HomePage handleCategoryNavClick={handleCategoryNavClick} />
                 }} />
@@ -120,8 +124,9 @@ const MainContainer = () => {
                             basket={basket}
                             basketValue={basketValue}
                         />
-                    )
-                }} />
+                    )}} />
+                     <Route exact path="/Basket" component={OrderPage}/>
+
             </Switch>
         </>
     )
