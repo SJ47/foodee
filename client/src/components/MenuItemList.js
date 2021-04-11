@@ -17,14 +17,14 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
 
             <div>
                 <h3>{item.name}</h3>
-                <p><em>{item.description}</em></p>
+                <p>{item.description}</p>
                 <h3>£{item.price}</h3>
                 <button
                     onClick={() => { handleSelectedItemRemove(item) }}
                     className="btn minus-button">-
                 </button>
 
-                <div className="item-quantity">Qty: <span className="item-quantity-value">{item.quantity}</span></div>
+                <div className="item-quantity"><span className="item-quantity-value">{item.quantity}</span></div>
                 <button
                     onClick={() => { handleSelectedItemAdd(item) }}
                     className="btn plus-button">+
@@ -32,7 +32,7 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
 
             </div>
             <div className="item-info-container">
-                <img src={item.image} alt="" width="200px" height="200px" />
+                <img src={item.image} alt=""/>
             </div>
         </li>
     })

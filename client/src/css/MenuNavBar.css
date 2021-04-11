@@ -10,7 +10,7 @@
     padding-top: 1em;
     padding-bottom: 0.5em;
     overflow-y: hidden;
-    /* position: fixed; */
+    position: fixed;
     z-index: 99;
     left: 0;
     right: 0;
