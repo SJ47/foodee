@@ -5,6 +5,7 @@ import HomePage from '../components/HomePage';
 import LoginPage from '../components/LoginPage';
 import MenuPage from '../components/MenuPage';
 import OrderPage from '../components/OrderPage';
+import SideNavBar from '../components/SideNavBar'
 
 // import TopNavBar from '../components/TopNavBar';
 
@@ -94,6 +95,7 @@ const MainContainer = () => {
     return (
         <>
             {/* HAVE TOPNAVBAR HERE IF YOU WANT IT ON ALL PAGES */}
+            <SideNavBar />
             <Switch>
                 <Route exact path="/" render={() => {
                     return (
