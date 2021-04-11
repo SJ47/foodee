@@ -5,6 +5,7 @@ import HomePage from '../components/HomePage';
 import LoginPage from '../components/LoginPage';
 import MenuPage from '../components/MenuPage';
 import OrderPage from '../components/OrderPage';
+import AboutPage from '../components/AboutPage';
 
 // import TopNavBar from '../components/TopNavBar';
 
@@ -15,17 +16,20 @@ const MainContainer = () => {
     const [basket, setBasket] = useState([])
     const [basketValue, setBasketValue] = useState(0)
     const [loggedIn, setLoggedIn] = useState(false)
+    const [restaurants, setRestaurants] = useState({});
     // const [customer, setCustomer] = useState({});
 
     useEffect(() => {
-        console.log("Fetching menu items...")
+        console.log("Fetching menu items and restaurant info...")
         // let categoryUrl = selectedCategory;
         const request = new Request();
         const allItemsPromise = request.get(selectedCategory)
+        const restaurantPromise = request.get('/restaurants')
 
-        Promise.all([allItemsPromise])
+        Promise.all([allItemsPromise, restaurantPromise])
             .then((data) => {
                 setCurrentItems(data[0]);
+                setRestaurants(data[1]);
             })
 
     }, [selectedCategory])
@@ -112,7 +116,9 @@ const MainContainer = () => {
                     )
                 }} />
                 <Route exact path="/home" render={() => {
-                    return <HomePage handleCategoryNavClick={handleCategoryNavClick} />
+                    return (
+                        <HomePage handleCategoryNavClick={handleCategoryNavClick} />
+                    )
                 }} />
                 <Route exact path="/menu" render={() => {
                     return (
@@ -125,7 +131,13 @@ const MainContainer = () => {
                             basketValue={basketValue}
                         />
                     )}} />
-                     <Route exact path="/Basket" component={OrderPage}/>
+                <Route exact path="/Basket" component={OrderPage}/>
+
+                <Route exact path="/about" render={() => {
+                    return (
+                        <AboutPage restaurants={restaurants} />
+                    )
+                }} />
 
             </Switch>
         </>
