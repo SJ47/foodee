@@ -5,7 +5,7 @@ import HomePage from '../components/HomePage';
 import LoginPage from '../components/LoginPage';
 import MenuPage from '../components/MenuPage';
 import OrderPage from '../components/OrderPage';
-import PaymentForm from '../components/PaymentForm';
+import PaymentForm from '../components/PaymentForm.js';
 
 // import TopNavBar from '../components/TopNavBar';
 

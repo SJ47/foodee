@@ -55,7 +55,7 @@ public class Order {
     public Order() {
     }
 
-    //    Not sure about the constructor set up ^^^
+//    Not sure about the constructor set up ^^^
 //    Let me know your thoughts
 
 //    NOTE: won't let me create an empty constructor
@@ -122,5 +122,13 @@ public class Order {
         this.total += item.getPrice();
 //        System.out.println("ORDER: " + item);
 
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
     }
 }

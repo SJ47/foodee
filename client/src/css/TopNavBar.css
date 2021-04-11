@@ -2,6 +2,11 @@
     display: flex;
     justify-content: space-between;
     background: var(--primary-color);
+
+    overflow: hidden;
+    position: sticky;
+    top: 0em;
+    z-index: 99;
 }
 
 .top-navbar-container-right > img {
@@ -9,7 +14,8 @@
     width: 30px;
 }
 
-#home-button, #basket-logo {
+#home-button,
+#basket-logo {
     margin-right: 15px;
 }
 

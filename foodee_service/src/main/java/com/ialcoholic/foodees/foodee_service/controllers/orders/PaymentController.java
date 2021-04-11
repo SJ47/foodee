@@ -28,7 +28,10 @@ public class PaymentController {
     @PostMapping(value = "/payments")
     public ResponseEntity<Payment> postPayment(@RequestBody Payment payment){
         paymentRepository.save(payment);
-        System.out.println("Payment Details: " + payment);
+
+//        System.out.println("Payment Details - orders included: " + payment.getOrder().getOrderItems());
+
+        paymentRepository.processStripePayment(payment);
         return new ResponseEntity<>(payment, HttpStatus.CREATED);
     }
 }

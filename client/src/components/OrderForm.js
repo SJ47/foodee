@@ -67,7 +67,7 @@ const OrderForm = ({ customer, basket, basketValue }) => {
             {tableOptions}
         </select>  */}
 
-                <Link to="/paymentform" className="checkout-text">
+                <Link to="/paymentform" className="checkout-text" basket={basket}>
                     <button className="order-btn" type="submit">Pay Now</button>
                 </Link>
 
