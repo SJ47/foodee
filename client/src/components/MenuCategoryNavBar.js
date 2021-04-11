@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MenuCategoryNavBar = ({ onCategoryNavClick }) => {
     return (
-        <div>
+        <div id="cat-nav-container-buffer">
             <ul className="category-nav-container">
                 <li className="category-nav-link" >
                     <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/main") }}>Mains</Link>

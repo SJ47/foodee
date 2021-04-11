@@ -1,4 +1,5 @@
 import React from 'react'
+import BasketYellow from '../media/CartEmptyYellow.png'
 import '../css/Checkout.css';
 
 const Checkout = ({ basket, basketValue }) => {
@@ -18,9 +19,9 @@ const Checkout = ({ basket, basketValue }) => {
 
     return (
         <div className="checkout-container">
-            <i className="fas fa-shopping-cart"></i>
+            <img id="basket-logo-checkout" src={BasketYellow} alt="basket logo"/>
             <div className="basket-item-count">{qtyInBasket}</div>
-            <div className="checkout-text">CHECKOUT</div>
+            <div className="checkout-text"></div>
             <div className="checkout-total">£{basketValue}</div>
         </div>
 

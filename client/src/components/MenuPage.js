@@ -9,7 +9,7 @@ const MenuPage = ({ currentItems, handleCategoryNavClick, category, handleSelect
 
     if (category === "menu_items/category/hard_drink" || category === "menu_items/category/soft_drink" || category === "menu_items/category/hot_drink") {
         return (
-            <>
+            <><div>
                 <TopNavBar />
                 <div className="menu-page">
                     <MenuCategoryNavBar onCategoryNavClick={handleCategoryNavClick} />
@@ -25,11 +25,13 @@ const MenuPage = ({ currentItems, handleCategoryNavClick, category, handleSelect
                     />
                 </div>
                 <Checkout basket={basket} basketValue={basketValue} />
+                </div>
             </>
         )
     } else {
         return (
             <>
+            <div>
                 <TopNavBar />
                 <div className="menu-page">
                     <MenuCategoryNavBar onCategoryNavClick={handleCategoryNavClick} />
@@ -44,6 +46,7 @@ const MenuPage = ({ currentItems, handleCategoryNavClick, category, handleSelect
                     />
                 </div>
                 <Checkout basket={basket} basketValue={basketValue} />
+            </div>
             </>
         )
     }

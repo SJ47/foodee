@@ -1,16 +1,19 @@
-
+#cat-nav-container-buffer {
+    height: 1px;
+}
 
 .category-nav-container {
     background: var(--primary-color);
     display: flex;
     justify-content: space-between;
-    margin-top: 0;
+    margin: 0;
     padding-top: 1em;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
     overflow-y: hidden;
     position: fixed;
     left: 0;
     right: 0;
+
 }
 
 .category-nav-link {

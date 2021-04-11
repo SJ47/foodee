@@ -25,12 +25,10 @@
 
 body {
     margin: 0;
-    /* padding: 0 1em; */
 }
 
 .App {
     font-family: var(--ff-primary);
-    background-color: var(--secondary-color);
-    /* background-color: var(--tertiary-color); */
+    background-color: var(--quadary-color);
     color: var(--secondary-color);
 }
