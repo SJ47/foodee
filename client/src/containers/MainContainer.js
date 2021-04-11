@@ -103,10 +103,12 @@ const MainContainer = () => {
                     )
                 }} />
                 <Route exact path="/login" render={() => {
-                    return <LoginPage handleCustomerLogIn={handleCustomerLogIn} />
-
+                    return (
+                        loggedIn ?
+                        <Redirect to="/home" /> :
+                        <LoginPage handleCustomerLogIn={handleCustomerLogIn} />
+                    )
                 }} />
-                {/* <Route exact path="/login" component={LoginPage} /> */}
                 <Route exact path="/home" render={() => {
                     return <HomePage handleCategoryNavClick={handleCategoryNavClick} />
                 }} />
