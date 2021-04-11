@@ -5,9 +5,7 @@ import com.ialcoholic.foodees.foodee_service.repositories.orders.PaymentReposito
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +23,12 @@ public class PaymentController {
     @GetMapping(value="/payments/{id}")
     public ResponseEntity getPayment(@PathVariable Long id){
         return new ResponseEntity<>(paymentRepository.findById(id), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/payments")
+    public ResponseEntity<Payment> postPayment(@RequestBody Payment payment){
+        paymentRepository.save(payment);
+        System.out.println("Payment Details: " + payment);
+        return new ResponseEntity<>(payment, HttpStatus.CREATED);
     }
 }

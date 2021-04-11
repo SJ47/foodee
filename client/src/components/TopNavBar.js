@@ -2,6 +2,7 @@ import FooDeeLogo from './FooDeeLogo'
 import HamburgerLogo from './HamburgerLogo';
 import HomeLogo from './HomeButtonLogo';
 import BasketLogo from './BasketLogo';
+import SideNavBar from '../components/SideNavBar';
 
 const TopNavBar = () => {
     return (
@@ -14,6 +15,7 @@ const TopNavBar = () => {
                 <HomeLogo></HomeLogo>
                 <BasketLogo></BasketLogo>
                 <HamburgerLogo></HamburgerLogo>
+                <SideNavBar />
             </div>
         </div>
         </>

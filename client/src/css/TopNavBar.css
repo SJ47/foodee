@@ -4,20 +4,22 @@
     background: var(--primary-color);
 }
 
-
-
 .top-navbar-container-right > img {
-
-
-    padding:20px 10px 10px 10px;
-    max-width: 50px;
-    max-height: 100px;
+    padding-top: 5px;
+    width: 30px;
 }
 
-.top-navbar-container-left > img{
+#home-button, #basket-logo {
+    margin-right: 15px;
+}
 
+#hamburger-menu-logo {
+    margin-right: 2px;
+}
 
-    padding: 10px;
-    max-width: 50px;
-    max-height: 100px;
+#fooDee-logo {
+    font-size: 1.6rem;
+    margin: 0%;
+    padding-top: 5px;
+    margin-left: 2px;
 }

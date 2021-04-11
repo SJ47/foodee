@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import '../css/LoginForm.css';
-import Request from '../helpers/request';
 
-const LoginForm = ({handleCustomerLogIn}) => {
+
+const LoginForm = ({handleCustomerLogIn, handleCustomerPost}) => {
     
     const [stateCustomer, setStateCustomer] = useState(
         {
@@ -19,14 +19,6 @@ const LoginForm = ({handleCustomerLogIn}) => {
         setStateCustomer(copiedCustomer)
     }
 
-    // Can be moved then passed down later /////////
-    const handleCustomerPost = function(customer){
-        const request = new Request();
-        request.post("/customers", customer)
-        .then(() => window.location = '/home')
-        // change '/' to whichever route the home page is called
-      }
-    ///////////////////////////////////////////////
 
     const handleSubmit = function(event){
         event.preventDefault();
