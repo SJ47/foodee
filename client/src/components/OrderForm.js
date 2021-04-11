@@ -3,13 +3,13 @@ import '../css/OrderForm.css';
 import Request from '../helpers/request';
 
 
-const OrderForm = ({customer, basketItems, basketValue, onCreate}) => {
+const OrderForm = ({customer, basket, basketValue}) => {
 
 const [stateOrder, setStateOrder] = useState(
     {
         customer: {customer},
         specialNotes: "",
-        orderItems: {basketItems},
+        orderItems: {basket},
         quantity: 0,
         total: {basketValue},
         rating: null
@@ -43,7 +43,6 @@ const handleOrderPost = function(order){
 
 const handleSubmit = function(event){
     event.preventDefault();
-    onCreate(stateOrder); 
     handleOrderPost(stateOrder); 
 }
 

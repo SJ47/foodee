@@ -15,7 +15,7 @@ const MainContainer = () => {
     const [basket, setBasket] = useState([])
     const [basketValue, setBasketValue] = useState(0)
     const [loggedIn, setLoggedIn] = useState(false)
-    // const [customer, setCustomer] = useState({});
+    const [activeCustomer, setActiveCustomer] = useState(null);
 
     useEffect(() => {
         console.log("Fetching menu items...")
@@ -91,6 +91,15 @@ const MainContainer = () => {
         console.log("handle customer login triggered");
         setLoggedIn(true);
     }
+    // Can be moved then passed down later /////////
+    const handleCustomerPost = function(customer){
+        const request = new Request();
+        request.post("/customers", customer)
+        setActiveCustomer(customer);
+        // .then(() => window.location = '/home')
+        // change '/' to whichever route the home page is called
+        }
+    ///////////////////////////////////////////////
 
 
     return (
@@ -108,7 +117,7 @@ const MainContainer = () => {
                     return (
                         loggedIn ?
                         <Redirect to="/home" /> :
-                        <LoginPage handleCustomerLogIn={handleCustomerLogIn} />
+                        <LoginPage handleCustomerLogIn={handleCustomerLogIn} handleCustomerPost={handleCustomerPost} />
                     )
                 }} />
                 <Route exact path="/home" render={() => {
@@ -125,7 +134,19 @@ const MainContainer = () => {
                             basketValue={basketValue}
                         />
                     )}} />
-                     <Route exact path="/order" component={OrderPage}/>
+                     <Route exact path="/order" render={() => {
+                         return (
+                             <OrderPage customer={activeCustomer} 
+                             basket={basket}
+                             basketValue={basketValue}
+                             />
+                         )
+
+                     }
+
+                     }
+                     
+                     />
 
             </Switch>
         </>

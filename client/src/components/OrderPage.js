@@ -1,22 +1,18 @@
 import React from "react";
 import '../css/OrderPage.css';
-import Checkout from "../components/Checkout";
-import {Link} from 'react-router-dom';
+import OrderForm from "./OrderForm";
 
 
-
-const OrderPage = () => {
+const OrderPage = ({customer, basket, basketValue}) => {
     return (
 
         <>
 
         <p>Hello OrderPage </p>
 
-      
- 
-
-        
-
+        <OrderForm customer={customer} 
+        basket={basket}
+        basketValue={basketValue}/>
         </>
 
         
