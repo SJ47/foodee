@@ -1,0 +1,6 @@
+.order-page {
+    background: var(--primary-color);
+    text-align: center;
+    font-size: larger;
+    color: var(--secondary-color);
+}

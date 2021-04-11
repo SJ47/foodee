@@ -25,7 +25,8 @@ public class Order {
     private String specialNotes;
 
     @JsonIgnoreProperties(value="order")
-    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "order")
+//    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
     private List<MenuItem> orderItems;
 
     @OneToOne(cascade = CascadeType.ALL)

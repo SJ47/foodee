@@ -24,7 +24,7 @@ public class MenuItem {
     private Category category;
 
     @ManyToOne
-    @JsonIgnoreProperties({"menu_items"})
+//    @JsonIgnoreProperties({"menu_items"})
     @JoinColumn(name = "order_id")
     private Order order;
 
@@ -206,4 +206,10 @@ public class MenuItem {
     public void addAllergen(Allergen allergen){
         this.allergens.add(allergen);
     }
-}
+
+
+
+    }
+
+
+
