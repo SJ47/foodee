@@ -11,24 +11,77 @@ import OrderPage from '../components/OrderPage';
 const MainContainer = () => {
 
     const [currentItems, setCurrentItems] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState("menu_items/category/main")
+    const [selectedCategory, setSelectedCategory] = useState('/menu_items/category/main')
+
+    const [mains, setMains] = useState([]);
+    const [sides, setSides] = useState([]);
+    const [desserts, setDesserts] = useState([]);
+    const [snacks, setSnacks] = useState([]);
+    const [childrenMeals, setChildrenMeals] = useState([]);
+    const [hotDrinks, setHotDrinks] = useState([]);
+    const [softDrinks, setSoftDrinks] = useState([]);
+    const [hardDrinks, setHardDrinks] = useState([]);
+
     const [basket, setBasket] = useState([])
     const [basketValue, setBasketValue] = useState(0)
     const [loggedIn, setLoggedIn] = useState(false)
     // const [customer, setCustomer] = useState({});
 
-    useEffect(() => {
+    const requestRestaurantData = function() {
+        // for now just menu items
         console.log("Fetching menu items...")
-        // let categoryUrl = selectedCategory;
         const request = new Request();
-        const allItemsPromise = request.get(selectedCategory)
+        // const allItemsPromise = request.get(selectedCategory)
+        const mainsPromise = request.get('/menu_items/category/main')
+        const sidesPromise = request.get('/menu_items/category/side')
+        const snacksPromise = request.get('/menu_items/category/snack')
+        const dessertsPromise = request.get('/menu_items/category/dessert')
+        const childrenMealsPromise = request.get('/menu_items/category/child_meal')
+        const hotDrinksPromise = request.get('/menu_items/category/hot_drink')
+        const softDrinksPromise = request.get('/menu_items/category/soft_drink')
+        const hardDrinksPromise = request.get('/menu_items/category/hard_drink')
 
-        Promise.all([allItemsPromise])
-            .then((data) => {
-                setCurrentItems(data[0]);
-            })
+        // Promise.all([allItemsPromise])
+        // .then((data) => {
+        //     setCurrentItems(data[0]);
+        // })
 
+        Promise.all([mainsPromise, sidesPromise, snacksPromise, dessertsPromise, childrenMealsPromise, hotDrinksPromise, softDrinksPromise, hardDrinksPromise])
+        .then((data) => {
+            setMains(data[0]);
+            setSides(data[1]);
+            setSnacks(data[2]);
+            setDesserts(data[3]);
+            setChildrenMeals(data[4]);
+            setHotDrinks(data[5]);
+            setSoftDrinks(data[6]);
+            setHardDrinks(data[7]);
+        })
+    }
+
+    useEffect(() => {
+        requestRestaurantData()
     }, [selectedCategory])
+
+    // working but causing dependency warning which goes away if request moved into useeffect, see below commented out
+    // useEffect(() => {
+    //     requestRestaurantData()  
+    // }, [selectedCategory])
+
+    // Working useEffect but may be causing fetching issues
+    // useEffect(() => {
+    //     console.log("Fetching menu items...")
+    //     const request = new Request();
+    //     const allItemsPromise = request.get(selectedCategory)
+
+    //     Promise.all([allItemsPromise])
+    //         .then((data) => {
+    //             setCurrentItems(data[0]);
+    //         })
+
+    // }, [selectedCategory])
+
+////////////////////////////////////////////////////////////////////////////////
 
     // useEffect to update cart value when cart items change
     // useEffect(() => {
