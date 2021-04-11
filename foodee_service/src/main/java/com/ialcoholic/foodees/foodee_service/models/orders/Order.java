@@ -119,6 +119,7 @@ public class Order {
         this.orderItems.add(item);
         this.quantity += 1;
         this.total += item.getPrice();
+//        System.out.println("ORDER: " + item);
 
     }
 }
