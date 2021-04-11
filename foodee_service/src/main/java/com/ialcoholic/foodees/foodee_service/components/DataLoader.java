@@ -211,7 +211,7 @@ public class DataLoader implements ApplicationRunner {
                 true, true, false, "330ml", 0);
         menuItemRepository.save(menuItem16);
 
-        MenuItem menuItem17 = new MenuItem(restaurant, hard_drink, "Tennants", "Yellow garbage juice", 3.5, "data" +
+        MenuItem menuItem17 = new MenuItem(restaurant, hard_drink, "Tennants", "Yellow garbage juice", 3.5,
                 "https://www.telegraph.co.uk/content/dam/men/2016/05/13/tennents-588470_trans_NvBQzQNjv4Bq2mG3lyVb0qwi9Nuwg-8hyWM4S1u_kNqQtETCuvfEn_0.jpg",
                 false, true, true, true, "pint", 4);
         menuItemRepository.save(menuItem17);

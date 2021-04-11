@@ -16,7 +16,7 @@ public class MenuItem {
     private Long id;
 
     @ManyToOne
-    @JsonIgnoreProperties({"menu_items"})
+    @JsonIgnoreProperties(value = "menu")
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
 
