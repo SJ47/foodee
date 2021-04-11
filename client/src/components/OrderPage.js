@@ -1,5 +1,8 @@
 import React from "react";
 import '../css/OrderPage.css';
+import Checkout from "../components/Checkout";
+import {Link} from 'react-router-dom';
+
 
 
 const OrderPage = () => {
@@ -8,6 +11,11 @@ const OrderPage = () => {
         <>
 
         <p>Hello OrderPage </p>
+
+      
+ 
+
+        
 
         </>
 

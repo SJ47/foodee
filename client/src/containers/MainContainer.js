@@ -125,7 +125,7 @@ const MainContainer = () => {
                             basketValue={basketValue}
                         />
                     )}} />
-                     <Route exact path="/Basket" component={OrderPage}/>
+                     <Route exact path="/order" component={OrderPage}/>
 
             </Switch>
         </>
