@@ -1,10 +1,16 @@
+
+
 .category-nav-container {
     background: var(--primary-color);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 0;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    overflow-y: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
 }
 
 .category-nav-link {
@@ -14,7 +20,8 @@
 
 .category-nav-link > a {
 
-    font-weight: 500;
+    font-weight: 100;
+    letter-spacing: 0.1rem;
     padding: 0.7em 1.5em;
     text-decoration: none;
     /* border: 1px solid var(--tertiary-color); */
