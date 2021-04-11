@@ -41,7 +41,7 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
 
         // Setup a restaurant
-        Restaurant restaurant = new Restaurant("Foodee");
+        Restaurant restaurant = new Restaurant("Foodee", 55.865680, -4.257140);
         restaurantRepository.save(restaurant);
 
         // Setup categories

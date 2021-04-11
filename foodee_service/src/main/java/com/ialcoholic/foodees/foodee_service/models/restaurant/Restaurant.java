@@ -18,6 +18,12 @@ public class Restaurant {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "latitude")
+    private double latitude;
+
+    @Column(name = "longitude")
+    private double longitude;
+
     @JsonIgnoreProperties(value="restaurant")
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
     private List<Table> tables;
@@ -26,8 +32,10 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
     private List<MenuItem> menu;
 
-    public Restaurant(String name) {
+    public Restaurant(String name, double latitude, double longitude) {
         this.name = name;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.menu = new ArrayList<>();
         this.tables = new ArrayList<>();
     }
@@ -49,6 +57,22 @@ public class Restaurant {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public List<Table> getTables() {
