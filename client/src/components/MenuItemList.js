@@ -2,17 +2,6 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
 
     const copiedCurrentItems = [...currentItems]
 
-    // for (const item of copiedCurrentItems) {
-    //     for (let count = 0; count < basket.length; count++) {
-    //         if (item.name === basket[count].name) {
-    //             item.quantity = basket[count].quantity
-    //         }
-    //     }
-    //     if (!item.quantity) {
-    //         item.quantity = 0;
-    //     }
-    // }
-
     for (let currentItemCount = 0; currentItemCount < copiedCurrentItems.length; currentItemCount++) {
 
         for (let count = 0; count < basket.length; count++) {
@@ -20,9 +9,7 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
                 copiedCurrentItems[currentItemCount] = basket[count]
             }
         }
-        // if (!item.quantity) {
-        //     item.quantity = 0;
-        // }
+
     }
 
     const menuListItems = copiedCurrentItems.map((item, index) => {
