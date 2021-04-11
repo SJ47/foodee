@@ -10,7 +10,8 @@
     padding-top: 1em;
     padding-bottom: 0.5em;
     overflow-y: hidden;
-    position: fixed;
+    /* position: fixed; */
+    z-index: 99;
     left: 0;
     right: 0;
 
@@ -39,56 +40,4 @@
 
 
     /* border-color: transparent; */
-}
-
-/*********************/
-/** Menu List Items **/
-/*********************/
-
-.menu-list-item {
-    list-style: none;
-    padding: 1em 1em 1em 1em;
-    margin: 1em;
-    box-shadow: var(--box-shadow-light);
-    display: grid;
-    gap: 1em;
-    grid-template-columns: 2fr 1fr;
-    border-radius: 25px;
-    color: var(--primary-color);
-}
-
-.item-info-container {
-    display: grid;
-    place-items: center;
-}
-
-.item-info-container > img {
-    box-shadow: var(--box-shadow-light);
-    border-radius: 25px;
-}
-
-.homepage-intro-text {
-    color: var(--primary-color);
-    padding: 1em;
-}
-
-.item-quantity {
-    display: inline-block;
-    padding: 0 1em;
-    /* font-size: 1.3em; */
-}
-
-.item-quantity-value {
-    font-weight: bold;
-    font-size: 1.3em;
-}
-
-.btn {
-    /* padding: 0.5em; */
-    font-size: 2em;
-    background: var(--primary-color);
-    color: var(--secondary-color);
-    border: 0;
-    /* padding: 0.3em; */
-    border-radius: 25px;
 }

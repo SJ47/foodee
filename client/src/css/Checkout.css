@@ -32,7 +32,7 @@
 }
 
 .checkout-total {
-    color: var(--quadary-color);
+    color: var(--tertiary-color);
     font-size: 2em;
     font-weight: 200;
     margin-left: 1em;
