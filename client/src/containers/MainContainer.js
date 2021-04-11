@@ -63,10 +63,6 @@ const MainContainer = () => {
     }
 
     const handleSelectedItemRemove = (item) => {
-        // Update contents of the basket if item qty > 0
-        // if (!item.quantity) {
-        //     return
-        // }
 
         // // Remove item from basket
         const updatedBasket = basket.filter((basketItem) => {
@@ -74,14 +70,19 @@ const MainContainer = () => {
                 // Remove item price from basket if item to remove is found
                 setBasketValue(basketValue - basketItem.price)
                 basketItem.quantity -= 1;
-                return basketItem
+                if (basketItem.quantity === 0) {
+                    return
+                } else {
+                    return basketItem
+                }
+
             } else {
                 return basketItem !== item
             }
 
         })
         setBasket(updatedBasket);
-        // console.log(updatedBasket);
+        console.log("UPDATED BASKET: ", updatedBasket);
     }
 
     const handleCustomerLogIn = () => {
