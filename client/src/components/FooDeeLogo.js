@@ -3,7 +3,7 @@ import '../css/TopNavBar.css'
 
 const FooDeeLogo = () => {
     return (
-        <h1>fooDee</h1>
+        <h1 id="fooDee-logo">fooDee</h1>
     )
     };
     

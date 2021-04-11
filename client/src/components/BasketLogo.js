@@ -4,7 +4,7 @@ import BasketYellow from '../media/CartEmptyYellow.png'
 
 const BasketLogo = () => {
     return (
-        <img id="basket-logo" className="grow" src={BasketYellow} alt="basket logo"/>
+        <img id="basket-logo" src={BasketYellow} alt="basket logo"/>
     )
     };
     

@@ -3,40 +3,37 @@
 /********************/
 
 .checkout-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background: var(--primary-color);
-    padding: 2em 2em;
-    /* margin: 2em; */
-    /* border-radius: 25px; */
-    border: 1px solid grey;
-
-    /* overflow: hidden; */
+    padding-top: 1.5em;
     position: sticky;
     bottom: 0em;
     z-index: 99;
-    /* padding-top: 0.5em; */
 }
 
-.fa-shopping-cart {
-    font-size: 3em;
+#basket-logo-checkout {
+    height: 50px;
+    padding-bottom: 9px;
 }
+
 
 .basket-item-count {
-    display: inline-block;
     background: red;
     padding: 0.5em;
     width: 32px;
     border-radius: 50%;
     position: relative;
-    left: -15px;
-    bottom: 40px;
+    left: -70px;
+    bottom: 20px;
     text-align: center;
     font-weight: bold;
 }
 
-.checkout-text,
 .checkout-total {
-    display: inline;
+    color: var(--tertiary-color);
     font-size: 2em;
-    font-weight: bold;
+    font-weight: 200;
     margin-left: 1em;
 }

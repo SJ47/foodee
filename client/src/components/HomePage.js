@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const HomePage = ({handleCategoryNavClick}) => {
     return (
         <>
-        <TopNavBar />
+        <TopNavBar/>
         <div className="homepage-intro-text">
             
             <h1>Hello, and welcome Foodee!</h1>

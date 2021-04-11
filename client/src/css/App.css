@@ -10,7 +10,7 @@
 :root {
     --primary-color: #143d59;
     --secondary-color: #f4b41a;
-    --tertiary-color: white;
+    --tertiary-color: antiquewhite;
     --quadary-color: white;
 
     --ff-primary: "font-family: " Raleway ", sans-serif;";
@@ -23,14 +23,15 @@
         0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
 }
 
+
 body {
     margin: 0;
-    /* padding: 0 1em; */
+
+
 }
 
 .App {
     font-family: var(--ff-primary);
-    background-color: var(--secondary-color);
-    /* background-color: var(--tertiary-color); */
+    background-color: var(--quadary-color);
     color: var(--secondary-color);
 }
