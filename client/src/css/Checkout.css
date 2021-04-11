@@ -4,10 +4,16 @@
 
 .checkout-container {
     background: var(--primary-color);
-    padding: 2em;
-    margin: 2em;
-    border-radius: 25px;
+    padding: 2em 2em;
+    /* margin: 2em; */
+    /* border-radius: 25px; */
     border: 1px solid grey;
+
+    /* overflow: hidden; */
+    position: sticky;
+    bottom: 0em;
+    z-index: 99;
+    /* padding-top: 0.5em; */
 }
 
 .fa-shopping-cart {
