@@ -71,7 +71,7 @@ const MainContainer = () => {
                 setBasketValue(basketValue - basketItem.price)
                 basketItem.quantity -= 1;
                 if (basketItem.quantity === 0) {
-                    return
+                    return null
                 } else {
                     return basketItem
                 }
