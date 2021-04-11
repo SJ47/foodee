@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/TopNavBar.css'
-import BasketYellow from '../media/BasketYellow.png'
+import BasketYellow from '../media/CartEmptyYellow.png'
 
 const BasketLogo = () => {
     return (
