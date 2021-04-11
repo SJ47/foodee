@@ -4,6 +4,8 @@ import Request from '../helpers/request.js';
 import HomePage from '../components/HomePage';
 import LoginPage from '../components/LoginPage';
 import MenuPage from '../components/MenuPage';
+import OrderPage from '../components/OrderPage';
+
 // import TopNavBar from '../components/TopNavBar';
 
 const MainContainer = () => {
@@ -28,6 +30,17 @@ const MainContainer = () => {
 
     }, [selectedCategory])
 
+
+    // useEffect to update cart value when cart items change
+    // useEffect(() => {
+    //     console.log("Basket has changed contents")
+    //     let total = 0;
+    //     total = basket.map((basketItem) => {
+    //         return total -= basketItem.price
+    //     })
+    //     // console.log("Basket total: ", basketValue);
+    // }, [basket])
+
     if (!currentItems) {
         return <p>nothing</p>
     }
@@ -38,20 +51,40 @@ const MainContainer = () => {
 
     const handleSelectedItemAdd = (item) => {
         // Update contents of the basket
-        const currentBasket = [...basket, item]
-        setBasket(currentBasket)
-        console.log("Added item", item)
-        console.log("Current basket: ", currentBasket);
+        // Add a quantity field to the object and append by 1 if already exist and > 0
+        // console.log("ITEM QTY: ", item.quantity + 1);
+        if (item.quantity > 0) {
+            item.quantity += 1;
+        } else {
+            item.quantity = 1;
+            setBasket([...basket, item])
+        }
 
-        // Update total value of basket
-        let currentValue = basketValue;
-        currentValue += item.price;
-        setBasketValue(currentValue);
-        console.log("Current basket Value: ", currentValue);
+        // Update value of basket 
+        setBasketValue(basketValue + item.price)
     }
 
     const handleSelectedItemRemove = (item) => {
-        console.log("Removed item", item)
+
+        // // Remove item from basket
+        const updatedBasket = basket.filter((basketItem) => {
+            if (basketItem === item && item.quantity > 0) {
+                // Remove item price from basket if item to remove is found
+                setBasketValue(basketValue - basketItem.price)
+                basketItem.quantity -= 1;
+                if (basketItem.quantity === 0) {
+                    return null
+                } else {
+                    return basketItem
+                }
+
+            } else {
+                return basketItem !== item
+            }
+
+        })
+        setBasket(updatedBasket);
+        console.log("UPDATED BASKET: ", updatedBasket);
     }
 
     const handleCustomerLogIn = () => {
@@ -59,32 +92,41 @@ const MainContainer = () => {
         setLoggedIn(true);
     }
 
+
     return (
         <>
             {/* HAVE TOPNAVBAR HERE IF YOU WANT IT ON ALL PAGES */}
             <Switch>
                 <Route exact path="/" render={() => {
                     return (
-                        loggedIn?
-                        <Redirect to="/home"/>:
-                        <Redirect to="/login"/>   
-                    )}}/>
-                <Route exact path="/login" render={() => {
-                    return <LoginPage handleCustomerLogIn={handleCustomerLogIn} />
-
+                        loggedIn ?
+                            <Redirect to="/home" /> :
+                            <Redirect to="/login" />
+                    )
                 }} />
-                {/* <Route exact path="/login" component={LoginPage} /> */}
+                <Route exact path="/login" render={() => {
+                    return (
+                        loggedIn ?
+                        <Redirect to="/home" /> :
+                        <LoginPage handleCustomerLogIn={handleCustomerLogIn} />
+                    )
+                }} />
                 <Route exact path="/home" render={() => {
-                    return <HomePage handleCategoryNavClick={handleCategoryNavClick}/>
+                    return <HomePage handleCategoryNavClick={handleCategoryNavClick} />
                 }} />
                 <Route exact path="/menu" render={() => {
                     return (
-                        <MenuPage currentItems={currentItems} 
-                        handleCategoryNavClick={handleCategoryNavClick}
-                        category={selectedCategory}
-                        onSelectedItemAdd={handleSelectedItemAdd}
-                        onSelectedItemRemove={handleSelectedItemRemove}/>
+                        <MenuPage currentItems={currentItems}
+                            handleCategoryNavClick={handleCategoryNavClick}
+                            category={selectedCategory}
+                            handleSelectedItemAdd={handleSelectedItemAdd}
+                            handleSelectedItemRemove={handleSelectedItemRemove}
+                            basket={basket}
+                            basketValue={basketValue}
+                        />
                     )}} />
+                     <Route exact path="/Basket" component={OrderPage}/>
+
             </Switch>
         </>
     )

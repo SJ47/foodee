@@ -1,18 +1,32 @@
-const MenuItemList = ({ currentItems, category, onSelectedItemAdd, onSelectedItemRemove }) => {
+const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSelectedItemRemove, basket, basketValue }) => {
 
-    const menuListItems = currentItems.map((item, index) => {
+    const copiedCurrentItems = [...currentItems]
+
+    for (let currentItemCount = 0; currentItemCount < copiedCurrentItems.length; currentItemCount++) {
+
+        for (let count = 0; count < basket.length; count++) {
+            if (copiedCurrentItems[currentItemCount].name === basket[count].name) {
+                copiedCurrentItems[currentItemCount] = basket[count]
+            }
+        }
+
+    }
+
+    const menuListItems = copiedCurrentItems.map((item, index) => {
         return <li className="menu-list-item" key={index}>
+
             <div>
                 <h3>{item.name}</h3>
                 <p><em>{item.description}</em></p>
                 <h3>£{item.price}</h3>
                 <button
-                    onClick={() => { onSelectedItemRemove(item) }}
+                    onClick={() => { handleSelectedItemRemove(item) }}
                     className="btn minus-button">-
                 </button>
-                <div className="item-quantity">Qty: <span className="item-quantity-value">0</span></div>
+
+                <div className="item-quantity">Qty: <span className="item-quantity-value">{item.quantity}</span></div>
                 <button
-                    onClick={() => { onSelectedItemAdd(item) }}
+                    onClick={() => { handleSelectedItemAdd(item) }}
                     className="btn plus-button">+
                     </button>
 
