@@ -16,7 +16,7 @@ const MainContainer = () => {
     const [basket, setBasket] = useState([])
     const [basketValue, setBasketValue] = useState(0)
     const [loggedIn, setLoggedIn] = useState(false)
-    const [restaurants, setRestaurants] = useState({});
+    const [restaurants, setRestaurants] = useState([]);
     // const [customer, setCustomer] = useState({});
 
     useEffect(() => {
