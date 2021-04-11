@@ -19,9 +19,9 @@ const [stateOrder, setStateOrder] = useState(
 )
 
 const handleChange = function(event){
-    let propertyCustomer = event.target.value;
+    let propertyName = event.target.value;
     let copiedOrder = {...stateOrder}
-    copiedOrder[propertyCustomer] = event.target.value;
+    copiedOrder[propertyName] = event.target.value;
     setStateOrder(copiedOrder)
 }
 
@@ -66,7 +66,7 @@ const handleSubmit = function(event){
             {tableOptions}
         </select>  */}
 
-        <button type="submit">Save</button>
+        <button className= "order-btn" type="submit">Submit</button>
 
         </form>
         </>
