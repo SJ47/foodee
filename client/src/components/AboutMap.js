@@ -35,30 +35,6 @@ const AboutMap = ({restaurants}) => {
             </MapContainer>
         </div>
     )
-
-    // if(restaurants.length === 0) {
-    //     return (
-    //         <div className="map-container">
-    //             <MapContainer center={[55.864239, -4.251806]} zoom={12} scrollWheelZoom={false}>
-    //             <TileLayer
-    //                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    //                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    //             />
-    //             </MapContainer>
-    //         </div>
-    //     )
-    // } else {
-    //     return (
-    //         <div className="map-container">
-    //             <MapContainer center={[55.864239, -4.251806]} zoom={12} scrollWheelZoom={false}>
-    //             <TileLayer
-    //                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    //                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    //             />
-    //             {restaurantMarkers}
-    //             </MapContainer>
-    //         </div>
-    //     )}
-}
+    }
 
 export default AboutMap;
