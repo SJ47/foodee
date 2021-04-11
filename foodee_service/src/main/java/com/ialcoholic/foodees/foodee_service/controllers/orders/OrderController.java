@@ -32,7 +32,7 @@ public class OrderController {
     }
 
     @PatchMapping(value = "/orders/{id}")
-    public ResponseEntity<Order> updatePirate(@RequestBody Order order){
+    public ResponseEntity<Order> updateOrder(@RequestBody Order order){
         orderRepository.save(order);
         return new ResponseEntity<>(order, HttpStatus.OK);
     }
