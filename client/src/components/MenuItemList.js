@@ -1,3 +1,5 @@
+import '../css/foodIcons.css'
+
 const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSelectedItemRemove, basket, basketValue }) => {
 
     const copiedCurrentItems = [...currentItems]
@@ -17,7 +19,16 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
 
             <div>
                 <h3>{item.name}</h3>
-                <p><em>{item.description}</em></p>
+                
+                <div className="description-food-icons-box">
+                    <p><em>{item.description}</em>&nbsp;</p>
+                    <p className="food-req-icons">
+                        {item.vegan ? "VE" : null}{' '}
+                        {item.vegetarian ? "VG": null}{' '}
+                        {item.glutenFree ? "GF" : null}
+                    </p>
+                </div>
+                    
                 <h3>£{item.price}</h3>
                 <button
                     onClick={() => { handleSelectedItemRemove(item) }}
