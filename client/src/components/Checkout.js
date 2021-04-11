@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import BasketYellow from '../media/CartEmptyYellow.png'
 import '../css/Checkout.css';
-import { Link } from 'react-router-dom';
+
 
 const Checkout = ({ basket, basketValue, handlePayment }) => {
 
@@ -22,21 +22,11 @@ const Checkout = ({ basket, basketValue, handlePayment }) => {
 
     return (
         <div className="checkout-container">
-            {/* <i className="fas fa-shopping-cart"></i>
-            <div className="basket-item-count">{qtyInBasket}</div>
-            <button onClick={handlePayment}>
-                <Link to="/paymentform" className="checkout-text">
-                    CHECKOUT
-                </Link> */}
-            {/* <div className="checkout-text">CHECKOUT</div> */}
-            {/* </button>
-            <div className="checkout-total">£{basketValue}</div> */}
-
-            <Link to="/order">
+            <Link to="/order">CHECKOUT
                 <img id="basket-logo-checkout" src={BasketYellow} alt="basket logo" />
                 {/* <i className="fas fa-shopping-cart"></i> */}
                 <div className="basket-item-count">{qtyInBasket}</div>
-                <div className="checkout-text"></div>
+                {/* <div className="checkout-text">CHECKOUT</div> */}
             </Link>
             <div className="checkout-total">£{basketValue}
             </div>
