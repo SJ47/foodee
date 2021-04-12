@@ -41,23 +41,15 @@ const MainContainer = () => {
         const request = new Request();
         const allItemsPromise = request.get(selectedCategory)
         const restaurantPromise = request.get('/restaurants')
-<<<<<<< HEAD
         const customerPromise = request.get('/customers')
-=======
-        
->>>>>>> develop
 
         Promise.all([allItemsPromise, restaurantPromise, customerPromise])
             .then((data) => {
                 setCurrentItems(data[0]);
                 setRestaurants(data[1]);
-<<<<<<< HEAD
                 setMenu(data[1][0].menu);
                 setTables(data[1][0].tables);
                 setAllCustomers(data[2]);
-=======
-            
->>>>>>> develop
             })
 
     }, [selectedCategory])
