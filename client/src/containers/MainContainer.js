@@ -9,8 +9,10 @@ import AboutPage from '../components/AboutPage';
 import PaymentForm from '../components/PaymentForm';
 
 // Management
+import '../components/management/admin.css'
 import MHomePage from '../components/management/MHomePage';
 import MLoginPage from '../components/management/MLoginPage';
+import MMenu from '../components/management/MMenu';
 
 // import TopNavBar from '../components/TopNavBar';
 
@@ -22,6 +24,7 @@ const MainContainer = () => {
     const [basketValue, setBasketValue] = useState(0)
     const [loggedIn, setLoggedIn] = useState(false)
     const [restaurants, setRestaurants] = useState([]);
+    const [menu, setMenu] = useState([]);
     // const [customer, setCustomer] = useState({});
     const [activeCustomer, setActiveCustomer] = useState(null);
 
@@ -36,6 +39,7 @@ const MainContainer = () => {
             .then((data) => {
                 setCurrentItems(data[0]);
                 setRestaurants(data[1]);
+                setMenu(data[1][0].menu)
             })
 
     }, [selectedCategory])
@@ -204,20 +208,22 @@ const MainContainer = () => {
                 <Route exact path="/management/home" render={() => {
                     return (
                         <MHomePage
+                        restaurants={restaurants}
                             // props
                         />
                     )
                 }} />
 
-                {/* <Route exact path="/management/menu" render={() => {
+                <Route exact path="/management/menu" render={() => {
                     return (
                         <MMenu
+                        menu={menu}
                             // props
                         />
                     )
                 }} />
 
-                <Route exact path="/management/tables" render={() => {
+                {/* <Route exact path="/management/tables" render={() => {
                     return (
                         <MMenu
                             // props

@@ -10,8 +10,8 @@ const TopNavBar = () => {
                 <FooDeeLogo></FooDeeLogo>
             </div>
             <div className="top-navbar-container-right">
-                <Link className="admin-link">Home</Link>{' '}
-                <Link className="admin-link">Menu</Link>{' '}
+                <Link to="/management/home" className="admin-link">Home</Link>{' '}
+                <Link to="/management/menu" className="admin-link">Menu</Link>{' '}
                 <Link className="admin-link">Tables</Link>{' '}
                 <Link className="admin-link">Customers</Link>{' '}
                 <Link className="admin-link">Orders</Link>{' '}
