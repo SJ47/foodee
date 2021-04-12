@@ -19,28 +19,28 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
 
             <div>
                 <h3>{item.name}</h3>
-                
+
                 <div className="description-food-icons-box">
                     <p>{item.description}&nbsp;</p>
                     <p className="food-req-icons">
                         <div id="vegan">{item.vegan ? "VE" : null}{' '}</div>
-                        <div id="vegetarian">{item.vegetarian ? "VG": null}{' '}</div>
+                        <div id="vegetarian">{item.vegetarian ? "VG" : null}{' '}</div>
                         <div id="gluten-free">{item.glutenFree ? "GF" : null}</div>
                     </p>
                 </div>
-                    
-                <div className="menu-item-attributes">
-                <h3>£{item.price}</h3>
-                <i onClick={() => { handleSelectedItemRemove(item) }} class="fa fa-minus-circle" aria-hidden="true"></i>
 
-                <div className="item-quantity"><span className="item-quantity-value">{item.quantity}</span></div>
-                <i onClick={() => { handleSelectedItemAdd(item) }} class="fa fa-plus-circle" aria-hidden="true">
+                <div className="menu-item-attributes">
+                    <h3>£{item.price}</h3>
+                    <i onClick={() => { handleSelectedItemRemove(item) }} className="fa fa-minus-circle" aria-hidden="true"></i>
+
+                    <div className="item-quantity"><span className="item-quantity-value">{item.quantity ? item.quantity : 0}</span></div>
+                    <i onClick={() => { handleSelectedItemAdd(item) }} className="fa fa-plus-circle" aria-hidden="true">
                     </i>
                 </div>
 
             </div>
             <div className="item-info-container">
-                <img src={item.image} alt=""/>
+                <img src={item.image} alt="" />
             </div>
         </li>
     })
