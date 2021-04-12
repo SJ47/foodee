@@ -14,6 +14,9 @@ import MHomePage from '../components/management/MHomePage';
 import MLoginPage from '../components/management/MLoginPage';
 import MMenu from '../components/management/MMenu';
 import MTableList from '../components/management/MTableList';
+import MCustomerList from '../components/management/MCustomerList';
+import MOrderList from '../components/management/MOrderList';
+import MFinancePage from '../components/management/MFinancePage';
 
 // import TopNavBar from '../components/TopNavBar';
 
@@ -27,6 +30,7 @@ const MainContainer = () => {
     const [restaurants, setRestaurants] = useState([]);
     const [menu, setMenu] = useState([]);
     const [tables, setTables] = useState([]);
+    const [allCustomers, setAllCustomers] = useState([]);
     // const [customer, setCustomer] = useState({});
     const [activeCustomer, setActiveCustomer] = useState(null);
 
@@ -36,13 +40,15 @@ const MainContainer = () => {
         const request = new Request();
         const allItemsPromise = request.get(selectedCategory)
         const restaurantPromise = request.get('/restaurants')
+        const customerPromise = request.get('/customers')
 
-        Promise.all([allItemsPromise, restaurantPromise])
+        Promise.all([allItemsPromise, restaurantPromise, customerPromise])
             .then((data) => {
                 setCurrentItems(data[0]);
                 setRestaurants(data[1]);
-                setMenu(data[1][0].menu)
-                setTables(data[1][0].tables)
+                setMenu(data[1][0].menu);
+                setTables(data[1][0].tables);
+                setAllCustomers(data[2]);
             })
 
     }, [selectedCategory])
@@ -235,9 +241,10 @@ const MainContainer = () => {
                     )
                 }} />
 
-                {/* <Route exact path="/management/customers" render={() => {
+                <Route exact path="/management/customers" render={() => {
                     return (
-                        <MCustomers
+                        <MCustomerList
+                        customers={allCustomers}
                             // props
                         />
                     )
@@ -245,7 +252,7 @@ const MainContainer = () => {
 
                 <Route exact path="/management/orders" render={() => {
                     return (
-                        <MOrders
+                        <MOrderList
                             // props
                         />
                     )
@@ -253,11 +260,11 @@ const MainContainer = () => {
 
                 <Route exact path="/management/finance" render={() => {
                     return (
-                        <MFinance
+                        <MFinancePage
                             // props
                         />
                     )
-                }} /> */}
+                }} />
 
             </Switch>
         </>

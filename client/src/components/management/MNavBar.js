@@ -13,9 +13,9 @@ const TopNavBar = () => {
                 <Link to="/management/home" className="admin-link">Home</Link>{' '}
                 <Link to="/management/menu" className="admin-link">Menu</Link>{' '}
                 <Link to="/management/tables" className="admin-link">Tables</Link>{' '}
-                <Link className="admin-link">Customers</Link>{' '}
-                <Link className="admin-link">Orders</Link>{' '}
-                <Link className="admin-link">Finance</Link>
+                <Link to="/management/customers" className="admin-link">Customers</Link>{' '}
+                <Link to="/management/orders" className="admin-link">Orders</Link>{' '}
+                <Link to="/management/finance" className="admin-link">Finance</Link>
             </div>
         </div>
         </>
