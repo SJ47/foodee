@@ -20,8 +20,6 @@ import MOrderList from '../components/management/MOrderList';
 import MFinancePage from '../components/management/MFinancePage';
 import TopNavBar from '../components/TopNavBar.js';
 
-// import TopNavBar from '../components/TopNavBar';
-
 const MainContainer = () => {
 
     const [currentItems, setCurrentItems] = useState([]);
@@ -119,7 +117,7 @@ const MainContainer = () => {
         console.log("handle customer login triggered");
         setLoggedIn(true);
     }
-    // Can be moved then passed down later /////////
+
     const handleCustomerPost = function (customer) {
         const request = new Request();
         request.post("/customers", customer)
@@ -127,24 +125,14 @@ const MainContainer = () => {
         // .then(() => window.location = '/home')
         // change '/' to whichever route the home page is called
     }
-    ///////////////////////////////////////////////
-
 
     //////Handle Order Post 
     const handleOrderPost = function (order) {
         console.log("what is an order", order)
         const request = new Request();
         request.post('/orders', order)
-        // .then(() => window.location = '/orders')
-
-
+        // .then(() => window.location = '/paymentform')
     }
-
-    const handleOrder = () => {
-        console.log("creating order");
-    }
-
-
     ////////////
 
 
@@ -207,13 +195,11 @@ const MainContainer = () => {
 
                 <Route exact path="/order" render={() => {
                     return (
-                        <OrderPage customer={activeCustomer}
+                        <OrderPage
+                            customer={activeCustomer}
                             basket={basket}
                             basketValue={basketValue}
                             handleOrderPost={handleOrderPost}
-                            handleOrder={handleOrder}
-
-
                         />
                     )
                 }} />

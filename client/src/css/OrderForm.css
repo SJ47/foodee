@@ -1,13 +1,33 @@
 .order-form {
     background: var(--primary-color);
+    /* border: solid yellow; */
+    text-align: center;
+    margin-top: 5%;
 }
 
-.order-btn {
-    /* padding: 0.5em; */
+.large-text {
+    width: 80vw; 
+    height: 20vh; 
+    padding: 1%; 
+    font-size: 1em;
+    /* border-radius: 2%; */
+}
+
+/* .order-btn {
     font-size: 1em;
     background: var(--primary-color);
     color: var(--secondary-color);
     border: 0;
-    /* padding: 0.3em; */
     border-radius: 10px;
+} */
+
+.order-form > button {
+    margin: 1em;
+    display: block;
+    padding: 0.5em 1.2em;
+    background-color: var(--secondary-color);
+    border: 0;
+    color: var(--primary-color);
+    /* font-weight: bold; */
+    cursor: pointer;
 }
