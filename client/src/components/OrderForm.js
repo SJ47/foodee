@@ -12,7 +12,8 @@ const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
             orderItems: { basket },
             quantity: 0,
             total: { basketValue },
-            rating: null
+            rating: null,
+            payment: null
             // table: null,
 
         }
@@ -23,6 +24,7 @@ const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
         let propertyName = event.target.name;
         let copiedOrder = { ...stateOrder }
         copiedOrder[propertyName] = event.target.value;
+        copiedOrder[customer] = customer;
         setStateOrder(copiedOrder)
     }
 
