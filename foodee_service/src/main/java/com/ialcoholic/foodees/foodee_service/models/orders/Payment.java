@@ -19,9 +19,28 @@ public class Payment {
     private int creditCardInfo;
 //    Placeholder - waiting to see what Stripe will need :)
 
-    public Payment(Order order) {
+    private String cardHolder;
+    private String cardNumber;
+    private String cardExpiryMonth;
+    private String cardExpiryYear;
+    private String cardCvv;
+    private double totalPayment;
+
+
+    public Payment(int creditCardInfo, String cardHolder, String cardNumber, String cardExpiryMonth, String cardExpiryYear, String cardCvv, Order order) {
+        this.creditCardInfo = creditCardInfo;
+        this.cardHolder = cardHolder;
+        this.cardNumber = cardNumber;
+        this.cardExpiryMonth = cardExpiryMonth;
+        this.cardExpiryYear = cardExpiryYear;
+        this.cardCvv = cardCvv;
         this.order = order;
+
     }
+
+//    public Payment(Order order) {
+//        this.order = order;
+//    }
 
     public Payment() {
     }
@@ -48,5 +67,53 @@ public class Payment {
 
     public void setCreditCardInfo(int creditCardInfo) {
         this.creditCardInfo = creditCardInfo;
+    }
+
+    public String getCardHolder() {
+        return cardHolder;
+    }
+
+    public void setCardHolder(String cardHolder) {
+        this.cardHolder = cardHolder;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public String getCardExpiryMonth() {
+        return cardExpiryMonth;
+    }
+
+    public void setCardExpiryMonth(String cardExpiryMonth) {
+        this.cardExpiryMonth = cardExpiryMonth;
+    }
+
+    public String getCardExpiryYear() {
+        return cardExpiryYear;
+    }
+
+    public void setCardExpiryYear(String cardExpiryYear) {
+        this.cardExpiryYear = cardExpiryYear;
+    }
+
+    public String getCardCvv() {
+        return cardCvv;
+    }
+
+    public void setCardCvv(String cardCvv) {
+        this.cardCvv = cardCvv;
+    }
+
+    public double getTotalPayment() {
+        return totalPayment;
+    }
+
+    public void setTotalPayment(double totalPayment) {
+        this.totalPayment = totalPayment;
     }
 }

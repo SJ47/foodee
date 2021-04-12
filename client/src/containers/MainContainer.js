@@ -5,6 +5,8 @@ import HomePage from '../components/HomePage';
 import LoginPage from '../components/LoginPage';
 import MenuPage from '../components/MenuPage';
 import OrderPage from '../components/OrderPage';
+import AboutPage from '../components/AboutPage';
+import PaymentForm from '../components/PaymentForm';
 
 // import TopNavBar from '../components/TopNavBar';
 
@@ -15,17 +17,21 @@ const MainContainer = () => {
     const [basket, setBasket] = useState([])
     const [basketValue, setBasketValue] = useState(0)
     const [loggedIn, setLoggedIn] = useState(false)
+    const [restaurants, setRestaurants] = useState([]);
+    // const [customer, setCustomer] = useState({});
     const [activeCustomer, setActiveCustomer] = useState(null);
 
     useEffect(() => {
-        console.log("Fetching menu items...")
+        console.log("Fetching menu items and restaurant info...")
         // let categoryUrl = selectedCategory;
         const request = new Request();
         const allItemsPromise = request.get(selectedCategory)
+        const restaurantPromise = request.get('/restaurants')
 
-        Promise.all([allItemsPromise])
+        Promise.all([allItemsPromise, restaurantPromise])
             .then((data) => {
                 setCurrentItems(data[0]);
+                setRestaurants(data[1]);
             })
 
     }, [selectedCategory])
@@ -92,15 +98,28 @@ const MainContainer = () => {
         setLoggedIn(true);
     }
     // Can be moved then passed down later /////////
-    const handleCustomerPost = function(customer){
+    const handleCustomerPost = function (customer) {
         const request = new Request();
         request.post("/customers", customer)
         setActiveCustomer(customer);
         // .then(() => window.location = '/home')
         // change '/' to whichever route the home page is called
-        }
+    }
     ///////////////////////////////////////////////
 
+    // Handle payment
+    const handlePayment = () => {
+        console.log("PAYMENT");
+
+    }
+    // const handlePayment = (payment) => {
+    //     console.log("PAYMENT", payment);
+
+    //     const request = new Request();
+    //     request.post("/payments", payment)
+    //     // .then(() => window.location = '/home')
+    //     // change '/' to whichever route the home page is called
+    // }
 
     return (
         <>
@@ -116,12 +135,16 @@ const MainContainer = () => {
                 <Route exact path="/login" render={() => {
                     return (
                         loggedIn ?
-                        <Redirect to="/home" /> :
-                        <LoginPage handleCustomerLogIn={handleCustomerLogIn} handleCustomerPost={handleCustomerPost} />
+                            // <Redirect to="/home" /> :
+                            // <LoginPage handleCustomerLogIn={handleCustomerLogIn} />
+                            <Redirect to="/home" /> :
+                            <LoginPage handleCustomerLogIn={handleCustomerLogIn} handleCustomerPost={handleCustomerPost} />
                     )
                 }} />
                 <Route exact path="/home" render={() => {
-                    return <HomePage handleCategoryNavClick={handleCategoryNavClick} />
+                    return (
+                        <HomePage handleCategoryNavClick={handleCategoryNavClick} />
+                    )
                 }} />
                 <Route exact path="/menu" render={() => {
                     return (
@@ -132,22 +155,36 @@ const MainContainer = () => {
                             handleSelectedItemRemove={handleSelectedItemRemove}
                             basket={basket}
                             basketValue={basketValue}
+                            handlePayment={handlePayment}
                         />
-                    )}} />
-                     <Route exact path="/order" render={() => {
-                         return (
-                             <OrderPage customer={activeCustomer} 
-                             basket={basket}
-                             basketValue={basketValue}
-                             />
-                         )
+                    )
+                }} />
 
-                     }
+                <Route exact path="/order" render={() => {
+                    return (
+                        <OrderPage customer={activeCustomer}
+                            basket={basket}
+                            basketValue={basketValue}
+                        />
+                    )
+                }} />
+                <Route exact path="/Basket" component={OrderPage} />
 
-                     }
-                     
-                     />
+                <Route exact path="/about" render={() => {
+                    return (
+                        <AboutPage restaurants={restaurants} />
+                    )
+                }} />
 
+                {/* Render payment page  */}
+                <Route exact path="/paymentform" render={() => {
+                    return (
+                        <PaymentForm
+                            basket={basket}
+                            basketValue={basketValue}
+                        />
+                    )
+                }} />
             </Switch>
         </>
     )

@@ -2,16 +2,15 @@ package com.ialcoholic.foodees.foodee_service.controllers.menu;
 
 import com.ialcoholic.foodees.foodee_service.models.menu.Category;
 import com.ialcoholic.foodees.foodee_service.models.menu.MenuItem;
+import com.ialcoholic.foodees.foodee_service.models.orders.Order;
 import com.ialcoholic.foodees.foodee_service.models.people.Customer;
 import com.ialcoholic.foodees.foodee_service.repositories.menu.MenuItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -86,6 +85,25 @@ public class MenuItemController {
         allDrinks.add(allHardDrinks);
 
         return new ResponseEntity(allDrinks, HttpStatus.OK);
+    }
+
+    @PostMapping(value= "/menu_items")
+    public ResponseEntity<MenuItem> postMenuItem(@RequestBody MenuItem menuItem) {
+        menuItemRepository.save(menuItem);
+        return new ResponseEntity<>(menuItem, HttpStatus.CREATED);
+    }
+
+    @PatchMapping(value = "/menu_items/{id}")
+    public ResponseEntity<MenuItem> updateMenuItem(@RequestBody MenuItem menuItem) {
+        menuItemRepository.save(menuItem);
+        return new ResponseEntity<>(menuItem, HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/menu_items/{id}")
+    public ResponseEntity<MenuItem> deleteMenuItem(@PathVariable Long id) {
+        MenuItem found = menuItemRepository.getOne(id);
+        menuItemRepository.delete(found);
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
 

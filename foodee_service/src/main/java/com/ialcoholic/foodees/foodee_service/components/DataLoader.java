@@ -41,7 +41,7 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
 
         // Setup a restaurant
-        Restaurant restaurant = new Restaurant("Foodee");
+        Restaurant restaurant = new Restaurant("Foodee", 55.865680, -4.257140);
         restaurantRepository.save(restaurant);
 
         // Setup categories
@@ -236,10 +236,12 @@ public class DataLoader implements ApplicationRunner {
         restaurantRepository.save(restaurant);
 
         // Setup orders
-        Order order1 = new Order(renee);
+        Order order1 = new Order(renee, "with a smile");
         order1.addItemToOrder(menuItem1);
         order1.addItemToOrder(menuItem2);
         orderRepository.save(order1);
+        renee.addOrderToOrders(order1);
+        customerRepository.save(renee);
 
         // Setup tables
         Table table1 = new Table(restaurant, 1, 4);
@@ -252,6 +254,25 @@ public class DataLoader implements ApplicationRunner {
         restaurant.addTable(table1);
         restaurant.addTable(table2);
         restaurantRepository.save(restaurant);
+
+
+//        Another journey test
+        Customer bob = new Customer("Bob", "Bob", "bobemail@email.com");
+        MenuItem carrot = new MenuItem(restaurant, side, "carrot", "carrot", 1, "image",
+                true, true, true, false, "1", 0);
+        Order carrotOrder = new Order(bob, "no carrots");
+
+        customerRepository.save(bob);
+        menuItemRepository.save(carrot);
+
+        carrotOrder.addItemToOrder(carrot);
+
+        bob.addOrderToOrders(carrotOrder);
+        customerRepository.save(bob);
+        orderRepository.save(carrotOrder);
+
+
+
 
     }
 

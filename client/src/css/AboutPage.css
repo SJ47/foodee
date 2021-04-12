@@ -1,0 +1,15 @@
+.about-page {
+    color: #143D59;
+}
+
+.map-container {
+    /* border: solid black; */
+    text-align: center;
+}
+
+.leaflet-container {
+    /* border: solid red; */
+    width: 70vw;
+    height: 70vh;
+    margin: auto;
+  }

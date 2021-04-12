@@ -20,8 +20,9 @@ Anim non aute tempor nisi incididunt sunt reprehenderit. Nulla elit dolor exerci
 
 Reprehenderit incididunt laborum nostrud do irure pariatur sunt ea do. Veniam enim ea do est. Labore minim in occaecat magna excepteur non tempor reprehenderit Lorem eu mollit. Elit eu in laboris laborum labore labore cillum laboris aliqua deserunt laboris aute.
         </div>
-        <div className="home-button">
+        <div className="homepage-button">
             <button><Link to="/menu" onClick={() => { handleCategoryNavClick("menu_items/category/main") }}>MENU</Link></button>
+            <button><Link to="/about">ABOUT</Link></button>
         </div>
         </>
     )

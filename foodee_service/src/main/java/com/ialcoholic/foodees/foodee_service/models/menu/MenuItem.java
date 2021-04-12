@@ -3,9 +3,11 @@ package com.ialcoholic.foodees.foodee_service.models.menu;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ialcoholic.foodees.foodee_service.models.orders.Order;
 import com.ialcoholic.foodees.foodee_service.models.restaurant.Restaurant;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "menu_items")
@@ -16,17 +18,26 @@ public class MenuItem {
     private Long id;
 
     @ManyToOne
-    @JsonIgnoreProperties({"menu_items"})
+    @JsonIgnoreProperties({"menu"})
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
 
     @Column(name = "category")
     private Category category;
 
-    @ManyToOne
-//    @JsonIgnoreProperties({"menu_items"})
-    @JoinColumn(name = "order_id")
-    private Order order;
+//    @ManyToOne
+////    @JsonIgnoreProperties({"menu_items"})
+//    @JoinColumn(name = "order_id")
+//    private Order order;
+
+    @JsonIgnoreProperties(value = "menu_items")
+    @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            joinColumns = {@JoinColumn(name = "menu_item_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "order_id", nullable = false, updatable = false)}
+    )
+    private List<Order> orders;
 
     @Column(name = "name")
     private String name;
@@ -77,7 +88,7 @@ public class MenuItem {
         this.size = size;
         this.abv = abv;
         this.allergens = new ArrayList<>();
-        this.order = null;
+        this.orders = new ArrayList<>();
     }
 
     public MenuItem() {
@@ -131,13 +142,21 @@ public class MenuItem {
         this.restaurant = restaurant;
     }
 
-    public Order getOrder() {
-        return order;
+    public List<Order> getOrders() {
+        return orders;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
+
+    //    public Order getOrder() {
+//        return order;
+//    }
+//
+//    public void setOrder(Order order) {
+//        this.order = order;
+//    }
 
     public String getName() {
         return name;
@@ -207,7 +226,9 @@ public class MenuItem {
         this.allergens.add(allergen);
     }
 
-
+    public void addOrderToOrders(Order order) {
+        this.orders.add(order);
+    }
 
     }
 

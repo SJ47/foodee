@@ -93,4 +93,9 @@ public class Customer {
     public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
+
+    public void addOrderToOrders(Order order) {
+        this.orders.add(order);
+    }
+
 }
