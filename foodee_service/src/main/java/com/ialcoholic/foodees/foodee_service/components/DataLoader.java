@@ -4,11 +4,13 @@ import com.ialcoholic.foodees.foodee_service.models.menu.Allergen;
 import com.ialcoholic.foodees.foodee_service.models.menu.Category;
 import com.ialcoholic.foodees.foodee_service.models.menu.MenuItem;
 import com.ialcoholic.foodees.foodee_service.models.orders.Order;
+import com.ialcoholic.foodees.foodee_service.models.people.Admin;
 import com.ialcoholic.foodees.foodee_service.models.people.Customer;
 import com.ialcoholic.foodees.foodee_service.models.restaurant.Restaurant;
 import com.ialcoholic.foodees.foodee_service.models.restaurant.Table;
 import com.ialcoholic.foodees.foodee_service.repositories.menu.MenuItemRepository;
 import com.ialcoholic.foodees.foodee_service.repositories.orders.OrderRepository;
+import com.ialcoholic.foodees.foodee_service.repositories.people.AdminRepository;
 import com.ialcoholic.foodees.foodee_service.repositories.people.CustomerRepository;
 import com.ialcoholic.foodees.foodee_service.repositories.restaurant.RestaurantRepository;
 import com.ialcoholic.foodees.foodee_service.repositories.restaurant.TableRepository;
@@ -34,6 +36,9 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     TableRepository tableRepository;
+
+    @Autowired
+    AdminRepository adminRepository;
 
     public DataLoader() {
     }
@@ -255,6 +260,9 @@ public class DataLoader implements ApplicationRunner {
         restaurant.addTable(table2);
         restaurantRepository.save(restaurant);
 
+//        Setup an admin
+        Admin admin1 = new Admin("gmcstockings", "ladyboss21");
+        adminRepository.save(admin1);
 
 //        Another journey test
         Customer bob = new Customer("Bob", "Bob", "bobemail@email.com");
