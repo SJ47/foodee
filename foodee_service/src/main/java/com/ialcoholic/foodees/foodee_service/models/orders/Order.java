@@ -25,8 +25,8 @@ public class Order {
     private String specialNotes;
 
     @JsonIgnoreProperties(value="order")
-    @OneToMany(mappedBy = "order")
-//    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
+//    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private List<MenuItem> orderItems;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -118,8 +118,9 @@ public class Order {
 
     public void addItemToOrder(MenuItem item) {
         this.orderItems.add(item);
-        this.quantity += 1;
-        this.total += item.getPrice();
+//        this.quantity += 1;
+//        this.total += item.getPrice();
+
 //        System.out.println("ORDER: " + item);
 
     }

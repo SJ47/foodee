@@ -207,7 +207,9 @@ public class MenuItem {
         this.allergens.add(allergen);
     }
 
-
+//    public void assignItemToOrder(Order order) {
+//        this.order.
+//    }
 
     }
 
