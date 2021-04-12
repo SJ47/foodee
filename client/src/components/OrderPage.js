@@ -5,7 +5,7 @@ import OrderForm from "./OrderForm";
 
 
 
-const OrderPage = ({ customer, basket, basketValue }) => {
+const OrderPage = ({ customer, basket, basketValue, handleOrderPost }) => {
 
     let orderTotal = 0;
     const orderList = basket.map((item, index) => {
@@ -24,7 +24,9 @@ const OrderPage = ({ customer, basket, basketValue }) => {
 
             <OrderForm customer={customer}
                 basket={basket}
-                basketValue={basketValue} />
+                basketValue={basketValue} 
+                handleOrderPost={handleOrderPost}
+           />
     
         </div>
     )

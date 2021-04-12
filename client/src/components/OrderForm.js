@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import '../css/OrderForm.css';
-import Request from '../helpers/request';
 import { Link } from "react-router-dom"
 
 
-const OrderForm = ({ customer, basket, basketValue }) => {
+const OrderForm = ({ customer, basket, basketValue, handleOrderPost, onCreate }) => {
 
     const [stateOrder, setStateOrder] = useState(
         {
@@ -36,16 +35,19 @@ const OrderForm = ({ customer, basket, basketValue }) => {
     //     setStateOrder(copiedOrder)
     // }
 
-    const handleOrderPost = function (order) {
-        const request = new Request();
-        request.post("/orders", order)
+    // const handlePost = function (order) {
+    //     const request = new Request();
+    //     request.post("/orders", order)
+    //     .then(() => window.location = "/orders")
 
-    }
+    // }
 
 
     const handleSubmit = function (event) {
         event.preventDefault();
-        handleOrderPost(stateOrder);
+        onCreate(stateOrder); 
+        // handleOrderPost(stateOrder);
+        // handleOrderSubmit();
     }
 
 
