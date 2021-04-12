@@ -9,7 +9,7 @@ background-color: var(--primary-color);
 }
 
 .homepage-intro-text h1 {
-    font-weight: 150;
+    font-weight: 100;
     font-size: 3em;
     text-align: center;
     border-bottom: var(--secondary-color) solid 1px;
