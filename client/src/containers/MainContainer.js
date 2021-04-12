@@ -7,6 +7,7 @@ import MenuPage from '../components/MenuPage';
 import OrderPage from '../components/OrderPage';
 import AboutPage from '../components/AboutPage';
 import PaymentForm from '../components/PaymentForm';
+import HamburgerMenu from '../components/HamburgerMenu.js';
 
 // import TopNavBar from '../components/TopNavBar';
 
@@ -183,6 +184,12 @@ const MainContainer = () => {
                             basket={basket}
                             basketValue={basketValue}
                         />
+                    )
+                }} />
+
+                <Route exact path="/hamburger" render={() => {
+                    return (
+                        <HamburgerMenu />
                     )
                 }} />
             </Switch>
