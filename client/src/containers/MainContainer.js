@@ -9,6 +9,16 @@ import AboutPage from '../components/AboutPage';
 import PaymentForm from '../components/PaymentForm';
 import HamburgerMenu from '../components/HamburgerMenu.js';
 
+// Management
+import '../components/management/admin.css'
+import MHomePage from '../components/management/MHomePage';
+import MLoginPage from '../components/management/MLoginPage';
+import MMenu from '../components/management/MMenu';
+import MTableList from '../components/management/MTableList';
+import MCustomerList from '../components/management/MCustomerList';
+import MOrderList from '../components/management/MOrderList';
+import MFinancePage from '../components/management/MFinancePage';
+
 // import TopNavBar from '../components/TopNavBar';
 
 const MainContainer = () => {
@@ -19,6 +29,9 @@ const MainContainer = () => {
     const [basketValue, setBasketValue] = useState(0)
     const [loggedIn, setLoggedIn] = useState(false)
     const [restaurants, setRestaurants] = useState([]);
+    const [menu, setMenu] = useState([]);
+    const [tables, setTables] = useState([]);
+    const [allCustomers, setAllCustomers] = useState([]);
     // const [customer, setCustomer] = useState({});
     const [activeCustomer, setActiveCustomer] = useState(null);
 
@@ -29,13 +42,15 @@ const MainContainer = () => {
         const request = new Request();
         const allItemsPromise = request.get(selectedCategory)
         const restaurantPromise = request.get('/restaurants')
-        
+        const customerPromise = request.get('/customers')
 
-        Promise.all([allItemsPromise, restaurantPromise])
+        Promise.all([allItemsPromise, restaurantPromise, customerPromise])
             .then((data) => {
                 setCurrentItems(data[0]);
                 setRestaurants(data[1]);
-            
+                setMenu(data[1][0].menu);
+                setTables(data[1][0].tables);
+                setAllCustomers(data[2]);
             })
 
     }, [selectedCategory])
@@ -211,6 +226,69 @@ const MainContainer = () => {
                             basket={basket}
                             basketValue={basketValue}
                          
+                        />
+                    )
+                }} />
+
+                {/* <Route exact path="/management" component={MLoginPage} /> */}
+
+
+                <Route exact path="/management/login" render={() => {
+                    return (
+                        <MLoginPage
+                            // props
+                        />
+                    )
+                }} />
+
+                <Route exact path="/management/home" render={() => {
+                    return (
+                        <MHomePage
+                        restaurants={restaurants}
+                            // props
+                        />
+                    )
+                }} />
+
+                <Route exact path="/management/menu" render={() => {
+                    return (
+                        <MMenu
+                        menu={menu}
+                            // props
+                        />
+                    )
+                }} />
+
+                <Route exact path="/management/tables" render={() => {
+                    return (
+                        <MTableList
+                        tables={tables}
+                            // props
+                        />
+                    )
+                }} />
+
+                <Route exact path="/management/customers" render={() => {
+                    return (
+                        <MCustomerList
+                        customers={allCustomers}
+                            // props
+                        />
+                    )
+                }} />
+
+                <Route exact path="/management/orders" render={() => {
+                    return (
+                        <MOrderList
+                            // props
+                        />
+                    )
+                }} />
+
+                <Route exact path="/management/finance" render={() => {
+                    return (
+                        <MFinancePage
+                            // props
                         />
                     )
                 }} />
