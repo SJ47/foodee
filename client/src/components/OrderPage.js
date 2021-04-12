@@ -6,18 +6,26 @@ import OrderForm from "./OrderForm";
 
 
 const OrderPage = ({ customer, basket, basketValue }) => {
+
+    let orderTotal = 0;
+    const orderList = basket.map((item, index) => {
+        orderTotal = orderTotal + (item.price * item.quantity)
+        return <li key={index}>{item.name} - Item Price: £{item.price} - Qty: {item.quantity}</li>
+    })
+
     return (
 
         <div className="order-page">
 
-            <p>Hello OrderPage </p>
+            <h2> Summary of your order </h2>
+            <ul>{orderList}</ul>
+            <h2>Total: £{orderTotal}</h2>
+            
 
             <OrderForm customer={customer}
                 basket={basket}
                 basketValue={basketValue} />
-            <div className="order-text">TOTAL</div>
-            <div className="order-total">£{basketValue}</div>
-
+    
         </div>
     )
 }

@@ -19,8 +19,9 @@ const OrderForm = ({ customer, basket, basketValue }) => {
         }
     )
 
+
     const handleChange = function (event) {
-        let propertyName = event.target.value;
+        let propertyName = event.target.name;
         let copiedOrder = { ...stateOrder }
         copiedOrder[propertyName] = event.target.value;
         setStateOrder(copiedOrder)
@@ -57,10 +58,17 @@ const OrderForm = ({ customer, basket, basketValue }) => {
     //     return <p>Loading...</p>
     //     }
 
+  
+
+
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+
+              
+        
+        
+             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="special notes" name="specialNotes" onChange={handleChange} value={stateOrder.specialNotes} />
                 {/* <select name="table" onChange={handleTable} defaultValue="select-table">
         <option disabled value='select-ship'>Select a Table</option>
@@ -88,6 +96,7 @@ const OrderForm = ({ customer, basket, basketValue }) => {
 
     )
 }
+
 
 export default OrderForm;
 
