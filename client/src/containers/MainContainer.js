@@ -13,6 +13,7 @@ import '../components/management/admin.css'
 import MHomePage from '../components/management/MHomePage';
 import MLoginPage from '../components/management/MLoginPage';
 import MMenu from '../components/management/MMenu';
+import MTableList from '../components/management/MTableList';
 
 // import TopNavBar from '../components/TopNavBar';
 
@@ -25,6 +26,7 @@ const MainContainer = () => {
     const [loggedIn, setLoggedIn] = useState(false)
     const [restaurants, setRestaurants] = useState([]);
     const [menu, setMenu] = useState([]);
+    const [tables, setTables] = useState([]);
     // const [customer, setCustomer] = useState({});
     const [activeCustomer, setActiveCustomer] = useState(null);
 
@@ -40,6 +42,7 @@ const MainContainer = () => {
                 setCurrentItems(data[0]);
                 setRestaurants(data[1]);
                 setMenu(data[1][0].menu)
+                setTables(data[1][0].tables)
             })
 
     }, [selectedCategory])
@@ -223,15 +226,16 @@ const MainContainer = () => {
                     )
                 }} />
 
-                {/* <Route exact path="/management/tables" render={() => {
+                <Route exact path="/management/tables" render={() => {
                     return (
-                        <MMenu
+                        <MTableList
+                        tables={tables}
                             // props
                         />
                     )
                 }} />
 
-                <Route exact path="/management/customers" render={() => {
+                {/* <Route exact path="/management/customers" render={() => {
                     return (
                         <MCustomers
                             // props

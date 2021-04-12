@@ -12,7 +12,7 @@ const TopNavBar = () => {
             <div className="top-navbar-container-right">
                 <Link to="/management/home" className="admin-link">Home</Link>{' '}
                 <Link to="/management/menu" className="admin-link">Menu</Link>{' '}
-                <Link className="admin-link">Tables</Link>{' '}
+                <Link to="/management/tables" className="admin-link">Tables</Link>{' '}
                 <Link className="admin-link">Customers</Link>{' '}
                 <Link className="admin-link">Orders</Link>{' '}
                 <Link className="admin-link">Finance</Link>
