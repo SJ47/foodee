@@ -351,11 +351,20 @@ public class DataLoader implements ApplicationRunner {
 
 
         // DRINKS
-        MenuItem menuItem15 = new MenuItem(restaurant, hot_drink, "Espresso", "As dark as your heart", 0.95, "https" +
+        MenuItem menuItem15 = new MenuItem(restaurant, hot_drink, "Espresso", "As dark as your heart", 1.20, "https" +
                 "://i2" +
                 "-prod.mirror.co.uk/incoming/article17203196" +
                 ".ece/ALTERNATES/s1200c/3_Tiny-glass-cup-of-espresso-coffee.jpg", true, true, true, false, "small", 0);
         menuItemRepository.save(menuItem15);
+
+        MenuItem menuItem33 = new MenuItem(restaurant, hot_drink, "Cappucino", "Also called breakfast in Italy", 1.50, "https://static01." +
+                "nyt.com/images/2015/10/02/fashion/02CAPP3SUB/02CAPP3SUB-superJumbo.jpg", true, true, true, false, "medium", 0);
+        menuItemRepository.save(menuItem33);
+
+        MenuItem menuItem34 = new MenuItem(restaurant, hot_drink, "Tea", "Just a gold old pot of tea", 1.50, "https://www.imore.com/sites/imore.com/files/styles/large/" +
+                "public/field/image/2020/07/tea-pot-milada-vigerova-unsplash-hero.jpg", true, true, true, false, "medium", 0);
+        menuItemRepository.save(menuItem34);
+
 
         MenuItem menuItem16 = new MenuItem(restaurant, soft_drink, "Coke", "Just a can of coke", 1.5,  "https" +
                 "://delivery.pret.co.uk/dw/image/v2/ABBI_PRD/on/demandware" +
@@ -363,10 +372,31 @@ public class DataLoader implements ApplicationRunner {
                 true, true, false, "330ml", 0);
         menuItemRepository.save(menuItem16);
 
-        MenuItem menuItem17 = new MenuItem(restaurant, hard_drink, "Tennants", "Yellow garbage juice", 3.5, "data" +
+        MenuItem menuItem35 = new MenuItem(restaurant, soft_drink, "Lemonade", "Homemade lemonade", 1.5,  "https" +
+                "https://feelgoodfoodie.net/wp-content/uploads/2020/08/Homemade-Lemonade-7.jpg", false,
+                true, true, false, "500ml", 0);
+        menuItemRepository.save(menuItem35);
+
+        MenuItem menuItem36 = new MenuItem(restaurant, soft_drink, "Irn Bru", "Scotland's fav drink lovingly made in Falkirk", 1.5,  "https" +
+                "https://i2-prod.dailyrecord.co.uk/incoming/article21200566.ece/ALTERNATES/s615b/0_JS202339007.jpg", false,
+                true, true, false, "330ml", 0);
+        menuItemRepository.save(menuItem36);
+
+        MenuItem menuItem17 = new MenuItem(restaurant, hard_drink, "Tennent's Lager", "Yellow garbage juice", 3.5, "data" +
                 "https://www.telegraph.co.uk/content/dam/men/2016/05/13/tennents-588470_trans_NvBQzQNjv4Bq2mG3lyVb0qwi9Nuwg-8hyWM4S1u_kNqQtETCuvfEn_0.jpg",
                 false, true, true, true, "pint", 4);
         menuItemRepository.save(menuItem17);
+
+        MenuItem menuItem37 = new MenuItem(restaurant, hard_drink, "BrewDog Speedbird", "Scottish craft beer", 3.5, "data" +
+                "https://pbs.twimg.com/media/ECpadFpXsAIhHMA.jpg",
+                false, true, true, true, "pint", 4);
+        menuItemRepository.save(menuItem37);
+
+        MenuItem menuItem38 = new MenuItem(restaurant, hard_drink, "House Red", "A special wine chosen by the chef", 3.5, "https://freestocks.org/fs/wp-content/uploads/2019/03/" +
+                "glass_of_red_wine.jpg",
+                false, true, true, true, "pint", 6);
+        menuItemRepository.save(menuItem38);
+
 
         restaurant.addMenuItem(menuItem1);
         restaurant.addMenuItem(menuItem2);
@@ -400,6 +430,13 @@ public class DataLoader implements ApplicationRunner {
         restaurant.addMenuItem(menuItem30);
         restaurant.addMenuItem(menuItem31);
         restaurant.addMenuItem(menuItem32);
+        restaurant.addMenuItem(menuItem33);
+        restaurant.addMenuItem(menuItem34);
+        restaurant.addMenuItem(menuItem35);
+        restaurant.addMenuItem(menuItem36);
+        restaurant.addMenuItem(menuItem37);
+        restaurant.addMenuItem(menuItem38);
+
 
 
         restaurantRepository.save(restaurant);
@@ -412,16 +449,30 @@ public class DataLoader implements ApplicationRunner {
         renee.addOrderToOrders(order1);
         customerRepository.save(renee);
 
+        Order order2 = new Order(alan, "with a bigger plate");
+        order1.addItemToOrder(menuItem28);
+        order1.addItemToOrder(menuItem30);
+        orderRepository.save(order2);
+        alan.addOrderToOrders(order2);
+        customerRepository.save(alan);
+
+
         // Setup tables
         Table table1 = new Table(restaurant, 1, 4);
-        Table table2 = new Table(restaurant, 2, 2);
+        Table table2 = new Table(restaurant, 2, 3);
+        Table table3 = new Table(restaurant, 3,2 );
         table2.addCustomer(renee);
         table2.addCustomer(reneesHusband);
+        table3.addCustomer(alan);
+        table3.addCustomer(scott);
+        table3.addCustomer(tom);
         tableRepository.save(table1);
         tableRepository.save(table2);
+        tableRepository.save(table3);
 
         restaurant.addTable(table1);
         restaurant.addTable(table2);
+        restaurant.addTable(table3);
         restaurantRepository.save(restaurant);
 
 //        Setup an admin
