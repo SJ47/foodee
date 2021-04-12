@@ -25,6 +25,7 @@ public class OrderController {
     public ResponseEntity getOrder(@PathVariable Long id){
         return new ResponseEntity<>(orderRepository.findById(id), HttpStatus.OK);
     }
+
     @PostMapping(value = "/orders")
     public ResponseEntity<Order> postPirate(@RequestBody Order order){
         orderRepository.save(order);
