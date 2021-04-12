@@ -29,17 +29,14 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
                     </p>
                 </div>
                     
+                <div className="menu-item-attributes">
                 <h3>£{item.price}</h3>
-                <button
-                    onClick={() => { handleSelectedItemRemove(item) }}
-                    className="btn minus-button">-
-                </button>
+                <i onClick={() => { handleSelectedItemRemove(item) }} class="fa fa-minus-circle" aria-hidden="true"></i>
 
                 <div className="item-quantity"><span className="item-quantity-value">{item.quantity}</span></div>
-                <button
-                    onClick={() => { handleSelectedItemAdd(item) }}
-                    className="btn plus-button">+
-                    </button>
+                <i onClick={() => { handleSelectedItemAdd(item) }} class="fa fa-plus-circle" aria-hidden="true">
+                    </i>
+                </div>
 
             </div>
             <div className="item-info-container">
