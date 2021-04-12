@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import '../css/OrderForm.css';
-import Request from '../helpers/request';
 import { Link } from "react-router-dom"
 
 
-const OrderForm = ({ customer, basket, basketValue }) => {
+const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
 
     const [stateOrder, setStateOrder] = useState(
         {
@@ -13,16 +12,19 @@ const OrderForm = ({ customer, basket, basketValue }) => {
             orderItems: { basket },
             quantity: 0,
             total: { basketValue },
-            rating: null
+            rating: null,
+            payment: null
             // table: null,
 
         }
     )
 
+
     const handleChange = function (event) {
-        let propertyName = event.target.value;
+        let propertyName = event.target.name;
         let copiedOrder = { ...stateOrder }
         copiedOrder[propertyName] = event.target.value;
+        copiedOrder[customer] = customer;
         setStateOrder(copiedOrder)
     }
 
@@ -35,16 +37,21 @@ const OrderForm = ({ customer, basket, basketValue }) => {
     //     setStateOrder(copiedOrder)
     // }
 
-    const handleOrderPost = function (order) {
-        const request = new Request();
-        request.post("/orders", order)
+    // const handlePost = function (order) {
+    //     const request = new Request();
+    //     request.post("/orders", order)
+    //     .then(() => window.location = "/orders")
 
-    }
+    // }
 
 
     const handleSubmit = function (event) {
+        console.log("handleSubmit called")
         event.preventDefault();
+        // onCreate(stateOrder); 
         handleOrderPost(stateOrder);
+        
+        // handleOrderSubmit();
     }
 
 
@@ -53,25 +60,27 @@ const OrderForm = ({ customer, basket, basketValue }) => {
     //     return <option key={index} value={index}>{table.number}</option>
     // })
 
-    // if (!OrderItems.length === 0){
+    // if (!TableOptions.length === 0){
     //     return <p>Loading...</p>
     //     }
+
+  
+
 
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="special notes" name="specialNotes" onChange={handleChange} value={stateOrder.specialNotes} />
                 {/* <select name="table" onChange={handleTable} defaultValue="select-table">
         <option disabled value='select-ship'>Select a Table</option>
             {tableOptions}
         </select>  */}
-
-                <Link to="/paymentform" className="checkout-text" basket={basket}>
-                    <button className="order-btn" type="submit">Pay Now</button>
-                </Link>
-
+            <button className="order-btn" type="submit">Pay Now</button>
             </form>
+            {/* <Link to="/paymentform" className="checkout-text" basket={basket}>
+                    
+            </Link> */}
         </>
 
         //         <i className="fas fa-shopping-cart"></i>
@@ -88,6 +97,7 @@ const OrderForm = ({ customer, basket, basketValue }) => {
 
     )
 }
+
 
 export default OrderForm;
 

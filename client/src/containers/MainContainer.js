@@ -7,6 +7,7 @@ import MenuPage from '../components/MenuPage';
 import OrderPage from '../components/OrderPage';
 import AboutPage from '../components/AboutPage';
 import PaymentForm from '../components/PaymentForm';
+import HamburgerMenu from '../components/HamburgerMenu.js';
 
 // import TopNavBar from '../components/TopNavBar';
 
@@ -21,17 +22,20 @@ const MainContainer = () => {
     // const [customer, setCustomer] = useState({});
     const [activeCustomer, setActiveCustomer] = useState(null);
 
+
     useEffect(() => {
         console.log("Fetching menu items and restaurant info...")
         // let categoryUrl = selectedCategory;
         const request = new Request();
         const allItemsPromise = request.get(selectedCategory)
         const restaurantPromise = request.get('/restaurants')
+        
 
         Promise.all([allItemsPromise, restaurantPromise])
             .then((data) => {
                 setCurrentItems(data[0]);
                 setRestaurants(data[1]);
+            
             })
 
     }, [selectedCategory])
@@ -107,6 +111,27 @@ const MainContainer = () => {
     }
     ///////////////////////////////////////////////
 
+
+    //////Handle Order Post 
+    const handleOrderPost = function (order) {
+        console.log("what is an order", order)
+        const request = new Request();
+        request.post('/orders', order)
+        // .then(() => window.location = '/orders')
+       
+
+    }
+
+    const handleOrder = () => {
+        console.log("creating order");
+    }
+
+
+    ////////////
+
+
+
+
     // Handle payment
     const handlePayment = () => {
         console.log("PAYMENT");
@@ -165,11 +190,14 @@ const MainContainer = () => {
                         <OrderPage customer={activeCustomer}
                             basket={basket}
                             basketValue={basketValue}
+                            handleOrderPost={handleOrderPost}
+                            handleOrder={handleOrder}
+  
+                            
                         />
                     )
                 }} />
-                <Route exact path="/Basket" component={OrderPage} />
-
+                
                 <Route exact path="/about" render={() => {
                     return (
                         <AboutPage restaurants={restaurants} />
@@ -182,7 +210,14 @@ const MainContainer = () => {
                         <PaymentForm
                             basket={basket}
                             basketValue={basketValue}
+                         
                         />
+                    )
+                }} />
+
+                <Route exact path="/hamburger" render={() => {
+                    return (
+                        <HamburgerMenu />
                     )
                 }} />
             </Switch>
