@@ -10,11 +10,12 @@ const PaymentForm = ({ basket, basketValue }) => {
             cardExpiryMonth: "",
             cardExpiryYear: "",
             cardCvv: ""
-        })
+        }
+    )
 
     // Handle payment
     const handlePaymentPost = (payment) => {
-        console.log("PAYMENT", payment);
+        payment.totalPayment = basketValue;
         const request = new Request();
         request.post("/payments", payment)
         // .then(() => window.location = '/home')
@@ -26,23 +27,13 @@ const PaymentForm = ({ basket, basketValue }) => {
         let propertyName = event.target.name;
         let copiedCardDetails = { ...cardDetails }
         copiedCardDetails[propertyName] = event.target.value;
+
         setCardDetails(copiedCardDetails)
     }
 
     const handleSubmitPayment = (event) => {
         event.preventDefault();
-
-        // const payment = {
-        //     "cardHolder": "Alan Patridge",
-        //     "cardNumber": "4242424242424242",
-        //     "cardExpiryMonth": "12",
-        //     "cardExpiryYear": "22",
-        //     "cardCvv": "123"
-        // }
-
         handlePaymentPost(cardDetails)
-        // setCardDetails(null)
-        console.log("handleSubmitPayment called");
     }
 
     let orderTotal = 0;

@@ -24,15 +24,18 @@ public class Payment {
     private String cardExpiryMonth;
     private String cardExpiryYear;
     private String cardCvv;
+    private double totalPayment;
 
-    public Payment(Order order, int creditCardInfo, String cardHolder, String cardNumber, String cardExpiryMonth, String cardExpiryYear, String cardCvv) {
-        this.order = order;
+
+    public Payment(int creditCardInfo, String cardHolder, String cardNumber, String cardExpiryMonth, String cardExpiryYear, String cardCvv, Order order) {
         this.creditCardInfo = creditCardInfo;
         this.cardHolder = cardHolder;
         this.cardNumber = cardNumber;
         this.cardExpiryMonth = cardExpiryMonth;
         this.cardExpiryYear = cardExpiryYear;
         this.cardCvv = cardCvv;
+        this.order = order;
+
     }
 
 //    public Payment(Order order) {
@@ -104,5 +107,13 @@ public class Payment {
 
     public void setCardCvv(String cardCvv) {
         this.cardCvv = cardCvv;
+    }
+
+    public double getTotalPayment() {
+        return totalPayment;
+    }
+
+    public void setTotalPayment(double totalPayment) {
+        this.totalPayment = totalPayment;
     }
 }

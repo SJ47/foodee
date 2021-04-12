@@ -166,8 +166,9 @@ const MainContainer = () => {
                             basket={basket}
                             basketValue={basketValue}
                         />
-                    )}} />
-                <Route exact path="/Basket" component={OrderPage}/>
+                    )
+                }} />
+                <Route exact path="/Basket" component={OrderPage} />
 
                 <Route exact path="/about" render={() => {
                     return (

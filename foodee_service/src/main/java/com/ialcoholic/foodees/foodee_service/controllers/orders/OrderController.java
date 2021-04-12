@@ -27,7 +27,7 @@ public class OrderController {
     }
 
     @PostMapping(value = "/orders")
-    public ResponseEntity<Order> postPirate(@RequestBody Order order){
+    public ResponseEntity<Order> postOrder(@RequestBody Order order){
         orderRepository.save(order);
         return new ResponseEntity<>(order, HttpStatus.CREATED);
     }
@@ -39,7 +39,7 @@ public class OrderController {
     }
 
     @DeleteMapping(value = "/orders/{id}")
-    public ResponseEntity<Order> deletePirate(@PathVariable Long id) {
+    public ResponseEntity<Order> deleteOrder(@PathVariable Long id) {
         Order found = orderRepository.getOne(id);
         orderRepository.delete(found);
         return new ResponseEntity<>(null, HttpStatus.OK);
