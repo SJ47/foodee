@@ -29,27 +29,6 @@ const MOrderList = ({orders}) => {
         <MNavBar/>
         <h1>All orders</h1>
 
-        {/* <table className="order-table">
-
-            <thdead>
-                <tr>
-                    <th>Order #</th>
-                    <th>Total Spent</th>
-                    <th>Customer</th>
-                    <th>Table #</th>
-                    <th>Food items</th>
-                </tr>
-            </thdead>
-            <tbody>
-                {orders.map((order, index))}
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-            
-        </table> */}
-
         <table className="order-table">
                     <thead>
                         <tr>

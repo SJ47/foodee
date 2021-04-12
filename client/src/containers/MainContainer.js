@@ -268,7 +268,7 @@ const MainContainer = () => {
                 <Route exact path="/management/finance" render={() => {
                     return (
                         <MFinancePage
-                        // props
+                            orders={allOrders}
                         />
                     )
                 }} />
