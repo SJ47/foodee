@@ -3,6 +3,7 @@ package com.ialcoholic.foodees.foodee_service.models.orders;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ialcoholic.foodees.foodee_service.models.menu.MenuItem;
 import com.ialcoholic.foodees.foodee_service.models.people.Customer;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -24,9 +25,19 @@ public class Order {
     @Column(name = "special_notes")
     private String specialNotes;
 
-    @JsonIgnoreProperties(value="order")
-//    @OneToMany(mappedBy = "order")
-    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
+//    @JsonIgnoreProperties(value="order")
+////    @OneToMany(mappedBy = "order")
+//    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
+//    private List<MenuItem> orderItems;
+
+    @JsonIgnoreProperties(value = "orders")
+    @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            name = "menu_items_orders",
+            joinColumns = {@JoinColumn(name = "order_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name="menu_item_id", nullable = false, updatable = false)}
+    )
     private List<MenuItem> orderItems;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -43,22 +54,30 @@ public class Order {
     @Column(name = "rating")
     private Rating rating;
 
-    public Order(Customer customer) {
+//    public Order(Customer customer) {
+//        this.customer = customer;
+//        this.specialNotes = "";
+//        this.orderItems = new ArrayList<>();
+//        this.quantity = 0;
+//        this.total = 0;
+//        this.rating = null;
+//    }
+//
+//    public Order() {
+//    }
+
+    public Order(Customer customer, String specialNotes) {
         this.customer = customer;
-        this.specialNotes = "";
+        this.specialNotes = specialNotes;
+        this.total = total;
+        this.quantity = quantity;
         this.orderItems = new ArrayList<>();
-        this.quantity = 0;
-        this.total = 0;
         this.rating = null;
+        this.payment = null;
     }
 
     public Order() {
     }
-
-//    Not sure about the constructor set up ^^^
-//    Let me know your thoughts
-
-//    NOTE: won't let me create an empty constructor
 
     public Long getId() {
         return id;

@@ -4,9 +4,11 @@ import com.ialcoholic.foodees.foodee_service.models.orders.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 import java.util.Map;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
-
+//    List<Order> findByMenuItemsName(String name);
 }
