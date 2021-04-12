@@ -76,11 +76,11 @@ const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
         <option disabled value='select-ship'>Select a Table</option>
             {tableOptions}
         </select>  */}
-            <button className="order-btn" type="submit">Pay Now</button>
+           
             </form>
-            {/* <Link to="/paymentform" className="checkout-text" basket={basket}>
-                    
-            </Link> */}
+            <Link to="/paymentform" className="checkout-text" basket={basket}>
+            <button className="order-btn" type="submit">Pay Now</button>
+            </Link>
         </>
 
         //         <i className="fas fa-shopping-cart"></i>
