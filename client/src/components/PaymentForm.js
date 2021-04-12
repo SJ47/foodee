@@ -61,6 +61,7 @@ const PaymentForm = ({ basket, basketValue }) => {
             </div>
 
             <form className="payment-form" onSubmit={handleSubmitPayment}>
+                <h3> Enter Card Details</h3>
                 <input type="text" placeholder="Card Holder Name" name="cardHolder" onChange={handleChange} value={cardDetails.CardHolder} required />
                 <input type="text" placeholder="Card Number" name="cardNumber" onChange={handleChange} value={cardDetails.cardNumber} required />
                 <input type="text" placeholder="Expiry Month" name="cardExpiryMonth" onChange={handleChange} value={cardDetails.cardExpiryMonth} required />

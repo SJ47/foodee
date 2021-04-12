@@ -27,6 +27,12 @@ td {
     border: 1px solid grey;
 }
 
+.payment-form > h3 {
+    font-weight: bold;
+    margin-left: 1em;
+    margin-bottom: 0;
+}
+
 .payment-form > ul {
     background: orange;
     border: 1px solid grey;
