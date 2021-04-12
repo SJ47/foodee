@@ -7,6 +7,7 @@ import MenuPage from '../components/MenuPage';
 import OrderPage from '../components/OrderPage';
 import AboutPage from '../components/AboutPage';
 import PaymentForm from '../components/PaymentForm';
+import StripeCardElement from '../components/StripeCardElement_old';
 
 // import TopNavBar from '../components/TopNavBar';
 
@@ -180,6 +181,16 @@ const MainContainer = () => {
                 <Route exact path="/paymentform" render={() => {
                     return (
                         <PaymentForm
+                            basket={basket}
+                            basketValue={basketValue}
+                        />
+                    )
+                }} />
+
+                {/* Render stripe card element page  */}
+                <Route exact path="/stripecardelement" render={() => {
+                    return (
+                        <StripeCardElement
                             basket={basket}
                             basketValue={basketValue}
                         />
