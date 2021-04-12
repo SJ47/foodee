@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import Request from '../helpers/request';
+import "../css/PaymentForm.css"
 
 const PaymentForm = ({ basket, basketValue }) => {
 
     const [cardDetails, setCardDetails] = useState(
         {
             cardHolder: "",
-            cardNumber: "",
+            cardNumber: "4242424242424242",
             cardExpiryMonth: "",
             cardExpiryYear: "",
             cardCvv: ""
@@ -39,23 +40,34 @@ const PaymentForm = ({ basket, basketValue }) => {
     let orderTotal = 0;
     const orderList = basket.map((item, index) => {
         orderTotal = orderTotal + (item.price * item.quantity)
-        return <li key={index}>{item.name} - Item Price: £{item.price} - Qty: {item.quantity}</li>
+        return <tr key={index}><td> {item.name}</td> <td>£{item.price}</td> <td>{item.quantity}</td></tr>
     })
 
     return (
-        <div>
-            Hello from Payment component
-            <h1>Order Summary for Payment</h1>
-            <ul>{orderList}</ul>
-            <h2>Total: £{orderTotal}</h2>
+        <div className="payment-form-container">
+            <div className="order-form-summary">
+                <h1>Order Summary for Payment</h1>
+                <table className="order-table">
+                    <tr>
+                        <th>Order Item</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                    </tr>
+                    {orderList}
+
+                </table>
+                {/* <table>{orderList}</table> */}
+                <h2>Total: £{orderTotal}</h2>
+            </div>
 
             <form className="payment-form" onSubmit={handleSubmitPayment}>
-                <input type="text" placeholder="Card Holder Name" name="cardHolder" onChange={handleChange} value={cardDetails.CardHolder} />
-                <input type="text" placeholder="Card Number" name="cardNumber" onChange={handleChange} value={cardDetails.cardNumber} />
-                <input type="text" placeholder="Expiry Month" name="cardExpiryMonth" onChange={handleChange} value={cardDetails.cardExpiryMonth} />
-                <input type="text" placeholder="Expiry Year" name="cardExpiryYear" onChange={handleChange} value={cardDetails.cardExpiryYear} />
-                <input type="text" placeholder="CVV" name="cardCvv" onChange={handleChange} value={cardDetails.cardCvv} />
-                <button type="submit">PAY NOW</button>
+                <h3> Enter Card Details</h3>
+                <input type="text" placeholder="Card Holder Name" name="cardHolder" onChange={handleChange} value={cardDetails.CardHolder} required />
+                <input type="text" placeholder="Card Number" name="cardNumber" onChange={handleChange} value={cardDetails.cardNumber} required />
+                <input type="text" placeholder="Expiry Month" name="cardExpiryMonth" onChange={handleChange} value={cardDetails.cardExpiryMonth} required />
+                <input type="text" placeholder="Expiry Year" name="cardExpiryYear" onChange={handleChange} value={cardDetails.cardExpiryYear} required />
+                <input type="text" placeholder="CVV" name="cardCvv" onChange={handleChange} value={cardDetails.cardCvv} required />
+                <button type="submit">PAY NOW </button>
             </form>
         </div>
     )
