@@ -95,8 +95,7 @@ public class DataLoader implements ApplicationRunner {
         menuItemRepository.save(menuItem2);
 
         MenuItem menuItem3 = new MenuItem(restaurant, child_meal, "Burger and fries", "Specially made from Scottish " +
-                "Angus beef and organic potatoes", 6.50, "https://images.unsplash" +
-                ".com/photo-1543339531-242d0bc29010?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                "Angus beef and organic potatoes", 6.50, "https://i.dailymail.co.uk/i/pix/2017/11/08/16/4623608900000578-0-image-a-9_1510156892900.jpg",
                 false, false, false, false, "300g", 0.0);
 
         menuItem3.addAllergen(Allergen.GLUTEN);
@@ -107,7 +106,7 @@ public class DataLoader implements ApplicationRunner {
 
         MenuItem menuItem18 = new MenuItem(restaurant, child_meal, "Fish Fingers", "Specially made with fish caught off Scotland's coast " +
                 "and mushy peas", 6.20, "https://images.unsplash" +
-                "https://www.regalfish.co.uk/sites/default/images/ZCODBATTFINGER500G.jpg",
+                "https://recipetineats.com/wp-content/uploads/2020/01/Fish-Fingers_5.jpg",
                 false, false, false, false, "250g", 0.0);
 
         menuItem18.addAllergen(Allergen.GLUTEN);
@@ -481,8 +480,9 @@ public class DataLoader implements ApplicationRunner {
 
 //        Another journey test
         Customer bob = new Customer("Bob", "Bob", "bobemail@email.com");
-        MenuItem carrot = new MenuItem(restaurant, side, "carrot", "carrot", 1, "image",
-                true, true, true, false, "1", 0);
+        MenuItem carrot = new MenuItem(restaurant, side, "Lasagne", "Lasagne made from grain fed Angus beef", 1, "https://foodtasia.com/wp-content/uploads/2020/05/" +
+                "lasagna-29-683x1024.jpg",
+                false, false, true, false, "Medium", 0);
         Order carrotOrder = new Order(bob, "no carrots");
 
         customerRepository.save(bob);
