@@ -8,6 +8,10 @@ import OrderPage from '../components/OrderPage';
 import AboutPage from '../components/AboutPage';
 import PaymentForm from '../components/PaymentForm';
 
+// Management
+import MHomePage from '../components/management/MHomePage';
+import MLoginPage from '../components/management/MLoginPage';
+
 // import TopNavBar from '../components/TopNavBar';
 
 const MainContainer = () => {
@@ -185,6 +189,66 @@ const MainContainer = () => {
                         />
                     )
                 }} />
+
+                {/* <Route exact path="/management" component={MLoginPage} /> */}
+
+
+                <Route exact path="/management/login" render={() => {
+                    return (
+                        <MLoginPage
+                            // props
+                        />
+                    )
+                }} />
+
+                <Route exact path="/management/home" render={() => {
+                    return (
+                        <MHomePage
+                            // props
+                        />
+                    )
+                }} />
+
+                {/* <Route exact path="/management/menu" render={() => {
+                    return (
+                        <MMenu
+                            // props
+                        />
+                    )
+                }} />
+
+                <Route exact path="/management/tables" render={() => {
+                    return (
+                        <MMenu
+                            // props
+                        />
+                    )
+                }} />
+
+                <Route exact path="/management/customers" render={() => {
+                    return (
+                        <MCustomers
+                            // props
+                        />
+                    )
+                }} />
+
+                <Route exact path="/management/orders" render={() => {
+                    return (
+                        <MOrders
+                            // props
+                        />
+                    )
+                }} />
+
+                <Route exact path="/management/finance" render={() => {
+                    return (
+                        <MFinance
+                            // props
+                        />
+                    )
+                }} /> */}
+
             </Switch>
         </>
     )
