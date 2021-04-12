@@ -12,10 +12,11 @@ const MItem = ({item}) => {
   return (
     <>
     <Link to = {url} className="name">
-    {item.name}
+    {item.id}{' - '}{item.name}
     </Link>
-    {/* <p>Age: {item.age}</p>
-    <p>Ship: {item.ship.name}</p> */}
+    <p>Description: {item.description}</p>
+    <p>Price: {item.price}</p>
+    <p>Allergens: {item.allergens}</p>
     </>
   )
 }

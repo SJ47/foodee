@@ -16,7 +16,8 @@ const MMenu = ({menu}) => {
     return (
         <>
         <MNavBar/>
-        <ul className="admin-menu">
+        <h1>Menu</h1>
+        <ul className="component-list">
             {itemNodes}
         </ul>
         </>

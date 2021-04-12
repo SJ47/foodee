@@ -1,13 +1,13 @@
-/* .component {
+.component {
     margin: 20px;
     padding: 10px;
     width: 300px;
     border: 1px solid black;
   }
   
-  .name {
+  /* .name {
     color: darkSlateGray;
-  }
+  } */
   
   ul.component-list {
     display: flex;
@@ -18,25 +18,25 @@
     display: inline;
   }
   
-  .navLink {
+  /* .navLink {
     display: inline;
-  }
+  } */
   
-  body {
+  /* body {
     height: 125vh;
     font-family: sans-serif;
     background-color: ghostWhite;
-  }
-  #root {
+  } */
+  /* #root {
     margin-top: 80px;
     padding: 30px;
-  }
+  } */
   
-  .main-image {
+  /* .main-image {
     width: 100%;
     height: 100%;
-  }
-  header {
+  } */
+  /* header {
     background-color: white;
     position: fixed;
     top: 0;
@@ -55,18 +55,18 @@
   }
   header li {
     margin: 20px;
-  }
+  } */
   
-  a {
+  /* a {
     color: black;
-  }
+  } */
   
-  .singlePirate {
+  /* .singlePirate {
     display: flex;
     justify-content: center;
-  }
+  } */
   
-  .button-link {
+  /* .button-link {
     font: bold 11px Arial;
     text-decoration: none;
     background-color: #eeeeee;
