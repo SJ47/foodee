@@ -62,8 +62,17 @@ public class DataLoader implements ApplicationRunner {
         // Setup customers
         Customer renee = new Customer("Renee", "Graham", "renee.graham@fakeemail.com");
         Customer reneesHusband = new Customer("Mister", "Man", "mister.man@fakeemail.com");
+        Customer laureline = new Customer("Laureline", "Vaucoy", "laureline.vaucoy@fakeemail.com");
+        Customer alan = new Customer("Alan", "Partridge", "alan.p@fakeemail.com");
+        Customer scott = new Customer("Scott", "Johnston", "scott.j@fakeemail.com");
+        Customer tom = new Customer("Tom", "Stocker", "tom.s@fakeemail.com");
+
         customerRepository.save(renee);
         customerRepository.save(reneesHusband);
+        customerRepository.save(laureline);
+        customerRepository.save(alan);
+        customerRepository.save(scott);
+        customerRepository.save(tom);
 
         // Setup menu items
         // KIDS //
@@ -96,6 +105,33 @@ public class DataLoader implements ApplicationRunner {
         menuItem3.addAllergen(Allergen.MILK);
         menuItemRepository.save(menuItem3);
 
+        MenuItem menuItem18 = new MenuItem(restaurant, child_meal, "Fish Fingers", "Specially made with fish caught off Scotland's coast " +
+                "and mushy peas", 6.20, "https://images.unsplash" +
+                "https://www.regalfish.co.uk/sites/default/images/ZCODBATTFINGER500G.jpg",
+                false, false, false, false, "250g", 0.0);
+
+        menuItem18.addAllergen(Allergen.GLUTEN);
+        menuItem18.addAllergen(Allergen.MILK);
+        menuItem18.addAllergen(Allergen.FISH);
+        menuItemRepository.save(menuItem18);
+
+        MenuItem menuItem19 = new MenuItem(restaurant, child_meal, "Chicken Nuggets", "So, so tasty ", 5.50, "https://www.aheadofthyme.com/wp-content/uploads/2020/06/easy-" +
+                "homemade-chicken-nuggets-8.jpg",
+                false, false, false, false, "300g", 0.0);
+
+        menuItem19.addAllergen(Allergen.GLUTEN);
+        menuItem19.addAllergen(Allergen.MUSTARD);
+        menuItem19.addAllergen(Allergen.SESAME);
+        menuItemRepository.save(menuItem19);
+
+        MenuItem menuItem20 = new MenuItem(restaurant, child_meal, "Mini Veggie Lasagne", "Made with the chef's special lasagne recipe ", 7.50, "https://images.unsplash" +
+                "https://i.ndtvimg.com/i/2017-01/lasagna_650x400_71485331734.jpg",
+                false, false, false, false, "400g", 0.0);
+
+        menuItem20.addAllergen(Allergen.GLUTEN);
+        menuItem20.addAllergen(Allergen.MILK);
+        menuItemRepository.save(menuItem20);
+
         // SIDES //
         MenuItem menuItem4 = new MenuItem(restaurant, side, "Potato fries", "Specially made from organic Scottish " +
                 "potatoes", 3.50, "https://images.unsplash.com/photo-1600339240932-226cff938b4f?ixlib=rb-1.2" +
@@ -112,6 +148,30 @@ public class DataLoader implements ApplicationRunner {
         menuItem5.addAllergen(Allergen.MUSTARD);
         menuItem5.addAllergen(Allergen.GLUTEN);
         menuItemRepository.save(menuItem5);
+
+
+        MenuItem menuItem21 = new MenuItem(restaurant, side, "Chorizo and sweet potato salad", "Packed with goodness. It's a meal in itself", 7.50, "https://img.delicious.com.au/g6CEWI5G/w759-h506-cfill/del/2016/01/chorizo-and-sweet-potato-salad-26203-2.jpg", false, true, false, false, "150g", 0.0);
+
+        menuItem21.addAllergen(Allergen.MILK);
+        menuItem21.addAllergen(Allergen.MUSTARD);
+        menuItem21.addAllergen(Allergen.GLUTEN);
+        menuItemRepository.save(menuItem21);
+
+        MenuItem menuItem22 = new MenuItem(restaurant, side, "fried mushrooms", "An old favourite", 4.50, "https://www.errenskitchen.com/wp-content/uploads/2016/01/" +
+                "garlic-breaded-mushrooms-feature.jpg", false, true, false, false, "150g", 0.0);
+
+        menuItem22.addAllergen(Allergen.MILK);
+        menuItem22.addAllergen(Allergen.MUSTARD);
+        menuItem22.addAllergen(Allergen.GLUTEN);
+        menuItemRepository.save(menuItem22);
+
+        MenuItem menuItem23 = new MenuItem(restaurant, side, "Green bean, fig and feta salad", "A healthy and light salad with a fruity, fig flavour", 6.50, "https://images.unsplash" +
+                "https://img.delicious.com.au/ghfC6zi_/del/2016/12/green-bean-fig-and-feta-salad-41494-2.jpg", true, true, false, false, "150g", 0.0);
+
+        menuItem23.addAllergen(Allergen.MILK);
+        menuItem23.addAllergen(Allergen.MUSTARD);
+        menuItemRepository.save(menuItem23);
+
 
         // SNACKS //
         MenuItem menuItem6 = new MenuItem(restaurant, snack, "Haggis Pakora", "Delicious fusion dish that combines a " +
@@ -146,6 +206,35 @@ public class DataLoader implements ApplicationRunner {
         menuItem8.addAllergen(Allergen.FISH);
         menuItemRepository.save(menuItem8);
 
+        MenuItem menuItem24 = new MenuItem(restaurant, snack, "Scotch eggs", "Old pubs faves", 5.0, "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/" +
+                "scotcheggs_85851_16x9.jpg", false, true, false, false, "200g", 0.0);
+
+        menuItem24.addAllergen(Allergen.EGGS);
+        menuItem24.addAllergen(Allergen.GLUTEN);
+        menuItem24.addAllergen(Allergen.CELERY);
+        menuItem24.addAllergen(Allergen.MILK);
+        menuItemRepository.save(menuItem24);
+
+        MenuItem menuItem25 = new MenuItem(restaurant, snack, "Chicken wings", "Double deep-frying chicken wings - crispy and light", 6.0,
+                "https://blog.opentable.com/wp-content/uploads/sites/108/2019/01/blog-BeetleCat-Credit-Andrew-Isabella-copy.jpeg", false, false, false, false, "200g", 0.0);
+
+        menuItem25.addAllergen(Allergen.EGGS);
+        menuItem25.addAllergen(Allergen.GLUTEN);
+        menuItem25.addAllergen(Allergen.CELERY);
+        menuItem25.addAllergen(Allergen.SESAME);
+        menuItemRepository.save(menuItem25);
+
+        MenuItem menuItem26 = new MenuItem(restaurant, snack, "Maple-Glazed Nuts & Bacon", "Chopped pieces of bacon and pure maple syrup are combined with peanuts in this perfectly sweet and salty snack.", 6.0,
+                "https://paleogrubs.com/wp-content/uploads/2020/05/roasted-nuts-6.jpg", true, false, false, false, "200g", 0.0);
+
+
+        menuItem26.addAllergen(Allergen.GLUTEN);
+        menuItem26.addAllergen(Allergen.SESAME);
+        menuItem26.addAllergen(Allergen.PEANUTS);
+
+        menuItemRepository.save(menuItem26);
+
+
         // MAINS //
         MenuItem menuItem9 = new MenuItem(restaurant, main, "Prawn Curry", "Delicious prawn curry, chef’s special " +
                 "recipe", 10.00, "https://images.unsplash.com/photo-1559847844-5315695dadae?ixid" +
@@ -174,6 +263,36 @@ public class DataLoader implements ApplicationRunner {
         menuItem11.addAllergen(Allergen.CELERY);
         menuItemRepository.save(menuItem11);
 
+        MenuItem menuItem27 = new MenuItem(restaurant, main, "Salmon and zucchini", "Fresh water Scottish salmon lightly grilled to perfection", 10.0, "https://images.unsplash.com" +
+                "/photo-1467003909585-2f8a72700288?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+                false, false, false, false, "500g", 0.0);
+
+        menuItem27.addAllergen(Allergen.CELERY);
+        menuItem27.addAllergen(Allergen.FISH);
+        menuItemRepository.save(menuItem27);
+
+        MenuItem menuItem28 = new MenuItem(restaurant, main, "Steak and vegetables", "Fresh water Scottish salmon lightly grilled to perfection", 10.0,
+                "https://images.unsplash.com/photo-1432139509613-5c4255815697?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2." +
+                        "1&auto=format&fit=crop&w=932&q=80",
+                false, false, false, false, "500g", 0.0);
+
+        menuItem28.addAllergen(Allergen.GLUTEN);
+        menuItem28.addAllergen(Allergen.CELERY);
+        menuItemRepository.save(menuItem28);
+
+        MenuItem menuItem29 = new MenuItem(restaurant, main, "Dumplings", "Pockets of flavour, so delicious you'll want seconds", 10.0,
+                "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1." +
+                        "2.1&auto=format&fit=crop&w=1950&q=80",
+                false, false, false, false, "400g", 0.0);
+
+        menuItem29.addAllergen(Allergen.GLUTEN);
+        menuItem29.addAllergen(Allergen.CELERY);
+        menuItem29.addAllergen(Allergen.CRUSTACEANS);
+
+        menuItemRepository.save(menuItem29);
+
+
+
         // DESSERTS //
         MenuItem menuItem12 = new MenuItem(restaurant, dessert, "Cheesecake", "This cheesecake will send you to " +
                 "heaven", 6.0, "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixid" +
@@ -185,8 +304,8 @@ public class DataLoader implements ApplicationRunner {
         menuItemRepository.save(menuItem12);
 
         MenuItem menuItem13 = new MenuItem(restaurant, dessert, "Cheese Platter", "The best cheeses from the region " +
-                "handpicked by the chef", 15.0, "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixid" +
-                "=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80",
+                "handpicked by the chef", 15.0, "https://images.unsplash.com/photo-1561668048-fe9c092832e0?ixlib=rb-1.2.1&ixid=" +
+                "MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80Z",
                 false, true, false, false, "500g", 0);
 
         menuItem13.addAllergen(Allergen.GLUTEN);
@@ -202,6 +321,34 @@ public class DataLoader implements ApplicationRunner {
         menuItem14.addAllergen(Allergen.PEANUTS);
         menuItem14.addAllergen(Allergen.SOYA);
         menuItemRepository.save(menuItem14);
+
+        MenuItem menuItem30 = new MenuItem(restaurant, dessert, "Glazed donuts", "Don't knock 'em till you try them", 6.0, "https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1" +
+                ".2.1&auto=format&fit=crop&w=934&q=80",
+                false, true, false, false, "150g", 0);
+
+        menuItem30.addAllergen(Allergen.GLUTEN);
+        menuItem30.addAllergen(Allergen.MILK);
+        menuItem30.addAllergen(Allergen.NUTS);
+        menuItemRepository.save(menuItem30);
+
+        MenuItem menuItem31 = new MenuItem(restaurant, dessert, "Oreo sunday", "Ice cream, caramel and oreo cookies, enough said", 6.0,
+                "https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=582&q=80",
+                false, true, false, false, "150g", 0);
+
+        menuItem31.addAllergen(Allergen.GLUTEN);
+        menuItem31.addAllergen(Allergen.MILK);
+        menuItem31.addAllergen(Allergen.NUTS);
+        menuItemRepository.save(menuItem31);
+
+        MenuItem menuItem32 = new MenuItem(restaurant, dessert, "Rum Baba", "Classic Rum Baba made with Scottish rum", 7.0,
+                "https://unsplash.com/photos/zECxA3ZL9eM",
+                false, true, false, true, "150g", 1);
+
+        menuItem32.addAllergen(Allergen.GLUTEN);
+        menuItem32.addAllergen(Allergen.MILK);
+        menuItem32.addAllergen(Allergen.NUTS);
+        menuItemRepository.save(menuItem31);
+
 
         // DRINKS
         MenuItem menuItem15 = new MenuItem(restaurant, hot_drink, "Espresso", "As dark as your heart", 0.95, "https" +
@@ -238,6 +385,23 @@ public class DataLoader implements ApplicationRunner {
         restaurant.addMenuItem(menuItem15);
         restaurant.addMenuItem(menuItem16);
         restaurant.addMenuItem(menuItem17);
+        restaurant.addMenuItem(menuItem18);
+        restaurant.addMenuItem(menuItem19);
+        restaurant.addMenuItem(menuItem20);
+        restaurant.addMenuItem(menuItem21);
+        restaurant.addMenuItem(menuItem22);
+        restaurant.addMenuItem(menuItem23);
+        restaurant.addMenuItem(menuItem24);
+        restaurant.addMenuItem(menuItem25);
+        restaurant.addMenuItem(menuItem26);
+        restaurant.addMenuItem(menuItem27);
+        restaurant.addMenuItem(menuItem28);
+        restaurant.addMenuItem(menuItem29);
+        restaurant.addMenuItem(menuItem30);
+        restaurant.addMenuItem(menuItem31);
+        restaurant.addMenuItem(menuItem32);
+
+
         restaurantRepository.save(restaurant);
 
         // Setup orders
