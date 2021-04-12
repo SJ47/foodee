@@ -57,7 +57,7 @@ const PaymentForm = ({ basket, basketValue }) => {
 
                 </table>
                 {/* <table>{orderList}</table> */}
-                <h2>Total: £{orderTotal}</h2>
+                <h2 className="payment-total-text">Total: £{orderTotal}</h2>
             </div>
 
             <form className="payment-form" onSubmit={handleSubmitPayment}>

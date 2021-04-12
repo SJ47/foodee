@@ -19,11 +19,13 @@ td {
 
 .order-table {
     border: 1px dashed grey;
-    padding: 1em;
+    padding: 0.5em 0.5em;
+    margin: 0.5em 0;
 }
 
 .payment-form {
     margin: 1em;
+    padding-top: 1em;
     border: 1px solid grey;
 }
 
@@ -43,14 +45,18 @@ td {
 }
 
 .payment-form > button {
-    margin: 1em;
+    margin: 1em 0.5em;
     display: block;
-    padding: 0.5em 1.2em;
+    padding: 0.3em 0.7em;
     background-color: var(--secondary-color);
     border: 0;
     color: var(--primary-color);
     font-weight: bold;
     cursor: pointer;
+}
+
+.payment-total-text {
+    margin: 0.5em 0em;
 }
 
 /* :root {

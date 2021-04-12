@@ -69,11 +69,11 @@ public class Order {
     public Order(Customer customer, String specialNotes) {
         this.customer = customer;
         this.specialNotes = specialNotes;
-        this.total = total;
-        this.quantity = quantity;
+//        this.total = total;
+//        this.quantity = quantity;
         this.orderItems = new ArrayList<>();
-        this.rating = null;
-        this.payment = null;
+//        this.rating = null;
+//        this.payment = null;
     }
 
     public Order() {
@@ -139,9 +139,7 @@ public class Order {
         this.orderItems.add(item);
         this.quantity += 1;
         this.total += item.getPrice();
-
 //        System.out.println("ORDER: " + item);
-
     }
 
     public Payment getPayment() {

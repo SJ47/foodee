@@ -494,6 +494,9 @@ public class DataLoader implements ApplicationRunner {
         customerRepository.save(bob);
         orderRepository.save(carrotOrder);
 
+        Order testOrder = new Order(bob, "");
+        orderRepository.save(testOrder);
+
 
 
 
