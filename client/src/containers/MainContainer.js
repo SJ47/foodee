@@ -113,9 +113,10 @@ const MainContainer = () => {
 
     //////Handle Order Post 
     const handleOrderPost = function (order) {
+        console.log("what is an order", order)
         const request = new Request();
         request.post('/orders', order)
-        .then(() => window.location = '/orders')
+        // .then(() => window.location = '/orders')
        
 
     }
@@ -188,7 +189,7 @@ const MainContainer = () => {
                         <OrderPage customer={activeCustomer}
                             basket={basket}
                             basketValue={basketValue}
-                            OnCreate={handleOrderPost}
+                            handleOrderPost={handleOrderPost}
                             handleOrder={handleOrder}
   
                             
