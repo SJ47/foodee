@@ -50,7 +50,7 @@ const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
         event.preventDefault();
         // onCreate(stateOrder); 
         handleOrderPost(stateOrder);
-        
+
         // handleOrderSubmit();
     }
 
@@ -64,23 +64,23 @@ const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
     //     return <p>Loading...</p>
     //     }
 
-  
+
 
 
 
     return (
         <>
-             <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="special notes" name="specialNotes" onChange={handleChange} value={stateOrder.specialNotes} />
                 {/* <select name="table" onChange={handleTable} defaultValue="select-table">
         <option disabled value='select-ship'>Select a Table</option>
             {tableOptions}
         </select>  */}
-            <button className="order-btn" type="submit">Pay Now</button>
+                <button className="order-btn" type="submit">Submit Order</button>
             </form>
-            {/* <Link to="/paymentform" className="checkout-text" basket={basket}>
-                    
-            </Link> */}
+            <Link to="/paymentform" className="checkout-text" basket={basket}>
+                <button className="order-btn" type="submit">Pay Now</button>
+            </Link>
         </>
 
         //         <i className="fas fa-shopping-cart"></i>

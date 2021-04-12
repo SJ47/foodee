@@ -5,7 +5,7 @@ import BasketYellow from '../media/CartEmptyYellow.png'
 import '../css/Checkout.css';
 
 
-const Checkout = ({ basket, basketValue, handlePayment }) => {
+const Checkout = ({ basketCounter, basket, basketValue, handlePayment }) => {
 
     // If basket not empty, then get the number of items in basket including their quantities
     let qtyInBasket = 0;
@@ -22,13 +22,14 @@ const Checkout = ({ basket, basketValue, handlePayment }) => {
 
     return (
         <>
-        <div className="checkout-container">
-            <Link to="/order">
-                <img id="basket-logo-checkout" src={BasketYellow} alt="basket logo" />
-                <div className="basket-item-count">{qtyInBasket}</div>
-            </Link>
-            <div className="checkout-total">£{basketValue}</div>
-        </div>
+            <div className="checkout-container">
+                <Link to="/order">
+                    <img id="basket-logo-checkout" src={BasketYellow} alt="basket logo" />
+                    {/* <div className="basket-item-count">{qtyInBasket}</div> */}
+                    <div className="basket-item-count">{basketCounter}</div>
+                </Link>
+                <div className="checkout-total">£{basketValue}</div>
+            </div>
         </>
 
     )

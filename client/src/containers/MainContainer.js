@@ -18,6 +18,7 @@ import MTableList from '../components/management/MTableList';
 import MCustomerList from '../components/management/MCustomerList';
 import MOrderList from '../components/management/MOrderList';
 import MFinancePage from '../components/management/MFinancePage';
+import TopNavBar from '../components/TopNavBar.js';
 
 // import TopNavBar from '../components/TopNavBar';
 
@@ -34,6 +35,7 @@ const MainContainer = () => {
     const [allCustomers, setAllCustomers] = useState([]);
     // const [customer, setCustomer] = useState({});
     const [activeCustomer, setActiveCustomer] = useState(null);
+    const [basketCounter, setBasketCounter] = useState(0)
 
 
     useEffect(() => {
@@ -87,6 +89,7 @@ const MainContainer = () => {
 
         // Update value of basket 
         setBasketValue(basketValue + item.price)
+        setBasketCounter(basketCounter + 1)
     }
 
     const handleSelectedItemRemove = (item) => {
@@ -97,6 +100,7 @@ const MainContainer = () => {
                 // Remove item price from basket if item to remove is found
                 setBasketValue(basketValue - basketItem.price)
                 basketItem.quantity -= 1;
+                setBasketCounter(basketCounter - 1)
                 if (basketItem.quantity === 0) {
                     return null
                 } else {
@@ -109,7 +113,6 @@ const MainContainer = () => {
 
         })
         setBasket(updatedBasket);
-        console.log("UPDATED BASKET: ", updatedBasket);
     }
 
     const handleCustomerLogIn = () => {
@@ -133,7 +136,7 @@ const MainContainer = () => {
         const request = new Request();
         request.post('/orders', order)
         // .then(() => window.location = '/orders')
-       
+
 
     }
 
@@ -164,6 +167,7 @@ const MainContainer = () => {
     return (
         <>
             {/* HAVE TOPNAVBAR HERE IF YOU WANT IT ON ALL PAGES */}
+            {/* <TopNavBar basketCounter={basketCounter} /> */}
             <Switch>
                 <Route exact path="/" render={() => {
                     return (
@@ -196,6 +200,7 @@ const MainContainer = () => {
                             basket={basket}
                             basketValue={basketValue}
                             handlePayment={handlePayment}
+                            basketCounter={basketCounter}
                         />
                     )
                 }} />
@@ -207,12 +212,12 @@ const MainContainer = () => {
                             basketValue={basketValue}
                             handleOrderPost={handleOrderPost}
                             handleOrder={handleOrder}
-  
-                            
+
+
                         />
                     )
                 }} />
-                
+
                 <Route exact path="/about" render={() => {
                     return (
                         <AboutPage restaurants={restaurants} />
@@ -225,7 +230,7 @@ const MainContainer = () => {
                         <PaymentForm
                             basket={basket}
                             basketValue={basketValue}
-                         
+
                         />
                     )
                 }} />
@@ -236,7 +241,7 @@ const MainContainer = () => {
                 <Route exact path="/management/login" render={() => {
                     return (
                         <MLoginPage
-                            // props
+                        // props
                         />
                     )
                 }} />
@@ -244,8 +249,8 @@ const MainContainer = () => {
                 <Route exact path="/management/home" render={() => {
                     return (
                         <MHomePage
-                        restaurants={restaurants}
-                            // props
+                            restaurants={restaurants}
+                        // props
                         />
                     )
                 }} />
@@ -253,8 +258,8 @@ const MainContainer = () => {
                 <Route exact path="/management/menu" render={() => {
                     return (
                         <MMenu
-                        menu={menu}
-                            // props
+                            menu={menu}
+                        // props
                         />
                     )
                 }} />
@@ -262,8 +267,8 @@ const MainContainer = () => {
                 <Route exact path="/management/tables" render={() => {
                     return (
                         <MTableList
-                        tables={tables}
-                            // props
+                            tables={tables}
+                        // props
                         />
                     )
                 }} />
@@ -271,8 +276,8 @@ const MainContainer = () => {
                 <Route exact path="/management/customers" render={() => {
                     return (
                         <MCustomerList
-                        customers={allCustomers}
-                            // props
+                            customers={allCustomers}
+                        // props
                         />
                     )
                 }} />
@@ -280,7 +285,7 @@ const MainContainer = () => {
                 <Route exact path="/management/orders" render={() => {
                     return (
                         <MOrderList
-                            // props
+                        // props
                         />
                     )
                 }} />
@@ -288,7 +293,7 @@ const MainContainer = () => {
                 <Route exact path="/management/finance" render={() => {
                     return (
                         <MFinancePage
-                            // props
+                        // props
                         />
                     )
                 }} />
