@@ -30,7 +30,7 @@ function CheckoutForm() {
         }
         setPaymentLoading(true);
         // const clientSecret = getClientSecret();
-        const clientSecret = "sk_test_51IdLMSBwKf7xu8WGg9KnSVvY9pUBTP329F2Z6WNpj8cilmwiBqG8QotstMuYq238dTUiZl1c9X7JT3zJSTrE5N3S00Y60x6akt"
+        const clientSecret = "secret key"
         const paymentResult = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: elements.getElement(CardElement),
