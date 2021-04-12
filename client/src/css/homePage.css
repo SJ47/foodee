@@ -1,4 +1,42 @@
-.homepage-intro-text {
-    color: beige;
-    padding: 1em;
+#home-page-container {
+background-color: var(--primary-color);
+}
+
+.homepage-intro-text{
+    margin: 0.6em;
+    background-color: var(--primary-color);
+
+}
+
+.homepage-intro-text h1 {
+    font-weight: 150;
+    font-size: 3em;
+    text-align: center;
+    border-bottom: var(--secondary-color) solid 1px;
+    /* border-top: var(--secondary-color) solid 1px; */
+    padding: 0em 0em 0.5em 0em;
+}
+
+.homepage-intro-text p {
+    font-weight: 100;
+    font-size: 1.2em;
+    text-align: justify;
+    line-height: 1.7em;
+}
+
+.homepage-button {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+button {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        border: var(--primary-color) solid 2px;
+        border-radius: 50px;
+        padding: 1rem;
+        width: 40vw;
+        margin-top: 1.5em;
+        font-size: 1.5em;
 }
