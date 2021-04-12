@@ -1,5 +1,15 @@
 .order-form {
     background: var(--primary-color);
+    /* border: solid yellow; */
+    text-align: center;
+    margin-top: 5%;
+}
+
+.large-text {
+    width: 80vw; 
+    height: 20vh; 
+    padding: 1%; 
+    font-size: 1em;
 }
 
 .order-btn {

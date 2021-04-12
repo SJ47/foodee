@@ -1,4 +1,7 @@
 .order-page {
+    /* border: solid red; */
+    min-height: 100vh;
+    padding-top: 20vh;
     background: var(--primary-color);
     text-align: center;
     font-size: larger;
