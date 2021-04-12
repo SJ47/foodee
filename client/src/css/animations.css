@@ -1,7 +1,77 @@
-.grow {
-    transition: all .2s  ease-in-out;
-}
+/* fooDee Logo In */
 
-.grow:hover {
-    transform: scale(1.5);
-}
+@keyframes slideInFromLeft {
+    0% {transform: translateX(-500%);}
+    
+    70% {
+      transform: translateX(20%);
+    }
+    85% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+    
+  }
+  
+  #foo {  
+    animation-duration: 1.5s; /* the duration of the animation */
+    animation-timing-function: ease-out; /* how the animation will behave */
+    animation-delay: 0s; /* how long to delay the animation from starting */
+    animation-iteration-count: 1; /* how many times the animation will play */
+    animation-name: slideInFromLeft; /* the name of the animation we defined above */
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(500%);
+    }    
+    70% {
+        transform: translateX(-20%);
+      }
+    85% {
+        transform: translateX(10%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  #dee {  
+    animation-duration: 2s; /* the duration of the animation */
+    animation-timing-function: ease-out; /* how the animation will behave */
+    animation-delay: 0s; /* how long to delay the animation from starting */
+    animation-iteration-count: 1; /* how many times the animation will play */
+    animation-name: slideInFromRight; /* the name of the animation we defined above */
+  }
+
+  /* Knife In */
+
+  @keyframes SlideInFromBottomRight {
+    0% {transform: translate(250%, 250%);}
+    100% {transform: translate(0, 0);}
+  }
+  
+  #knife {  
+    animation-duration: 2s; /* the duration of the animation */
+    animation-timing-function: ease-out; /* how the animation will behave */
+    animation-delay: 0s; /* how long to delay the animation from starting */
+    animation-iteration-count: 1; /* how many times the animation will play */
+    animation-name: SlideInFromBottomRight; /* the name of the animation we defined above */
+  }
+
+    /* Fork In */
+
+    @keyframes SlideInFromBottomLeft {
+        0% {transform: translate(-250%, 250%);}
+        100% {transform: translate(0, 0);}
+      }
+      
+      #fork {  
+        animation-duration: 2s; /* the duration of the animation */
+        animation-timing-function: ease-out; /* how the animation will behave */
+        animation-delay: 0s; /* how long to delay the animation from starting */
+        animation-iteration-count: 1; /* how many times the animation will play */
+        animation-name: SlideInFromBottomLeft; /* the name of the animation we defined above */
+      }
