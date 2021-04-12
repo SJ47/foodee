@@ -21,17 +21,15 @@ const Checkout = ({ basket, basketValue, handlePayment }) => {
     console.log("Basket contents", basket)
 
     return (
+        <>
         <div className="checkout-container">
-            <Link to="/order">CHECKOUT
+            <Link to="/order">
                 <img id="basket-logo-checkout" src={BasketYellow} alt="basket logo" />
-                {/* <i className="fas fa-shopping-cart"></i> */}
                 <div className="basket-item-count">{qtyInBasket}</div>
-                {/* <div className="checkout-text">CHECKOUT</div> */}
             </Link>
-            <div className="checkout-total">£{basketValue}
-            </div>
-
+            <div className="checkout-total">£{basketValue}</div>
         </div>
+        </>
 
     )
 }

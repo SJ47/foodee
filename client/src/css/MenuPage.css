@@ -11,7 +11,7 @@
 .item-info-container {
     display: grid;
     place-items: top;
-    padding: 1em 0 0 1.7em;
+    padding: 0em 0 0 2.1em;
 }
 
 .item-info-container > img {
@@ -31,23 +31,12 @@
     font-size: 1em;
 }
 
-.btn {
-    line-height: 30px;
-    font-size: 2em;
-    background: var(--primary-color);
-    color: var(--quadary-color);
-    border: 0;
-    height: 30px;
-    width: 30px;
-    border-radius: 25px;
-    margin-bottom: 0.3em;
 
+.menu-item-attributes {
+    display: flex;
+    flex-direction: row;
 }
 
-.minus-button {
-    margin-left: 0.5em;
-    
-}
 
 
 .menu-list-item-container {
@@ -56,6 +45,7 @@
 }
 
 h3 {
+    margin: 0.3em 0 1em 0;
     display: inline;
     font-size: 1rem;
     font-weight: 300;
@@ -66,6 +56,15 @@ p {
     font-size: 0.8rem;
     font-weight: 100;
 
+}
+
+.fa {
+    color: var(--primary-color);
+    font-size: 1.5em;
+}
+
+.fa-minus-circle {
+    margin-left: 1em;
 }
 
 .item-quantity {

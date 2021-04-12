@@ -1,12 +1,9 @@
-/********************/
-/* Checkout section */
-/********************/
-
 .checkout-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    align-items: center;
     background: var(--primary-color);
+    height: 10vh;
     padding-top: 1.5em;
     position: sticky;
     bottom: 0em;
@@ -20,15 +17,16 @@
 
 
 .basket-item-count {
+    text-decoration: none;
     background: red;
     padding: 0.5em;
     width: 32px;
     border-radius: 50%;
     position: relative;
-    left: -70px;
-    bottom: 20px;
+    left: 20px;
+    bottom: 70px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .checkout-total {
@@ -36,4 +34,14 @@
     font-size: 2em;
     font-weight: 200;
     margin-left: 1em;
+}
+
+.menu-item-attributes h3 {
+    width: 5vw;
+}
+
+.menu-item-attributes .item-quantity {
+    margin-left: 0.1vw;
+    margin-right: 1vw;
+    width: 11vw;
 }

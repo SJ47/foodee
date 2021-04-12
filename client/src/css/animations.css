@@ -16,11 +16,11 @@
   }
   
   #foo {  
-    animation-duration: 1.5s; /* the duration of the animation */
-    animation-timing-function: ease-out; /* how the animation will behave */
-    animation-delay: 0s; /* how long to delay the animation from starting */
-    animation-iteration-count: 1; /* how many times the animation will play */
-    animation-name: slideInFromLeft; /* the name of the animation we defined above */
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideInFromLeft;
   }
 
   @keyframes slideInFromRight {
@@ -39,11 +39,11 @@
   }
   
   #dee {  
-    animation-duration: 2s; /* the duration of the animation */
-    animation-timing-function: ease-out; /* how the animation will behave */
-    animation-delay: 0s; /* how long to delay the animation from starting */
-    animation-iteration-count: 1; /* how many times the animation will play */
-    animation-name: slideInFromRight; /* the name of the animation we defined above */
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideInFromRight;
   }
 
   /* Knife In */
@@ -54,11 +54,11 @@
   }
   
   #knife {  
-    animation-duration: 2s; /* the duration of the animation */
-    animation-timing-function: ease-out; /* how the animation will behave */
-    animation-delay: 0s; /* how long to delay the animation from starting */
-    animation-iteration-count: 1; /* how many times the animation will play */
-    animation-name: SlideInFromBottomRight; /* the name of the animation we defined above */
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: SlideInFromBottomRight;
   }
 
     /* Fork In */
@@ -69,9 +69,9 @@
       }
       
       #fork {  
-        animation-duration: 2s; /* the duration of the animation */
-        animation-timing-function: ease-out; /* how the animation will behave */
-        animation-delay: 0s; /* how long to delay the animation from starting */
-        animation-iteration-count: 1; /* how many times the animation will play */
-        animation-name: SlideInFromBottomLeft; /* the name of the animation we defined above */
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+        animation-delay: 0s;
+        animation-iteration-count: 1;
+        animation-name: SlideInFromBottomLeft;
       }
