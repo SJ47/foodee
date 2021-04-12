@@ -137,8 +137,8 @@ public class Order {
 
     public void addItemToOrder(MenuItem item) {
         this.orderItems.add(item);
-//        this.quantity += 1;
-//        this.total += item.getPrice();
+        this.quantity += 1;
+        this.total += item.getPrice();
 
 //        System.out.println("ORDER: " + item);
 
