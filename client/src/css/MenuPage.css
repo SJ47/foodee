@@ -3,7 +3,6 @@
     padding: 0em 0em 0em 0em;
     margin: 0.6em 0.5em 0em 0.5em;
     display: grid;
-    /* gap: 1em; */
     grid-template-columns: 2fr 1fr;
     border-bottom: solid 1px var(--line-color);
     color: var(--primary-color);
@@ -72,10 +71,6 @@ p {
 .item-quantity {
     font-size: 1.2rem;
     font-weight: 300;
-}
-
-.item-quantity-value {
-
 }
 
 .food-req-icons #vegetarian {
