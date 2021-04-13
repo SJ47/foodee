@@ -1,5 +1,8 @@
 import React from 'react'
 import "../css/HamburgerMenu.css"
+import FooDeeLogo from './FooDeeLogo'
+import HomeLogo from './HomeButtonLogo';
+import BasketLogo from './BasketLogo'
 
 const HamburgerMenu = () => {
 
@@ -18,6 +21,13 @@ const HamburgerMenu = () => {
     return (
         <div>
             <nav>
+                <div>
+                    <FooDeeLogo></FooDeeLogo>
+
+            </div>
+
+            
+    
                 <div onClick={handleNavButtonClick} className="hamburger">
                     <div className="line"></div>
                     <div className="line"></div>
@@ -25,8 +35,8 @@ const HamburgerMenu = () => {
                 </div>
                 <ul className="nav-links">
                     <li><a href="/">Find Us</a></li>
-                    <li><a href="/">Kids Section</a></li>
-                    <li><a href="/">Contact Foodee!</a></li>
+                    <li><a href="/">Kids</a></li>
+                    <li><a href="/">Contact</a></li>
                 </ul>
             </nav>
         </div>

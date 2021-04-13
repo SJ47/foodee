@@ -1,5 +1,6 @@
 #home-page-container {
 background-color: var(--primary-color);
+z-index: -1;
 }
 
 .homepage-intro-text{
@@ -27,10 +28,12 @@ background-color: var(--primary-color);
 .homepage-button {
     display: flex;
     justify-content: space-evenly;
+    z-index: 95;
     
 }
 
 button {
+        /* position: fixed; */
         background-color: var(--secondary-color);
         color: var(--primary-color);
         border: var(--primary-color) solid 2px;
@@ -39,4 +42,5 @@ button {
         width: 40vw;
         margin-top: 1.5em;
         font-size: 1.5em;
+        z-index: 95;
 }

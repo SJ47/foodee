@@ -36,7 +36,6 @@ const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
     }
 
     return (
-
         <div className="order-form">
             <form onSubmit={handleSubmit}>
                 <textarea className="large-text" placeholder="Special notes..." name="specialNotes" onChange={handleChange} value={stateOrder.specialNotes} />
@@ -46,23 +45,9 @@ const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
                     <button className="order-btn" type="submit">SUBMIT</button>
                 </Link>
             </form>
-
         </div>
     )
 }
 
 
 export default OrderForm;
-
-    //     {/* will take basket of items <Arraylist></Arraylist>
-
-    //      will take a total of item prices from checkout
-
-    //    need a <option>scrolldown table menu </option> table option scroll menu, 
-
-    //    needs a <button>submit button</button>   needs to persist to database with a postmethod similar 
-    //    to how done in createPirate and in Login Page with customer*/
-
-    //    //reference CreatePirate and use Insomnia for testing the route to basket 
-
-    //    }

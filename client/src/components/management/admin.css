@@ -1,23 +1,116 @@
 .component {
-    margin: 20px;
-    padding: 10px;
-    width: 300px;
-    border: 1px solid black;
-  }
+  margin: 20px;
+  padding: 10px;
+  width: 300px;
+  border: 1px solid black;
+}
+
+.admin-page {
+  height: 90vh
+}
+
+.admin-homepage > h1 {
+ text-align: center;
+ margin-top: 2%;
+}
+
+.admin-homepage {
+  text-align: center;
+}
+
+.admin-homepage > img {
+  margin-top: 10vh;
+  width: 50vw;
+}
+
+.admin-menu > h1 {
+ text-align: center;
+ margin-top: 2%;
+}
+
+.admin-tables > h1 {
+text-align: center;
+margin-top: 2%;
+}
+
+.admin-customers > h1 {
+text-align: center;
+margin-top: 2%;
+}
+
+.admin-orders > h1 {
+text-align: center;
+margin-top: 2%;
+}
+
+.admin-finances > h1 {
+text-align: center;
+margin-top: 2%;
+}
+
+/* .name {
+  color: darkSlateGray;
+} */
+
+ul.component-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li.component-item {
+  display: inline;
+}
   
-  /* .name {
-    color: darkSlateGray;
-  } */
-  
-  ul.component-list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  li.component-item {
-    display: inline;
-  }
-  
+.order-table {
+  border-collapse: collapse;
+  width: 100vw;
+  /* height: 80vh; */
+}
+
+.order-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.order-table tr:hover {background-color: #ddd;}
+
+.order-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(87, 87, 105);
+  color: white;
+}
+
+.Mtop-navbar-container-all {
+  display: flex;
+  justify-content: space-between;
+  background: var(--primary-color);
+  /* border: solid blueviolet; */
+  /* overflow: hidden; */
+  position: sticky;
+  /* top: 0em; */
+  /* z-index: 99; */
+
+  /* padding-top: 1.5em; */
+}
+
+.Mtop-navbar-container-right {
+  /* border: solid orange; */
+  margin-top: 2%;
+}
+
+.admin-link {
+  text-decoration: none;
+}
+
+/* .Mtop-navbar-container-right .admin-link {
+  border: solid pink;
+} */
+
+/* .Mtop-navbar-container-left {
+  border: solid yellow;
+  padding-top: 5px;
+  width: 30px;
+} */
+
   /* .navLink {
     display: inline;
   } */

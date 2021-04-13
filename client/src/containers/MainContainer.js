@@ -26,31 +26,33 @@ const MainContainer = () => {
     const [selectedCategory, setSelectedCategory] = useState("menu_items/category/main")
     const [basket, setBasket] = useState([])
     const [basketValue, setBasketValue] = useState(0)
-    const [loggedIn, setLoggedIn] = useState(false)
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [adminLoggedIn, setAdminLoggedIn] = useState(false);
     const [restaurants, setRestaurants] = useState([]);
     const [menu, setMenu] = useState([]);
     const [tables, setTables] = useState([]);
     const [allCustomers, setAllCustomers] = useState([]);
-    // const [customer, setCustomer] = useState({});
+    const [allOrders, setAllOrders] = useState([]);
     const [activeCustomer, setActiveCustomer] = useState(null);
     const [basketCounter, setBasketCounter] = useState(0)
 
 
     useEffect(() => {
         console.log("Fetching menu items and restaurant info...")
-        // let categoryUrl = selectedCategory;
         const request = new Request();
         const allItemsPromise = request.get(selectedCategory)
         const restaurantPromise = request.get('/restaurants')
         const customerPromise = request.get('/customers')
+        const orderPromise = request.get('/orders')
 
-        Promise.all([allItemsPromise, restaurantPromise, customerPromise])
+        Promise.all([allItemsPromise, restaurantPromise, customerPromise, orderPromise])
             .then((data) => {
                 setCurrentItems(data[0]);
                 setRestaurants(data[1]);
                 setMenu(data[1][0].menu);
                 setTables(data[1][0].tables);
                 setAllCustomers(data[2]);
+                setAllOrders(data[3]);
             })
 
     }, [selectedCategory])
@@ -118,6 +120,11 @@ const MainContainer = () => {
         setLoggedIn(true);
     }
 
+    const handleAmdinLoginIn = () => {
+        console.log("admin is logged in");
+        setAdminLoggedIn(true);
+    }
+
     const handleCustomerPost = function (customer) {
         const request = new Request();
         request.post("/customers", customer)
@@ -135,9 +142,6 @@ const MainContainer = () => {
     }
     ////////////
 
-
-
-
     // Handle payment
     const handlePayment = () => {
         console.log("PAYMENT");
@@ -154,7 +158,6 @@ const MainContainer = () => {
 
     return (
         <>
-            {/* HAVE TOPNAVBAR HERE IF YOU WANT IT ON ALL PAGES */}
             {/* <TopNavBar basketCounter={basketCounter} /> */}
             <Switch>
                 <Route exact path="/" render={() => {
@@ -167,8 +170,6 @@ const MainContainer = () => {
                 <Route exact path="/login" render={() => {
                     return (
                         loggedIn ?
-                            // <Redirect to="/home" /> :
-                            // <LoginPage handleCustomerLogIn={handleCustomerLogIn} />
                             <Redirect to="/home" /> :
                             <LoginPage handleCustomerLogIn={handleCustomerLogIn} handleCustomerPost={handleCustomerPost} />
                     )
@@ -216,19 +217,25 @@ const MainContainer = () => {
                         <PaymentForm
                             basket={basket}
                             basketValue={basketValue}
-
                         />
                     )
                 }} />
 
-                {/* <Route exact path="/management" component={MLoginPage} /> */}
-
+                <Route exact path="/management" render={() => {
+                    return (
+                        adminLoggedIn ?
+                            <Redirect to="/management/home" /> :
+                            <Redirect to="/management/login" />
+                    )
+                }} />
 
                 <Route exact path="/management/login" render={() => {
                     return (
-                        <MLoginPage
-                        // props
-                        />
+                        adminLoggedIn ?
+                            <Redirect to="/management/home" /> :
+                            <MLoginPage
+                                handleAdminLogIn={handleAmdinLoginIn}
+                            />
                     )
                 }} />
 
@@ -236,7 +243,6 @@ const MainContainer = () => {
                     return (
                         <MHomePage
                             restaurants={restaurants}
-                        // props
                         />
                     )
                 }} />
@@ -245,7 +251,6 @@ const MainContainer = () => {
                     return (
                         <MMenu
                             menu={menu}
-                        // props
                         />
                     )
                 }} />
@@ -254,7 +259,6 @@ const MainContainer = () => {
                     return (
                         <MTableList
                             tables={tables}
-                        // props
                         />
                     )
                 }} />
@@ -263,7 +267,6 @@ const MainContainer = () => {
                     return (
                         <MCustomerList
                             customers={allCustomers}
-                        // props
                         />
                     )
                 }} />
@@ -271,7 +274,8 @@ const MainContainer = () => {
                 <Route exact path="/management/orders" render={() => {
                     return (
                         <MOrderList
-                        // props
+                            orders={allOrders}
+                            tables={tables}
                         />
                     )
                 }} />
@@ -279,7 +283,7 @@ const MainContainer = () => {
                 <Route exact path="/management/finance" render={() => {
                     return (
                         <MFinancePage
-                        // props
+                            orders={allOrders}
                         />
                     )
                 }} />
