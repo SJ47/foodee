@@ -1,5 +1,6 @@
 .about-page {
-    color: #143D59;
+background-color: var(--primary-color);
+        
 }
 
 .map-container {
@@ -13,3 +14,26 @@
     height: 70vh;
     margin: auto;
   }
+
+  .wrapper {
+    column-count: 2;
+    column-gap: 50px;
+    padding: 50px;
+  }
+  
+  p {
+    line-height: 1.4; 
+    font-family: Helvetica;
+    text-align: justify;
+    margin: -5;
+    font-size: 10px;
+  }
+  
+  .brothers-image {
+    float: left;
+    width: 80px;
+    shape-margin:20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
