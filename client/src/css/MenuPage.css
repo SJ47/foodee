@@ -1,3 +1,4 @@
+
 .menu-list-item {
     list-style: none;
     padding: 0em 0em 0em 0em;
@@ -6,18 +7,23 @@
     grid-template-columns: 2fr 1fr;
     border-bottom: solid 1px var(--line-color);
     color: var(--primary-color);
+
 }
 
 .item-info-container {
     display: grid;
     place-items: top;
     padding: 0em 0 0 2.1em;
+    z-index: 97;
 }
 
 .item-info-container > img {
+    position: relative;
     border-radius: 5px;
     width: 80px;
     height: 80px;
+ 
+
 }
 
 .item-quantity {
@@ -35,13 +41,16 @@
 .menu-item-attributes {
     display: flex;
     flex-direction: row;
+
 }
 
 
 
 .menu-list-item-container {
+    position: relative;
     padding: 0 0 0 0;
     border-top: 30px solid transparent;
+    z-index: 96;
 }
 
 h3 {
@@ -49,6 +58,7 @@ h3 {
     display: inline;
     font-size: 1rem;
     font-weight: 300;
+
 
 }
 
