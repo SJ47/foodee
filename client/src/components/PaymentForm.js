@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Request from '../helpers/request';
 import "../css/PaymentForm.css"
+import {Link} from "react-router-dom";
 
 const PaymentForm = ({ basket, basketValue }) => {
 
@@ -67,7 +68,10 @@ const PaymentForm = ({ basket, basketValue }) => {
                 <input type="text" placeholder="Expiry Month" name="cardExpiryMonth" onChange={handleChange} value={cardDetails.cardExpiryMonth} required />
                 <input type="text" placeholder="Expiry Year" name="cardExpiryYear" onChange={handleChange} value={cardDetails.cardExpiryYear} required />
                 <input type="text" placeholder="CVV" name="cardCvv" onChange={handleChange} value={cardDetails.cardCvv} required />
+                <Link to="/thankyou">
                 <button type="submit">PAY NOW </button>
+                </Link>
+                
             </form>
         </div>
     )
