@@ -29,3 +29,23 @@
     padding-top: 5px;
     margin-left: 2px;
 }
+
+.admin-link {
+    color: orange;
+}
+
+.basket-item-count-top {
+    display: inline-block;
+    font-family: "Courier New", Courier, monospace;
+    text-decoration: none;
+    background: red;
+    padding: 0.5em;
+    width: 32px;
+    border-radius: 50%;
+    position: relative;
+    left: -28px;
+    bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+}

@@ -4,7 +4,7 @@ import HomeLogo from './HomeButtonLogo';
 import BasketLogo from './BasketLogo';
 import HamburgerMenu from './HamburgerMenu';
 
-const TopNavBar = () => {
+const TopNavBar = ({ basketCounter }) => {
     return (
         <>
         

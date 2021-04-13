@@ -5,7 +5,7 @@ import MenuItemList from '../components/MenuItemList';
 import TopNavBar from '../components/TopNavBar';
 import Checkout from '../components/Checkout';
 
-const MenuPage = ({ currentItems, handleCategoryNavClick, category, handleSelectedItemAdd, handleSelectedItemRemove, basket, basketValue, handlePayment }) => {
+const MenuPage = ({ basketCounter, currentItems, handleCategoryNavClick, category, handleSelectedItemAdd, handleSelectedItemRemove, basket, basketValue, handlePayment }) => {
 
     if (category === "menu_items/category/hard_drink" || category === "menu_items/category/soft_drink" || category === "menu_items/category/hot_drink") {
         return (
@@ -32,7 +32,7 @@ const MenuPage = ({ currentItems, handleCategoryNavClick, category, handleSelect
         return (
             <>
                 <div>
-                    <TopNavBar />
+                    <TopNavBar basketCounter={basketCounter} />
                     <div className="menu-page">
                         <MenuCategoryNavBar onCategoryNavClick={handleCategoryNavClick} />
                         <MenuItemList
@@ -46,7 +46,7 @@ const MenuPage = ({ currentItems, handleCategoryNavClick, category, handleSelect
                         />
                     </div>
                     {/* <Checkout basket={basket} basketValue={basketValue} handlePayment={handlePayment} /> */}
-                    <Checkout basket={basket} basketValue={basketValue} />
+                    <Checkout basketCounter={basketCounter} basket={basket} basketValue={basketValue} />
                 </div>
             </>
         )
