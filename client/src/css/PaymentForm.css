@@ -15,15 +15,18 @@ td {
     margin: 1em;
     padding-left: 1em;
     border: 1px solid grey;
+    text-align: center;
 }
 
-.order-table {
+.order-table-front-end {
     border: 1px dashed grey;
     padding: 0.5em 0.5em;
     margin: 0.5em 0;
+    width: 95%;
 }
 
 .payment-form {
+    text-align: center;
     margin: 1em;
     padding-top: 1em;
     border: 1px solid grey;
@@ -53,6 +56,10 @@ td {
     color: var(--primary-color);
     font-weight: bold;
     cursor: pointer;
+    margin: auto;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    width: fit-content;
 }
 
 .payment-total-text {
