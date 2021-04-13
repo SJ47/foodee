@@ -21,7 +21,13 @@ const MenuCategoryNavBar = ({ onCategoryNavClick }) => {
                     <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/child_meal") }}>Kids</Link>
                 </li>
                 <li className="category-nav-link" >
-                    <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/hard_drink") }}>Drinks</Link>
+                    <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/hard_drink") }}>Beers {'&'} Wines</Link>
+                </li>
+                <li className="category-nav-link" >
+                    <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/soft_drink") }}>Soft Drinks</Link>
+                </li>
+                <li className="category-nav-link" >
+                    <Link to="/menu" onClick={() => { onCategoryNavClick("menu_items/category/hot_drink") }}>Hot Drinks</Link>
                 </li>
             </ul>
         </div >
