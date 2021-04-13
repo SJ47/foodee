@@ -27,24 +27,25 @@ const MOrderList = ({orders}) => {
     return (
         <>
         <MNavBar/>
+        <div className="admin-orders">
         <h1>All orders</h1>
 
         <table className="order-table">
-                    <thead>
-                        <tr>
-                            <th>Order #</th>
-                            <th>Total Spent</th>
-                            <th>Customer</th>
-                            <th>Table #</th>
-                            {/* <th>Food items</th> */}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {orderList}
-                        {/* {itemsFromOrder} */}
-                    </tbody>    
+            <thead>
+                <tr>
+                    <th>Order #</th>
+                    <th>Total Spent</th>
+                    <th>Customer</th>
+                    <th>Table #</th>
+                    {/* <th>Food items</th> */}
+                </tr>
+            </thead>
+            <tbody>
+                {orderList}
+                {/* {itemsFromOrder} */}
+            </tbody>    
         </table>
-        
+        </div>
         </>
     )  
 }

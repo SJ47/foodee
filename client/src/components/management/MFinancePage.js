@@ -13,6 +13,7 @@ const MFinancePage = ({}) => {
     return (
         <>
         <MNavBar/>
+        <div className="admin-finances">
         <h1>Finances overview</h1>
 
         <table className="order-table">
@@ -135,6 +136,7 @@ const MFinancePage = ({}) => {
                 </tr>
             </tfoot>
         </table>
+        </div>
         </>
     )  
 }

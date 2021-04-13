@@ -5,6 +5,30 @@
   border: 1px solid black;
 }
 
+.admin-homepage > h1 {
+ text-align: center;
+}
+
+.admin-menu > h1 {
+ text-align: center;
+}
+
+.admin-tables > h1 {
+text-align: center;
+}
+
+.admin-customers > h1 {
+text-align: center;
+}
+
+.admin-orders > h1 {
+text-align: center;
+}
+
+.admin-finances > h1 {
+text-align: center;
+}
+
 /* .name {
   color: darkSlateGray;
 } */
@@ -37,12 +61,11 @@ li.component-item {
 }
 
 .Mtop-navbar-container-all {
-  /* display: flex;
-  justify-content: space-between; */
+  display: flex;
+  justify-content: space-between;
   background: var(--primary-color);
-  border: solid blueviolet;
-
-  overflow: hidden;
+  /* border: solid blueviolet; */
+  /* overflow: hidden; */
   position: sticky;
   /* top: 0em; */
   /* z-index: 99; */
@@ -50,17 +73,20 @@ li.component-item {
   /* padding-top: 1.5em; */
 }
 
-.Mtop-navbar-container-right .admin-link {
-  border: solid pink;
-  padding-top: 5px;
-  width: 30px;
+.Mtop-navbar-container-right {
+  /* border: solid orange; */
+  margin-top: 1%;
 }
 
-.Mtop-navbar-container-left {
+/* .Mtop-navbar-container-right .admin-link {
+  border: solid pink;
+} */
+
+/* .Mtop-navbar-container-left {
   border: solid yellow;
-  /* padding-top: 5px;
-  width: 30px; */
-}
+  padding-top: 5px;
+  width: 30px;
+} */
 
   /* .navLink {
     display: inline;

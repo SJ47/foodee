@@ -18,20 +18,24 @@ const MCustomerList = ({customers}) => {
     return (
         <>
         <MNavBar/>
-        <h1>Registered customers</h1>
-        <table className="order-table">
-            <thead>
-                <tr>
-                    <th>Customer #</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                {customerList}
-            </tbody>    
-        </table>
+
+        <div className="admin-customers">
+            <h1>Registered customers</h1>
+            <table className="order-table">
+                <thead>
+                    <tr>
+                        <th>Customer #</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {customerList}
+                </tbody>    
+            </table>
+        </div>
+
         </>
     )
     
