@@ -6,7 +6,7 @@
     overflow: hidden;
     position: sticky;
     top: 0em;
-    z-index: 99;
+    z-index: 100;
 }
 
 .top-navbar-container-right > img {

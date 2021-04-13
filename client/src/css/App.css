@@ -37,3 +37,7 @@ body {
     background-color: var(--quadary-color);
     color: var(--secondary-color);
 }
+
+a {
+    text-decoration: none;
+}

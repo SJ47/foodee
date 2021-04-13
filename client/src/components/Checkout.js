@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-
-import BasketYellow from '../media/CartEmptyYellow.png'
 import '../css/Checkout.css';
 
 
@@ -22,13 +20,17 @@ const Checkout = ({ basket, basketValue, handlePayment }) => {
 
     return (
         <>
-        <div className="checkout-container">
+        
             <Link to="/order">
-                <img id="basket-logo-checkout" src={BasketYellow} alt="basket logo" />
-                <div className="basket-item-count">{qtyInBasket}</div>
-            </Link>
+            <div className="checkout-container">
+                {/* <img id="basket-logo-checkout" src={BasketYellow} alt="basket logo" /> */}
+                {/* <div className="basket-item-count">{qtyInBasket}</div> */}
+            
             <div className="checkout-total">£{basketValue}</div>
-        </div>
+            <button id="checkout-button">CHECKOUT</button>
+            </div>
+            </Link>
+        
         </>
 
     )
