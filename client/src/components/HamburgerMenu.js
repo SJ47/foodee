@@ -20,10 +20,10 @@ const HamburgerMenu = () => {
     }
 
     return (
-        <div>
+        <div className="top-navbar-container-all">
             <nav>
                 <div>
-                    <FooDeeLogo></FooDeeLogo>
+            <FooDeeLogo></FooDeeLogo>
 
             </div>
 
