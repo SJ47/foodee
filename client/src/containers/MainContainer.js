@@ -8,7 +8,7 @@ import MenuPage from '../components/MenuPage';
 import OrderPage from '../components/OrderPage';
 import AboutPage from '../components/AboutPage';
 import PaymentForm from '../components/PaymentForm';
-
+import ThankYouPage from '../components/ThankYouPage'
 
 // Management
 import '../components/management/admin.css'
@@ -292,6 +292,12 @@ const MainContainer = () => {
                 <Route exact path="/hamburger" render={() => {
                     return (
                         <HamburgerMenu />
+                    )
+                }} />
+
+                <Route exact path="/thankyou" render={() => {
+                    return (
+                        <ThankYouPage />
                     )
                 }} />
             </Switch>

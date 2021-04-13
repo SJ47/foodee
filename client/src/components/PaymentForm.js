@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Request from '../helpers/request';
 import "../css/PaymentForm.css"
+import { Link } from "react-router-dom";
 
 const PaymentForm = ({ basket, basketValue }) => {
 
@@ -19,7 +20,9 @@ const PaymentForm = ({ basket, basketValue }) => {
         payment.totalPayment = basketValue;
         const request = new Request();
         request.post("/payments", payment)
-        // .then(() => window.location = '/home')
+            .then(window.alert("Payment Accepted"))
+            .then(window.location = '/thankyou')
+        // .then(() => window.location = '/thankyou')
         // change '/' to whichever route the home page is called
     }
 
@@ -46,8 +49,8 @@ const PaymentForm = ({ basket, basketValue }) => {
     return (
         <div className="payment-form-container">
             <div className="order-form-summary">
-                <h1>Order Summary for Payment</h1>
-                <table className="order-table">
+                <h1>Order Summary Payment</h1>
+                <table className="order-table-front-end">
                     <tr>
                         <th>Order Item</th>
                         <th>Price</th>
@@ -67,7 +70,10 @@ const PaymentForm = ({ basket, basketValue }) => {
                 <input type="text" placeholder="Expiry Month" name="cardExpiryMonth" onChange={handleChange} value={cardDetails.cardExpiryMonth} required />
                 <input type="text" placeholder="Expiry Year" name="cardExpiryYear" onChange={handleChange} value={cardDetails.cardExpiryYear} required />
                 <input type="text" placeholder="CVV" name="cardCvv" onChange={handleChange} value={cardDetails.cardCvv} required />
+                {/* <Link to="/thankyou"> */}
                 <button type="submit">PAY NOW </button>
+                {/* </Link> */}
+
             </form>
         </div>
     )

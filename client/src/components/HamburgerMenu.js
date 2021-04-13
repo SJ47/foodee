@@ -1,6 +1,7 @@
 import React from 'react'
 import "../css/HamburgerMenu.css"
-import FooDeeLogo from './FooDeeLogo';
+import FooDeeLogo from './FooDeeLogo'
+import {Link} from 'react-router-dom';
 
 
 const HamburgerMenu = () => {
@@ -29,10 +30,19 @@ const HamburgerMenu = () => {
                     <div className="line"></div>
                 </div>
                 <ul className="nav-links">
-                    <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
-                    <li><a href="/"><i class="fas fa-child"></i>Kids</a></li>
-                    <li><a href="/"><i class="fas fa-map-marker-alt"></i>Contact</a></li>
+                    {/* <li><a href="/home"><i class="fas fa-home"></i>Home</a></li> */}
+                    {/* <li><a href="/"><i class="fas fa-child"></i>Kids</a></li> */}
+                    {/* <li><a href="/"><i class="fas fa-map-marker-alt"></i>Log out</a></li> */}
+
+                    <li><Link to="/home"><i class="fas fa-home"></i>Home</Link></li>
+                    <li><Link to="/menu"><i class="fas fa-utensils"></i>Menu</Link></li>
+                    <li><Link to="/about"><i class="fas fa-map-marker-alt"></i>About Us</Link></li>
+                    <li><Link ><i class="fas fa-child"></i>Kids</Link></li>
+
+                    {/* Not a Link so we lose the state and default back to false */}
+                    <li><a href="/login"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
                 </ul>
+
             </nav>
         </div>
     )
