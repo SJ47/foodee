@@ -107,7 +107,7 @@ public class DataLoader implements ApplicationRunner {
 
         MenuItem menuItem2 = new MenuItem(restaurant, child_meal, "Macaroni and Cheese", "Cheesy Deliciousness", 6.0,
                 "https://images.unsplash.com/photo-1543339531-242d0bc29010?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-                false, true, false, false, "200g", 0.0);
+                false,true, false, false, "200g", 0.0);
 
         menuItem2.addAllergen(Allergen.GLUTEN);
         menuItem2.addAllergen(Allergen.MILK);
@@ -142,8 +142,8 @@ public class DataLoader implements ApplicationRunner {
         menuItem19.addAllergen(Allergen.SESAME);
         menuItemRepository.save(menuItem19);
 
-        MenuItem menuItem20 = new MenuItem(restaurant, child_meal, "Spagetti and meat sauce", "Made with the chef's special Italian recipe ", 7.50, "https://images.unsplash" +
-                "https://images.unsplash.com/photo-1612862068929-a9590aa97236?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHBhc3RhJTIwYmFrZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        MenuItem menuItem20 = new MenuItem(restaurant, child_meal, "Spagetti and meat sauce", "Made with the chef's special Italian recipe ", 7.50, "https://images.unsplash." +
+                "com/photo-1530114722439-f5cbd4dad762?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
                 false, false, false, false, "400g", 0.0);
 
         menuItem20.addAllergen(Allergen.GLUTEN);
@@ -438,13 +438,13 @@ public class DataLoader implements ApplicationRunner {
         menuItemRepository.save(menuItem44);
 
 
-        MenuItem menuItem17 = new MenuItem(restaurant, hard_drink, "Tennent's Lager", "Yellow garbage juice", 3.5, "https://unsplash." +
-                "com/photos/3egTNnU4nlw",
+        MenuItem menuItem17 = new MenuItem(restaurant, hard_drink, "Tennent's Lager", "Yellow garbage juice", 3.5, "https://images.unsplash.com/photo-1579106391617-bf9edae36907?ixid=" +
+                "MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z2xhc3MlMjBvZiUyMGJlZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
                 false, true, true, true, "pint", 4);
         menuItemRepository.save(menuItem17);
 
-        MenuItem menuItem37 = new MenuItem(restaurant, hard_drink, "BrewDog vs BreweGooder", "Vermont Vacation special lager", 3.5, "data" +
-                "https://images.unsplash.com/photo-1595318644790-dc51bdc72248?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1400&q=80",
+        MenuItem menuItem37 = new MenuItem(restaurant, hard_drink, "BrewDog Ale", "Vermont Vacation special lager", 3.5, "https://images.unsplash.com/photo-1579106391617" +
+                "-bf9edae36907?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z2xhc3MlMjBvZiUyMGJlZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
                 false, true, true, true, "pint", 4);
         menuItemRepository.save(menuItem37);
 
