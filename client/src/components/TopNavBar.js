@@ -1,7 +1,7 @@
-import Checkout from './Checkout';
 import HamburgerMenu from './HamburgerMenu';
 import BasketLogo from './BasketLogo';
-import FooDeeLogo from './FooDeeLogo';
+// import "../css/TopNavBar.css"
+
 
 
 // const TopNavBar = ({ basketCounter }) => {
@@ -16,12 +16,10 @@ const TopNavBar = ({ basketCounter }) => {
     return (
         <>
             <div className="top-navbar-container-all">
-                <div className="top-navbar-container-left">
-                </div>
-                <div className="top-navbar-container-right">
-                    <BasketLogo basketCounter={basketCounter}></BasketLogo>
-                    <HamburgerMenu></HamburgerMenu>
-                </div>
+                {/* <BasketLogo basketCounter={basketCounter}></BasketLogo> */}
+                <HamburgerMenu></HamburgerMenu>
+            
+
             </div>
         </>
     )

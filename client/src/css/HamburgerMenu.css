@@ -55,8 +55,8 @@ nav {
 .hamburger {
     position: absolute;
     cursor: pointer;
-    right: 5%;
-    top: 50%;
+    right: 2%;
+    top: 30%;
     transform: translate(-5%, -50%);
     z-index: 100;
 }
@@ -103,4 +103,8 @@ li.fade {
 .fas {
     color: var(--secondary-color);
     padding-right: 20px;
+}
+
+.fa-shopping-cart {
+    font-size: 2rem;
 }

@@ -33,12 +33,19 @@ const Checkout = ({ basketCounter, basket, basketValue, handlePayment }) => {
             </Link> */}
         
             <div className="checkout-container">
-                <Link to="/order">
+    
+             
+
+
+                <div className="checkout-total">£{basketValue}</div>
+
+                <div id="button-basket">
                     <img id="basket-logo-checkout" src={BasketYellow} alt="basket logo" />
                     <div className="basket-item-count">{basketCounter}</div>
-                </Link>
-                <div className="checkout-total">£{basketValue}</div>
+                <Link to="/order">
                 <button id="checkout-button">CHECKOUT</button>
+                </Link>
+                </div>
             </div>
 
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import "../css/HamburgerMenu.css"
-import FooDeeLogo from './FooDeeLogo'
-import BasketLogo from './BasketLogo';
+import FooDeeLogo from './FooDeeLogo';
 
 
 const HamburgerMenu = () => {
@@ -23,12 +22,7 @@ const HamburgerMenu = () => {
     return (
         <div className="top-navbar-container-all">
             <nav>
-                <div>
-            <FooDeeLogo></FooDeeLogo>
-            </div>
-
-            
-    
+                <FooDeeLogo></FooDeeLogo>
                 <div onClick={handleNavButtonClick} className="hamburger">
                     <div className="line"></div>
                     <div className="line"></div>

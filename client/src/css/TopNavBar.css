@@ -10,15 +10,12 @@
     z-index: 100;
 }
 
-.top-navbar-container-right > img {
-    padding-top: 5px;
-    width: 30px;
+.top-navbar-container-all > img {
+    padding-top: 20px;
+    height: 60px;  
 }
 
 
-#basket-logo {
-    margin-left: 260px;
-}
 
 #hamburger-menu-logo {
     margin-right: 2px;
@@ -28,7 +25,7 @@
     font-size: 1.6rem;
     margin: 0%;
     padding-top: 5px;
-    margin-left: 2px;
+    margin-left: 5px;
 }
 
 .admin-link {
@@ -42,12 +39,12 @@
     background: red;
     padding: 0.5em;
     width: 32px;
-    border-radius: 50%;
+    border-radius: 100%;
     position: relative;
     left: -10px;
     bottom: 25px;
     text-align: center;
     font-weight: 600;
     color: white;
-    z-index: 101;
+    z-index: 100;
 }

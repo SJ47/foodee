@@ -12,8 +12,8 @@
 }
 
 #basket-logo-checkout {
-    height: 50px;
-    padding-bottom: 9px;
+    height: 60px;
+    margin-top: 10px;
 
 }
 
@@ -21,13 +21,14 @@
     text-decoration: none;
     background: red;
     padding: 0.5em;
-    width: 32px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     position: relative;
-    left: 20px;
-    bottom: 70px;
+    left: -25px;
+    bottom: 10px;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     color: white;
     /* z-index: 999; */
 }
@@ -54,4 +55,8 @@
     width: 50vw;
     margin: 0;
     font-weight: 200;
+}
+
+#button-basket {
+    display: flex;
 }
