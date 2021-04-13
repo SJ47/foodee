@@ -16,10 +16,12 @@ const MMenu = ({menu}) => {
     return (
         <>
         <MNavBar/>
+        <div className="admin-menu">
         <h1>Menu</h1>
-        <ul className="component-list">
-            {itemNodes}
-        </ul>
+            <ul className="component-list">
+                {itemNodes}
+            </ul>
+        </div>
         </>
     )
     

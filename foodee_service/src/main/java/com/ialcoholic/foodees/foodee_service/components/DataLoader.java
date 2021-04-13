@@ -66,6 +66,16 @@ public class DataLoader implements ApplicationRunner {
         Customer alan = new Customer("Alan", "Partridge", "alan.p@fakeemail.com");
         Customer scott = new Customer("Scott", "Johnston", "scott.j@fakeemail.com");
         Customer tom = new Customer("Tom", "Stocker", "tom.s@fakeemail.com");
+        Customer meghan = new Customer("Meghan", "Windsor", "megsandharry4eva@fakeemail.com");
+        Customer harry = new Customer("Harry", "Windsor", "harryluvsmeg@fakeemail.com");
+        Customer james = new Customer("James", "Bond", "jamesb@fakeemail.com");
+        Customer penny = new Customer("Penny", "Rogers", "pennyr@fakeemail.com");
+        Customer thandiwe = new Customer("Thandiwe", "Newton", "thandie@fakeemail.com");
+        Customer melody = new Customer("Melody", "Sanders", "melody@yahooyeah.com");
+        Customer charlotte = new Customer("Charlotte", "Windsor", "charlieW@gmailee.com");
+        Customer scarlett = new Customer("Scarlett", "Johnson", "scarlett@gmailee.com");
+        Customer john = new Customer("John", "Travolta", "johnt@hotmailoo.com");
+        Customer thor = new Customer("Thor", "Kingston", "thor@yahooyeah.com");
 
         customerRepository.save(renee);
         customerRepository.save(reneesHusband);
@@ -73,6 +83,16 @@ public class DataLoader implements ApplicationRunner {
         customerRepository.save(alan);
         customerRepository.save(scott);
         customerRepository.save(tom);
+        customerRepository.save(meghan);
+        customerRepository.save(harry);
+        customerRepository.save(james);
+        customerRepository.save(penny);
+        customerRepository.save(thandiwe);
+        customerRepository.save(melody);
+        customerRepository.save(charlotte);
+        customerRepository.save(scarlett);
+        customerRepository.save(john);
+        customerRepository.save(thor);
 
         // Setup menu items
         // KIDS //
@@ -105,8 +125,7 @@ public class DataLoader implements ApplicationRunner {
         menuItemRepository.save(menuItem3);
 
         MenuItem menuItem18 = new MenuItem(restaurant, child_meal, "Fish Fingers", "Specially made with fish caught off Scotland's coast " +
-                "and mushy peas", 6.20, "https://images.unsplash" +
-                "https://recipetineats.com/wp-content/uploads/2020/01/Fish-Fingers_5.jpg",
+                "and mushy peas", 6.20, "https://movingmountainsfoods.com/wp-content/uploads/2020/12/Fish-FInger-banner-image.jpg",
                 false, false, false, false, "250g", 0.0);
 
         menuItem18.addAllergen(Allergen.GLUTEN);
@@ -123,8 +142,8 @@ public class DataLoader implements ApplicationRunner {
         menuItem19.addAllergen(Allergen.SESAME);
         menuItemRepository.save(menuItem19);
 
-        MenuItem menuItem20 = new MenuItem(restaurant, child_meal, "Mini Veggie Lasagne", "Made with the chef's special lasagne recipe ", 7.50, "https://images.unsplash" +
-                "https://i.ndtvimg.com/i/2017-01/lasagna_650x400_71485331734.jpg",
+        MenuItem menuItem20 = new MenuItem(restaurant, child_meal, "Spagetti and meat sauce", "Made with the chef's special Italian recipe ", 7.50, "https://images.unsplash" +
+                "https://images.unsplash.com/photo-1612862068929-a9590aa97236?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHBhc3RhJTIwYmFrZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
                 false, false, false, false, "400g", 0.0);
 
         menuItem20.addAllergen(Allergen.GLUTEN);
@@ -164,11 +183,13 @@ public class DataLoader implements ApplicationRunner {
         menuItem22.addAllergen(Allergen.GLUTEN);
         menuItemRepository.save(menuItem22);
 
-        MenuItem menuItem23 = new MenuItem(restaurant, side, "Green bean, fig and feta salad", "A healthy and light salad with a fruity, fig flavour", 6.50, "https://images.unsplash" +
-                "https://img.delicious.com.au/ghfC6zi_/del/2016/12/green-bean-fig-and-feta-salad-41494-2.jpg", true, true, false, false, "150g", 0.0);
+        MenuItem menuItem23 = new MenuItem(restaurant, side, "Prawn and crouton salad", "A  hearty prawn salad, chicken of the sea ", 6.50, "https://images.unsplash.com/photo-1551248429" +
+                "-40975aa4de74?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1495&q=80", false, false, false, false, "200g", 0.0);
 
         menuItem23.addAllergen(Allergen.MILK);
-        menuItem23.addAllergen(Allergen.MUSTARD);
+        menuItem23.addAllergen(Allergen.GLUTEN);
+        menuItem23.addAllergen(Allergen.CRUSTACEANS);
+
         menuItemRepository.save(menuItem23);
 
 
@@ -364,6 +385,21 @@ public class DataLoader implements ApplicationRunner {
                 "public/field/image/2020/07/tea-pot-milada-vigerova-unsplash-hero.jpg", true, true, true, false, "medium", 0);
         menuItemRepository.save(menuItem34);
 
+        MenuItem menuItem39 = new MenuItem(restaurant, hot_drink, "Hot chocolate", "Made with belgian chocolate", 1.20, "https://images.unsplash.com/" +
+                "photo-1546334169-864ef455d3f8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG90JTIwY2hvY29sYXRlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+                true, true, true, false, "small", 0);
+        menuItemRepository.save(menuItem39);
+
+        MenuItem menuItem40 = new MenuItem(restaurant, hot_drink, "Rooibos tea", "A soothing tea made from Red Bush in South Africa", 1.20, "https:" +
+                "//images.unsplash.com/photo-1598099968270-f7a302af6d50?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTN8fHRlYXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+                true, true, true, false, "small", 0);
+        menuItemRepository.save(menuItem40);
+
+        MenuItem menuItem41 = new MenuItem(restaurant, hot_drink, "Café latte", "Milky coffee", 1.20, "https://images.unsplash.com" +
+                "/photo-1528830639624-fc16697bb8e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+                true, true, true, false, "small", 0);
+        menuItemRepository.save(menuItem41);
+
 
         MenuItem menuItem16 = new MenuItem(restaurant, soft_drink, "Coke", "Just a can of coke", 1.5,  "https" +
                 "://delivery.pret.co.uk/dw/image/v2/ABBI_PRD/on/demandware" +
@@ -371,23 +407,44 @@ public class DataLoader implements ApplicationRunner {
                 true, true, false, "330ml", 0);
         menuItemRepository.save(menuItem16);
 
-        MenuItem menuItem35 = new MenuItem(restaurant, soft_drink, "Lemonade", "Homemade lemonade", 1.5,  "https" +
-                "https://feelgoodfoodie.net/wp-content/uploads/2020/08/Homemade-Lemonade-7.jpg", false,
+        MenuItem menuItem35 = new MenuItem(restaurant, soft_drink, "Lemonade", "Homemade lemonade", 1.5,
+                "https://images.unsplash.com/photo-1606943932434-2f21e1c54ef2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGVtb25hZGV8ZW5" +
+                        "8MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", false,
                 true, true, false, "500ml", 0);
         menuItemRepository.save(menuItem35);
 
-        MenuItem menuItem36 = new MenuItem(restaurant, soft_drink, "Irn Bru", "Scotland's fav drink lovingly made in Falkirk", 1.5,  "https" +
-                "https://i2-prod.dailyrecord.co.uk/incoming/article21200566.ece/ALTERNATES/s615b/0_JS202339007.jpg", false,
+        MenuItem menuItem36 = new MenuItem(restaurant, soft_drink, "`Pink lemonade", "Grapefruit infused lemonade, simply delcious", 1.5,
+                "https://images.unsplash.com" +
+                        "/photo-1601912343940-b110df3f303d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fG9yYW5nZSUyMHNvZGF8ZW58MHx8MHx8&ixlib=rb-1" +
+                        ".2.1&auto=format&fit=crop&w=800&q=60", false,
                 true, true, false, "330ml", 0);
         menuItemRepository.save(menuItem36);
 
-        MenuItem menuItem17 = new MenuItem(restaurant, hard_drink, "Tennent's Lager", "Yellow garbage juice", 3.5, "data" +
-                "https://www.telegraph.co.uk/content/dam/men/2016/05/13/tennents-588470_trans_NvBQzQNjv4Bq2mG3lyVb0qwi9Nuwg-8hyWM4S1u_kNqQtETCuvfEn_0.jpg",
+        MenuItem menuItem42 = new MenuItem(restaurant, soft_drink, "Jarritos", "Jarritos Pineapple soda", 2.5,  "https://images." +
+                "unsplash.com/photo-1613509891877-d0b5adcde63b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fG9yYW5nZSUyMHNvZGF8ZW58MHx8MHx8&ixlib=rb-1.2." +
+                "1&auto=format&fit=crop&w=800&q=60", false,
+                true, true, false, "370ml", 0);
+        menuItemRepository.save(menuItem42);
+
+        MenuItem menuItem43 = new MenuItem(restaurant, soft_drink, "Pepsi", "Why not have a Pepsi?", 1.5,  "https:" +
+                "//images.unsplash.com/photo-1571114865995-9545aedcd241?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njd8fHNvZGF8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=" +
+                "format&fit=crop&w=800&q=60", false,
+                true, true, false, "330ml", 0);
+        menuItemRepository.save(menuItem43);
+
+        MenuItem menuItem44 = new MenuItem(restaurant, soft_drink, "Iced Coffee", "Why not have a Pepsi?", 2.5,  "https://images.unsplash." +
+                "com/photo-1542674817-7c03d278561a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fGljZWQlMjBjb2ZmZWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", false,
+                true, true, false, "400ml", 0);
+        menuItemRepository.save(menuItem44);
+
+
+        MenuItem menuItem17 = new MenuItem(restaurant, hard_drink, "Tennent's Lager", "Yellow garbage juice", 3.5, "https://unsplash." +
+                "com/photos/3egTNnU4nlw",
                 false, true, true, true, "pint", 4);
         menuItemRepository.save(menuItem17);
 
-        MenuItem menuItem37 = new MenuItem(restaurant, hard_drink, "BrewDog Speedbird", "Scottish craft beer", 3.5, "data" +
-                "https://pbs.twimg.com/media/ECpadFpXsAIhHMA.jpg",
+        MenuItem menuItem37 = new MenuItem(restaurant, hard_drink, "BrewDog vs BreweGooder", "Vermont Vacation special lager", 3.5, "data" +
+                "https://images.unsplash.com/photo-1595318644790-dc51bdc72248?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1400&q=80",
                 false, true, true, true, "pint", 4);
         menuItemRepository.save(menuItem37);
 
@@ -395,6 +452,23 @@ public class DataLoader implements ApplicationRunner {
                 "glass_of_red_wine.jpg",
                 false, true, true, true, "pint", 6);
         menuItemRepository.save(menuItem38);
+
+        MenuItem menuItem45 = new MenuItem(restaurant, hard_drink, "House White", "A special white wine chosen by the chef", 3.5, "https://images.unsplash.com/" +
+                "photo-1601924376620-fac275e571b3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2hpdGUlMjB3aW5lfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+                false, true, true, true, "pint", 6);
+        menuItemRepository.save(menuItem45);
+
+        MenuItem menuItem46 = new MenuItem(restaurant, hard_drink, "Cider", "A specially selected cider. You won't regret choosing this.", 3.5,
+                "https://images.unsplash.com/photo-1618162803775-cd146ebac4c5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Z2xhc3MlMjBvZiUyMGJlZXJ8ZW58MHx8MHx8&ixlib=rb-1.2." +
+                        "1&auto=format&fit=crop&w=800&q=60",
+                false, true, true, true, "pint", 6);
+        menuItemRepository.save(menuItem46);
+
+        MenuItem menuItem47 = new MenuItem(restaurant, hard_drink, "Craft beer", "A specially selected craft beer. You won't regret choosing this.", 3.5, "https://images.unsplash.com" +
+                "/photo-1579106391617-bf9edae36907?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z2xhc3MlMjBvZiUyMGJlZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+                ,
+                false, true, true, true, "pint", 6);
+        menuItemRepository.save(menuItem47);
 
 
         restaurant.addMenuItem(menuItem1);
@@ -435,6 +509,16 @@ public class DataLoader implements ApplicationRunner {
         restaurant.addMenuItem(menuItem36);
         restaurant.addMenuItem(menuItem37);
         restaurant.addMenuItem(menuItem38);
+        restaurant.addMenuItem(menuItem39);
+        restaurant.addMenuItem(menuItem40);
+        restaurant.addMenuItem(menuItem41);
+        restaurant.addMenuItem(menuItem42);
+        restaurant.addMenuItem(menuItem43);
+        restaurant.addMenuItem(menuItem44);
+        restaurant.addMenuItem(menuItem45);
+        restaurant.addMenuItem(menuItem46);
+        restaurant.addMenuItem(menuItem47);
+
 
 
 
@@ -460,6 +544,12 @@ public class DataLoader implements ApplicationRunner {
         Table table1 = new Table(restaurant, 1, 4);
         Table table2 = new Table(restaurant, 2, 3);
         Table table3 = new Table(restaurant, 3,2 );
+        Table table4 = new Table(restaurant, 4,6 );
+        Table table5 = new Table(restaurant, 5,4 );
+        Table table6 = new Table(restaurant, 6,2 );
+        Table table7 = new Table(restaurant, 7,3 );
+        Table table8 = new Table(restaurant, 8,3 );
+
         table2.addCustomer(renee);
         table2.addCustomer(reneesHusband);
         table3.addCustomer(alan);
@@ -468,6 +558,11 @@ public class DataLoader implements ApplicationRunner {
         tableRepository.save(table1);
         tableRepository.save(table2);
         tableRepository.save(table3);
+        tableRepository.save(table4);
+        tableRepository.save(table5);
+        tableRepository.save(table6);
+        tableRepository.save(table7);
+        tableRepository.save(table8);
 
         restaurant.addTable(table1);
         restaurant.addTable(table2);
