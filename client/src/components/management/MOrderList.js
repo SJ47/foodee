@@ -27,7 +27,7 @@ const MOrderList = ({orders}) => {
     return (
         <>
         <MNavBar/>
-        <div className="admin-orders">
+        <div className="admin-orders admin-page">
         <h1>All orders</h1>
 
         <table className="order-table">

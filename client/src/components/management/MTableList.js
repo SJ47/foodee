@@ -16,7 +16,7 @@ const MTableList = ({tables}) => {
     return (
         <>
         <MNavBar/>
-        <div className="admin-tables">
+        <div className="admin-tables admin-page">
         <h1>Tables</h1>
         <ul className="component-list">
             {itemNodes}

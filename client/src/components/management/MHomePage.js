@@ -16,7 +16,7 @@ const MHomePage = ({restaurants}) => {
     return (
         <>
         <MNavBar/>
-        <div className="admin-homepage">
+        <div className="admin-homepage admin-page">
             
             <h1>fooDee for Management</h1>
             {/* {restaurantNodes} */}

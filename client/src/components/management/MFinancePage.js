@@ -13,7 +13,7 @@ const MFinancePage = ({}) => {
     return (
         <>
         <MNavBar/>
-        <div className="admin-finances">
+        <div className="admin-finances admin-page">
         <h1>Finances overview</h1>
 
         <table className="order-table">

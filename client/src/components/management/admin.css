@@ -5,28 +5,38 @@
   border: 1px solid black;
 }
 
+.admin-page {
+  height: 90vh
+}
+
 .admin-homepage > h1 {
  text-align: center;
+ margin-top: 2%;
 }
 
 .admin-menu > h1 {
  text-align: center;
+ margin-top: 2%;
 }
 
 .admin-tables > h1 {
 text-align: center;
+margin-top: 2%;
 }
 
 .admin-customers > h1 {
 text-align: center;
+margin-top: 2%;
 }
 
 .admin-orders > h1 {
 text-align: center;
+margin-top: 2%;
 }
 
 .admin-finances > h1 {
 text-align: center;
+margin-top: 2%;
 }
 
 /* .name {

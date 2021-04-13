@@ -19,7 +19,7 @@ const MCustomerList = ({customers}) => {
         <>
         <MNavBar/>
 
-        <div className="admin-customers">
+        <div className="admin-customers admin-page">
             <h1>Registered customers</h1>
             <table className="order-table">
                 <thead>
