@@ -73,6 +73,68 @@ const MFinancePage = ({}) => {
                 </tr>
             </tfoot>
         </table>
+        <table className="order-table">
+            <thead>
+                <tr>
+                    <th>COSTS</th>
+                    <th>Actual</th>
+                    <th>Budget</th>
+                    <th>Var vs Budget</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Managers Salaries</td>
+                    <td>actual money</td>
+                    <td>budget money</td>
+                    <td>var</td>
+                </tr>
+                <tr>
+                    <td>Kitchen Labour</td>
+                    <td>actual money</td>
+                    <td>budget money</td>
+                    <td>var</td>
+                </tr>
+                <tr>
+                    <td>Bar/Restaurant Labour</td>
+                    <td>actual money</td>
+                    <td>budget money</td>
+                    <td>var</td>
+                </tr>
+                <tr>
+                    <td>Food cost</td>
+                    <td>actual money</td>
+                    <td>budget money</td>
+                    <td>var</td>
+                </tr>
+                <tr>
+                    <td>Beverage cost</td>
+                    <td>actual money</td>
+                    <td>budget money</td>
+                    <td>var</td>
+                </tr>
+                <tr>
+                    <td>Repairs</td>
+                    <td>actual money</td>
+                    <td>budget money</td>
+                    <td>var</td>
+                </tr>
+                <tr>
+                    <td>Cleaning materials</td>
+                    <td>actual money</td>
+                    <td>budget money</td>
+                    <td>var</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>TOTAL</td>
+                    <td>actual money</td>
+                    <td>budget money</td>
+                    <td>var</td>
+                </tr>
+            </tfoot>
+        </table>
         </>
     )  
 }
