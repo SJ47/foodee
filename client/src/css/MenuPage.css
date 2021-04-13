@@ -1,0 +1,96 @@
+
+.menu-list-item {
+    list-style: none;
+    padding: 0em 0em 0em 0em;
+    margin: 0.6em 0.5em 0em 0.5em;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    border-bottom: solid 1px var(--line-color);
+    color: var(--primary-color);
+
+}
+
+.item-info-container {
+    display: grid;
+    place-items: top;
+    padding: 0em 0 0 2.1em;
+    z-index: 97;
+}
+
+.item-info-container > img {
+    position: relative;
+    border-radius: 5px;
+    width: 80px;
+    height: 80px;
+ 
+
+}
+
+.item-quantity {
+    display: inline-block;
+    padding: 0 1em;
+    /* font-size: 1.3em; */
+}
+
+.item-quantity-value {
+    font-weight: 400;
+    font-size: 1em;
+}
+
+
+.menu-item-attributes {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+.menu-list-item-container {
+    position: relative;
+    padding: 0 0 0 0;
+    border-top: 30px solid transparent;
+    z-index: 96;
+}
+
+h3 {
+    margin: 0.3em 0 1em 0;
+    display: inline;
+    font-size: 1rem;
+    font-weight: 300;
+
+
+}
+
+p {
+    font-size: 0.8rem;
+    font-weight: 100;
+
+}
+
+.fa {
+    color: var(--primary-color);
+    font-size: 1.5em;
+}
+
+.fa-minus-circle {
+    margin-left: 1em;
+}
+
+.item-quantity {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.food-req-icons #vegetarian {
+    color: #39b449;
+}
+
+.food-req-icons #vegan{
+    color: #166a39;
+
+}
+
+.food-req-icons #gluten-free{
+    color: #727296;  
+}

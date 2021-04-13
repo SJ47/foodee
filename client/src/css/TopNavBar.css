@@ -1,0 +1,50 @@
+.top-navbar-container-all {
+    display: flex;
+
+    justify-content: space-between;
+    background: var(--primary-color);
+
+    overflow: hidden;
+    position: sticky;
+    top: 0em;
+    z-index: 100;
+}
+
+.top-navbar-container-all > img {
+    padding-top: 20px;
+    height: 60px;  
+}
+
+
+
+#hamburger-menu-logo {
+    margin-right: 2px;
+}
+
+#fooDee-logo {
+    font-size: 1.6rem;
+    margin: 0%;
+    padding-top: 5px;
+    margin-left: 5px;
+}
+
+.admin-link {
+    color: orange;
+}
+
+.basket-item-count-top {
+    display: inline-block;
+    font-family: "Courier New", Courier, monospace;
+    text-decoration: none;
+    background: red;
+    padding: 0.5em;
+    width: 32px;
+    border-radius: 100%;
+    position: relative;
+    left: -10px;
+    bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    z-index: 100;
+}

@@ -1,0 +1,77 @@
+/* fooDee Logo In */
+
+@keyframes slideInFromLeft {
+    0% {transform: translateX(-500%);}
+    
+    70% {
+      transform: translateX(20%);
+    }
+    85% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+    
+  }
+  
+  #foo {  
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideInFromLeft;
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(500%);
+    }    
+    70% {
+        transform: translateX(-20%);
+      }
+    85% {
+        transform: translateX(10%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  #dee {  
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideInFromRight;
+  }
+
+  /* Knife In */
+
+  @keyframes SlideInFromBottomRight {
+    0% {transform: translate(250%, 250%);}
+    100% {transform: translate(0, 0);}
+  }
+  
+  #knife {  
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: SlideInFromBottomRight;
+  }
+
+    /* Fork In */
+
+    @keyframes SlideInFromBottomLeft {
+        0% {transform: translate(-250%, 250%);}
+        100% {transform: translate(0, 0);}
+      }
+      
+      #fork {  
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+        animation-delay: 0s;
+        animation-iteration-count: 1;
+        animation-name: SlideInFromBottomLeft;
+      }

@@ -1,0 +1,8 @@
+.description-food-icons-box {
+    display: flex;
+}
+
+.food-req-icons {
+    font-size: 0.8rem;
+    font-weight: bold;
+}

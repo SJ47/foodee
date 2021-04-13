@@ -1,0 +1,43 @@
+/*****************/
+/* Setup section */
+/*****************/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #143d59;
+    --secondary-color: #f4b41a;
+    --tertiary-color: antiquewhite;
+    --quadary-color: white;
+    --line-color: #d0cfd3;
+    --form-bg-color: #143d59;
+
+    --ff-primary: "font-family: " Raleway ", sans-serif;";
+
+    --box-shadow-heavy: 0 4px 8px 0 rgba(0, 0, 0, 0.9),
+        0 6px 20px 0 rgba(0, 0, 0, 0.9);
+    --box-shadow-light: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --box-shadow-left-to-right: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+
+
+body {
+    margin: 0;
+
+
+}
+
+.App {
+    font-family: var(--ff-primary);
+    background-color: var(--quadary-color);
+    color: var(--secondary-color);
+}
+
+a {
+    text-decoration: none;
+}
