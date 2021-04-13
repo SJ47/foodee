@@ -22,7 +22,7 @@ const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
     )
 
     const handleChange = function (event) {
-        let propertyName = event.target.textarea;
+        let propertyName = event.target.name;
         let copiedOrder = { ...stateOrder }
         copiedOrder[propertyName] = event.target.value;
         copiedOrder[customer] = customer;

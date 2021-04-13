@@ -14,7 +14,7 @@ const HomePage = ({ handleCategoryNavClick }) => {
                 </div>
                 <div className="homepage-button">
                     <Link to="/menu" id="menu-button" onClick={() => { handleCategoryNavClick("menu_items/category/main") }}><button type="submit">MENU</button></Link>
-                    <Link to="/about" id="about-button"><button type="submit">ABOUT</button></Link>
+                    {/* <Link to="/about" id="about-button"><button type="submit">ABOUT</button></Link> */}
                 </div>
             </div>
         </>

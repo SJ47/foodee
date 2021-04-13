@@ -5,6 +5,7 @@
     z-index: 99;
 }
 
+/* the height here adds the padding top of the hamburger icon */
 nav {
     height: 10vh;
     width: 100vw;
