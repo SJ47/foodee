@@ -26,7 +26,8 @@ const MainContainer = () => {
     const [selectedCategory, setSelectedCategory] = useState("menu_items/category/main")
     const [basket, setBasket] = useState([])
     const [basketValue, setBasketValue] = useState(0)
-    const [loggedIn, setLoggedIn] = useState(false)
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [adminLoggedIn, setAdminLoggedIn] = useState(false);
     const [restaurants, setRestaurants] = useState([]);
     const [menu, setMenu] = useState([]);
     const [tables, setTables] = useState([]);
@@ -119,6 +120,11 @@ const MainContainer = () => {
         setLoggedIn(true);
     }
 
+    const handleAmdinLoginIn = () => {
+        console.log("admin is logged in");
+        setAdminLoggedIn(true);
+    }
+
     const handleCustomerPost = function (customer) {
         const request = new Request();
         request.post("/customers", customer)
@@ -164,8 +170,6 @@ const MainContainer = () => {
                 <Route exact path="/login" render={() => {
                     return (
                         loggedIn ?
-                            // <Redirect to="/home" /> :
-                            // <LoginPage handleCustomerLogIn={handleCustomerLogIn} />
                             <Redirect to="/home" /> :
                             <LoginPage handleCustomerLogIn={handleCustomerLogIn} handleCustomerPost={handleCustomerPost} />
                     )
@@ -217,10 +221,21 @@ const MainContainer = () => {
                     )
                 }} />
 
+                <Route exact path="/management" render={() => {
+                    return (
+                        adminLoggedIn ?
+                            <Redirect to="/management/home" /> :
+                            <Redirect to="/management/login" />
+                    )
+                }} />
+
                 <Route exact path="/management/login" render={() => {
                     return (
-                        <MLoginPage
-                        />
+                        adminLoggedIn ?
+                            <Redirect to="/management/home" /> :
+                            <MLoginPage
+                                handleAdminLogIn={handleAmdinLoginIn}
+                            />
                     )
                 }} />
 

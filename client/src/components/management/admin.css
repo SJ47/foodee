@@ -36,6 +36,32 @@ li.component-item {
   color: white;
 }
 
+.Mtop-navbar-container-all {
+  /* display: flex;
+  justify-content: space-between; */
+  background: var(--primary-color);
+  border: solid blueviolet;
+
+  overflow: hidden;
+  position: sticky;
+  /* top: 0em; */
+  /* z-index: 99; */
+
+  /* padding-top: 1.5em; */
+}
+
+.Mtop-navbar-container-right .admin-link {
+  border: solid pink;
+  padding-top: 5px;
+  width: 30px;
+}
+
+.Mtop-navbar-container-left {
+  border: solid yellow;
+  /* padding-top: 5px;
+  width: 30px; */
+}
+
   /* .navLink {
     display: inline;
   } */

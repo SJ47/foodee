@@ -1,11 +1,11 @@
 import '../../css/LoginPage.css'
 import MLoginForm from './MLoginForm';
 
-const MLoginPage = ({handleCustomerLogIn, handleCustomerPost}) => {
+const MLoginPage = ({handleAdminLogIn, handleAdminPost}) => {
     
     return (
         <div className="login-page">
-            <MLoginForm handleCustomerLogIn={handleCustomerLogIn} handleCustomerPost={handleCustomerPost}/>
+            <MLoginForm handleAdminLogIn={handleAdminLogIn} handleAdminPost={handleAdminPost}/>
         </div>
     )
     

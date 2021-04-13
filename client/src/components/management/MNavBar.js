@@ -1,5 +1,5 @@
 import FooDeeLogo from '../FooDeeLogo';
-import '../../css/TopNavBar.css';
+import './admin.css';
 import { Link } from 'react-router-dom';
 
 const TopNavBar = () => {

@@ -3,7 +3,7 @@ import '../../css/LoginPage.css';
 import {Link} from 'react-router-dom';
 
 
-const MLoginForm = ({handleCustomerLogIn, handleCustomerPost}) => {
+const MLoginForm = ({handleAdminLogIn, handleAdminPost}) => {
     
     const [stateAdmin, setStateAdmin] = useState(
         {
@@ -29,7 +29,7 @@ const MLoginForm = ({handleCustomerLogIn, handleCustomerPost}) => {
         event.preventDefault();
         // handlePost(stateAdmin);
         // handleCustomerPost(stateCustomer); 
-        // handleCustomerLogIn();
+        handleAdminLogIn();
 
     }
 
@@ -38,7 +38,8 @@ const MLoginForm = ({handleCustomerLogIn, handleCustomerPost}) => {
             <form className="login-form" onSubmit={handleSubmit}>
                 <input type="text" placeholder="Username" name="username" onChange={handleChange} value={stateAdmin.username} />
                 <input type="password" placeholder="password" name="password" onChange={handleChange} value={stateAdmin.password} />
-                <button type="submit"><Link to="/management/home">Log in</Link></button>
+                {/* <button type="submit"><Link to="/management/home">Log in</Link></button> */}
+                <button type="submit">Log in</button>
             </form>
         </>
     )
