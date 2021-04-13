@@ -437,7 +437,7 @@ public class DataLoader implements ApplicationRunner {
                 true, true, false, "330ml", 0);
         menuItemRepository.save(menuItem43);
 
-        MenuItem menuItem44 = new MenuItem(restaurant, soft_drink, "Iced Coffee", "A favuorite hot drink transformed into a icy surprise. Try it with whipped cream on top.", 2.5,  "https://images.unsplash." +
+        MenuItem menuItem44 = new MenuItem(restaurant, soft_drink, "Iced coffee", "A favuorite hot drink transformed into a icy surprise. Try it with whipped cream on top.", 2.5,  "https://images.unsplash." +
                 "com/photo-1542674817-7c03d278561a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fGljZWQlMjBjb2ZmZWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", false,
                 true, true, false, "400ml", 0);
         menuItemRepository.save(menuItem44);
