@@ -453,7 +453,7 @@ public class DataLoader implements ApplicationRunner {
                 false, true, true, true, "pint", 4);
         menuItemRepository.save(menuItem37);
 
-        MenuItem menuItem38 = new MenuItem(restaurant, hard_drink, "House red", "A special wine chosen by the chef", 3.5, "https://freestocks.org/fs/wp-content/uploads/2019/03/" +
+        MenuItem menuItem38 = new MenuItem(restaurant, hard_drink, "House red", "A special wine chosen by the chef. From the top wine yards in the world. Our chef knows best.", 3.5, "https://freestocks.org/fs/wp-content/uploads/2019/03/" +
                 "glass_of_red_wine.jpg",
                 false, true, true, true, "pint", 6);
         menuItemRepository.save(menuItem38);
