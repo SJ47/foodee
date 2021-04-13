@@ -1,6 +1,7 @@
 import React from 'react'
 import "../css/HamburgerMenu.css"
 import FooDeeLogo from './FooDeeLogo'
+import BasketLogo from './BasketLogo';
 
 
 const HamburgerMenu = () => {
@@ -24,7 +25,6 @@ const HamburgerMenu = () => {
             <nav>
                 <div>
             <FooDeeLogo></FooDeeLogo>
-
             </div>
 
             
