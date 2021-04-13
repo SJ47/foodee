@@ -25,6 +25,10 @@ td {
     width: 95%;
 }
 
+.order-table-front-end > tr > td {
+    text-align: left;
+}
+
 .payment-form {
     text-align: center;
     margin: 1em;
