@@ -177,7 +177,7 @@ const MainContainer = () => {
                 }} />
                 <Route exact path="/home" render={() => {
                     return (
-                        <HomePage handleCategoryNavClick={handleCategoryNavClick} />
+                        <HomePage handleCategoryNavClick={handleCategoryNavClick} handleCustomerLogIn={handleCustomerLogIn} />
                     )
                 }} />
                 <Route exact path="/menu" render={() => {
