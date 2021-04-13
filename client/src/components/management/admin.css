@@ -14,6 +14,15 @@
  margin-top: 2%;
 }
 
+.admin-homepage {
+  text-align: center;
+}
+
+.admin-homepage > img {
+  margin-top: 10vh;
+  width: 50vw;
+}
+
 .admin-menu > h1 {
  text-align: center;
  margin-top: 2%;
@@ -85,7 +94,11 @@ li.component-item {
 
 .Mtop-navbar-container-right {
   /* border: solid orange; */
-  margin-top: 1%;
+  margin-top: 2%;
+}
+
+.admin-link {
+  text-decoration: none;
 }
 
 /* .Mtop-navbar-container-right .admin-link {

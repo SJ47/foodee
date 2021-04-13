@@ -1,5 +1,6 @@
 import '../../css/homePage.css';
 import MNavBar from './MNavBar';
+import BlueLogo from "../../media/fooDeeLogoBlueTransparent.png"
 // import { Link } from 'react-router-dom';
 
 const MHomePage = ({restaurants}) => {
@@ -18,7 +19,8 @@ const MHomePage = ({restaurants}) => {
         <MNavBar/>
         <div className="admin-homepage admin-page">
             
-            <h1>fooDee for Management</h1>
+            <h1>Management</h1>
+            <img src={BlueLogo} alt="logo" ></img>
             {/* {restaurantNodes} */}
 
         </div>
