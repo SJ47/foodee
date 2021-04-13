@@ -4,6 +4,7 @@
     align-items: center;
     background: var(--primary-color);
     height: 10vh;
+    overflow: visible;
     padding-top: 1em;
     position: sticky;
     bottom: 0em;

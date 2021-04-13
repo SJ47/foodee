@@ -1,6 +1,5 @@
 #home-page-container {
 background-color: var(--primary-color);
-z-index: -1;
 }
 
 .homepage-intro-text{
@@ -14,7 +13,6 @@ z-index: -1;
     font-size: 3em;
     text-align: center;
     border-bottom: var(--secondary-color) solid 1px;
-    /* border-top: var(--secondary-color) solid 1px; */
     padding: 0em 0em 0.5em 0em;
 }
 
@@ -27,13 +25,11 @@ z-index: -1;
 
 .homepage-button {
     display: flex;
+    /* position: fixed; */
     justify-content: space-evenly;
-    z-index: 95;
-    
 }
 
 button {
-        /* position: fixed; */
         background-color: var(--secondary-color);
         color: var(--primary-color);
         border: var(--primary-color) solid 2px;
@@ -42,5 +38,8 @@ button {
         width: 40vw;
         margin-top: 1.5em;
         font-size: 1.5em;
-        z-index: 95;
+}
+
+#about-button, #menu-button {
+    z-index: 95;
 }
