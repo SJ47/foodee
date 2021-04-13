@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router';
+import HamburgerMenu from '../components/HamburgerMenu.js';
 import Request from '../helpers/request.js';
 import HomePage from '../components/HomePage';
 import LoginPage from '../components/LoginPage';
@@ -7,7 +8,6 @@ import MenuPage from '../components/MenuPage';
 import OrderPage from '../components/OrderPage';
 import AboutPage from '../components/AboutPage';
 import PaymentForm from '../components/PaymentForm';
-import HamburgerMenu from '../components/HamburgerMenu.js';
 import ThankYouPage from '../components/ThankYouPage'
 
 // Management
