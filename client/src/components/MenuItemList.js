@@ -22,11 +22,11 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
 
                 <div className="description-food-icons-box">
                     <p>{item.description}&nbsp;</p>
-                    <p className="food-req-icons">
+                    <span className="food-req-icons">
                         <div id="vegan">{item.vegan ? "VE" : null}{' '}</div>
                         <div id="vegetarian">{item.vegetarian ? "VG" : null}{' '}</div>
                         <div id="gluten-free">{item.glutenFree ? "GF" : null}</div>
-                    </p>
+                    </span>
                 </div>
 
                 <div className="menu-item-attributes">

@@ -45,7 +45,6 @@ const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
                     <button className="order-btn" type="submit">SUBMIT</button>
                 </Link>
             </form>
-
         </div>
     )
 }
