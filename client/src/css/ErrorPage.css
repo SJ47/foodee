@@ -1,4 +1,16 @@
 .error-page {
     background-color: var(--primary-color);
-            
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     }
+
+.error-headline {
+    margin-top: 30px;
+    font-weight: 200;
+}
+
+.alan-image {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}

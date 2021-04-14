@@ -2,7 +2,7 @@
 import AboutMap from './AboutMap';
 import TopNavBar from '../components/TopNavBar';
 import '../css/AboutPage.css';
-import Image1 from "../images/Image1.png";
+import brothers from "../media/brothers.png";
 
 
 const AboutPage = ({restaurants}) => {
@@ -22,7 +22,7 @@ const AboutPage = ({restaurants}) => {
              {/* <span></span>
              <div className="wrapper"></div> */}
           
-            <img className="brothers-image"src={Image1} alt="two brothers having some wine"/>
+            <img className="brothers-image"src={brothers} alt="two brothers having some wine"/>
 
             <p> In 1882 two brothers were playing the popular French game 
                 called Boules when one of their balls made a dent in the wall of 
