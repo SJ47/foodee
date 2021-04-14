@@ -96,7 +96,8 @@ public class DataLoader implements ApplicationRunner {
 
         // Setup menu items
         // KIDS //
-        MenuItem menuItem1 = new MenuItem(restaurant, child_meal, "Cheese Sticks", "Old favourites made with love",
+        MenuItem menuItem1 = new MenuItem(restaurant, child_meal, "Cheese sticks", "Old favourites made with love. Only the finest Scottish cheese used with delicious farm " +
+                "baked bread breadcrumbs.",
                 5.00, "https://images.unsplash.com/photo-1593895647433-5a608a3bd379?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8Y2hlZXNlJTIwc3RpY2tzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
                 false, true, false, false, "100g",
                 0.0);
@@ -105,7 +106,7 @@ public class DataLoader implements ApplicationRunner {
         menuItem1.addAllergen(Allergen.PEANUTS);
         menuItemRepository.save(menuItem1);
 
-        MenuItem menuItem2 = new MenuItem(restaurant, child_meal, "Macaroni and Cheese", "Cheesy Deliciousness", 6.0,
+        MenuItem menuItem2 = new MenuItem(restaurant, child_meal, "Macaroni and cheese", "Cheesy Deliciousness. Who doesn't love a good old fashion mac and cheese?", 6.0,
                 "https://images.unsplash.com/photo-1543339531-242d0bc29010?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
                 false,true, false, false, "200g", 0.0);
 
@@ -124,7 +125,7 @@ public class DataLoader implements ApplicationRunner {
         menuItem3.addAllergen(Allergen.MILK);
         menuItemRepository.save(menuItem3);
 
-        MenuItem menuItem18 = new MenuItem(restaurant, child_meal, "Fish Fingers", "Specially made with fish caught off Scotland's coast " +
+        MenuItem menuItem18 = new MenuItem(restaurant, child_meal, "Fish fingers", "Specially made with fish caught off Scotland's coast " +
                 "and mushy peas", 6.20, "https://movingmountainsfoods.com/wp-content/uploads/2020/12/Fish-FInger-banner-image.jpg",
                 false, false, false, false, "250g", 0.0);
 
@@ -133,7 +134,7 @@ public class DataLoader implements ApplicationRunner {
         menuItem18.addAllergen(Allergen.FISH);
         menuItemRepository.save(menuItem18);
 
-        MenuItem menuItem19 = new MenuItem(restaurant, child_meal, "Chicken Nuggets", "So, so tasty ", 5.50, "https://www.aheadofthyme.com/wp-content/uploads/2020/06/easy-" +
+        MenuItem menuItem19 = new MenuItem(restaurant, child_meal, "Chicken nuggets", "So, so tasty ", 5.50, "https://www.aheadofthyme.com/wp-content/uploads/2020/06/easy-" +
                 "homemade-chicken-nuggets-8.jpg",
                 false, false, false, false, "300g", 0.0);
 
@@ -168,14 +169,16 @@ public class DataLoader implements ApplicationRunner {
         menuItemRepository.save(menuItem5);
 
 
-        MenuItem menuItem21 = new MenuItem(restaurant, side, "Chorizo and sweet potato salad", "Packed with goodness. It's a meal in itself", 7.50, "https://img.delicious.com.au/g6CEWI5G/w759-h506-cfill/del/2016/01/chorizo-and-sweet-potato-salad-26203-2.jpg", false, true, false, false, "150g", 0.0);
+        MenuItem menuItem21 = new MenuItem(restaurant, side, "Chorizo and sweet potato salad", "Packed with goodness. It's a meal in itself", 7.50, "https://img.delicious.com.au/g6CEWI5G/w759-h506-" +
+                "cfill/del/2016/01/chorizo-and-sweet-potato-salad-26203-2.jpg", false, true, false, false, "150g", 0.0);
 
         menuItem21.addAllergen(Allergen.MILK);
         menuItem21.addAllergen(Allergen.MUSTARD);
         menuItem21.addAllergen(Allergen.GLUTEN);
         menuItemRepository.save(menuItem21);
 
-        MenuItem menuItem22 = new MenuItem(restaurant, side, "fried mushrooms", "An old favourite", 4.50, "https://www.errenskitchen.com/wp-content/uploads/2016/01/" +
+        MenuItem menuItem22 = new MenuItem(restaurant, side, "fried mushrooms", "An old favourite made with mushrooms imported from Denmark. Hand selected for their " +
+                "unique Danish mushroom flavour", 4.50, "https://www.errenskitchen.com/wp-content/uploads/2016/01/" +
                 "garlic-breaded-mushrooms-feature.jpg", false, true, false, false, "150g", 0.0);
 
         menuItem22.addAllergen(Allergen.MILK);
@@ -194,7 +197,7 @@ public class DataLoader implements ApplicationRunner {
 
 
         // SNACKS //
-        MenuItem menuItem6 = new MenuItem(restaurant, snack, "Haggis Pakora", "Delicious fusion dish that combines a " +
+        MenuItem menuItem6 = new MenuItem(restaurant, snack, "Haggis pakora", "Delicious fusion dish that combines a " +
                 "taste of Scotland with an Indian flare", 5.0, "https://images.unsplash" +
                 ".com/photo-1597559824960-df4d323435b9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1" +
                 ".2.1&auto=format&fit=crop&w=634&q=80", false, false, false, false, "200g", 0.0);
@@ -226,7 +229,7 @@ public class DataLoader implements ApplicationRunner {
         menuItem8.addAllergen(Allergen.FISH);
         menuItemRepository.save(menuItem8);
 
-        MenuItem menuItem24 = new MenuItem(restaurant, snack, "Scotch eggs", "Old pubs faves", 5.0, "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/" +
+        MenuItem menuItem24 = new MenuItem(restaurant, snack, "Scotch eggs", "Old pubs faves. Eggs selected from the the finest Scottish hens", 5.0, "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/" +
                 "scotcheggs_85851_16x9.jpg", false, true, false, false, "200g", 0.0);
 
         menuItem24.addAllergen(Allergen.EGGS);
@@ -244,7 +247,7 @@ public class DataLoader implements ApplicationRunner {
         menuItem25.addAllergen(Allergen.SESAME);
         menuItemRepository.save(menuItem25);
 
-        MenuItem menuItem26 = new MenuItem(restaurant, snack, "Maple-Glazed Nuts & Bacon", "Chopped pieces of bacon and pure maple syrup are combined with peanuts in this perfectly sweet and salty snack.", 6.0,
+        MenuItem menuItem26 = new MenuItem(restaurant, snack, "Maple-glazed nuts & bacon", "Chopped pieces of bacon and pure maple syrup are combined with peanuts in this perfectly sweet and salty snack.", 6.0,
                 "https://paleogrubs.com/wp-content/uploads/2020/05/roasted-nuts-6.jpg", true, false, false, false, "200g", 0.0);
 
 
@@ -256,7 +259,7 @@ public class DataLoader implements ApplicationRunner {
 
 
         // MAINS //
-        MenuItem menuItem9 = new MenuItem(restaurant, main, "Prawn Curry", "Delicious prawn curry, chef’s special " +
+        MenuItem menuItem9 = new MenuItem(restaurant, main, "Prawn curry", "Delicious prawn curry, chef’s special " +
                 "recipe", 10.00, "https://images.unsplash.com/photo-1559847844-5315695dadae?ixid" +
                 "=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1340&q=80",
                 true, false, false, false, "750g", 0.0);
@@ -274,7 +277,7 @@ public class DataLoader implements ApplicationRunner {
         menuItem10.addAllergen(Allergen.MILK);
         menuItemRepository.save(menuItem10);
 
-        MenuItem menuItem11 = new MenuItem(restaurant, main, "Bean Burger", "Delicious vegan bean burger made with " +
+        MenuItem menuItem11 = new MenuItem(restaurant, main, "Bean burger", "Delicious vegan bean burger made with " +
                 "love", 8.0, "https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?ixid" +
                 "=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
                 false, true, true, false, "4oz", 0.0);
@@ -315,7 +318,8 @@ public class DataLoader implements ApplicationRunner {
 
         // DESSERTS //
         MenuItem menuItem12 = new MenuItem(restaurant, dessert, "Cheesecake", "This cheesecake will send you to " +
-                "heaven", 6.0, "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixid" +
+                "heaven. Made with pure Scottish cream and cream cheese and a drizzle of lemon with berries on top.", 6.0, "https://" +
+                "images.unsplash.com/photo-1565958011703-44f9829ba187?ixid" +
                 "=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80",
                 false, true, false, false, "200g", 0);
 
@@ -323,7 +327,7 @@ public class DataLoader implements ApplicationRunner {
         menuItem12.addAllergen(Allergen.MILK);
         menuItemRepository.save(menuItem12);
 
-        MenuItem menuItem13 = new MenuItem(restaurant, dessert, "Cheese Platter", "The best cheeses from the region " +
+        MenuItem menuItem13 = new MenuItem(restaurant, dessert, "Cheese platter", "The best cheeses from the region " +
                 "handpicked by the chef", 15.0, "https://images.unsplash.com/photo-1561668048-fe9c092832e0?ixlib=rb-1.2.1&ixid=" +
                 "MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80Z",
                 false, true, false, false, "500g", 0);
@@ -333,7 +337,7 @@ public class DataLoader implements ApplicationRunner {
         menuItem13.addAllergen(Allergen.NUTS);
         menuItemRepository.save(menuItem13);
 
-        MenuItem menuItem14 = new MenuItem(restaurant, dessert, "Vegan Cupcakes", "Vegan chocolate peanut butter " +
+        MenuItem menuItem14 = new MenuItem(restaurant, dessert, "Vegan cupcakes", "Vegan chocolate peanut butter " +
                 "cakes", 13, "https://images.unsplash.com/photo-1537622289779-495ce4d68f54?ixid" +
                 "=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
                 true, true, true, false, "3", 0);
@@ -342,7 +346,8 @@ public class DataLoader implements ApplicationRunner {
         menuItem14.addAllergen(Allergen.SOYA);
         menuItemRepository.save(menuItem14);
 
-        MenuItem menuItem30 = new MenuItem(restaurant, dessert, "Glazed donuts", "Don't knock 'em till you try them", 6.0, "https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1" +
+        MenuItem menuItem30 = new MenuItem(restaurant, dessert, "Glazed donuts", "Don't knock 'em till you try them. These deep fried delights will have you " +
+                "begging for more.", 6.0, "https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1" +
                 ".2.1&auto=format&fit=crop&w=934&q=80",
                 false, true, false, false, "150g", 0);
 
@@ -360,7 +365,7 @@ public class DataLoader implements ApplicationRunner {
         menuItem31.addAllergen(Allergen.NUTS);
         menuItemRepository.save(menuItem31);
 
-        MenuItem menuItem32 = new MenuItem(restaurant, dessert, "Rum Baba", "Classic Rum Baba made with Scottish rum", 7.0,
+        MenuItem menuItem32 = new MenuItem(restaurant, dessert, "Rum baba", "Classic Rum Baba made with Scottish rum", 7.0,
                 "https://unsplash.com/photos/zECxA3ZL9eM",
                 false, true, false, true, "150g", 1);
 
@@ -371,21 +376,21 @@ public class DataLoader implements ApplicationRunner {
 
 
         // DRINKS
-        MenuItem menuItem15 = new MenuItem(restaurant, hot_drink, "Espresso", "As dark as your heart", 1.20, "https" +
+        MenuItem menuItem15 = new MenuItem(restaurant, hot_drink, "Espresso", "As dark as your heart. This wake-me-up is a perfect shot of caffeine to get you going.", 1.20, "https" +
                 "://i2" +
                 "-prod.mirror.co.uk/incoming/article17203196" +
                 ".ece/ALTERNATES/s1200c/3_Tiny-glass-cup-of-espresso-coffee.jpg", true, true, true, false, "small", 0);
         menuItemRepository.save(menuItem15);
 
-        MenuItem menuItem33 = new MenuItem(restaurant, hot_drink, "Cappucino", "Also called breakfast in Italy", 1.50, "https://static01." +
+        MenuItem menuItem33 = new MenuItem(restaurant, hot_drink, "Cappucino", "Also called breakfast in Italy. Try our creamy cappucinos with chocolate sprinkles made with organic coffee.", 1.50, "https://static01." +
                 "nyt.com/images/2015/10/02/fashion/02CAPP3SUB/02CAPP3SUB-superJumbo.jpg", true, true, true, false, "medium", 0);
         menuItemRepository.save(menuItem33);
 
-        MenuItem menuItem34 = new MenuItem(restaurant, hot_drink, "Tea", "Just a gold old pot of tea", 1.50, "https://www.imore.com/sites/imore.com/files/styles/large/" +
+        MenuItem menuItem34 = new MenuItem(restaurant, hot_drink, "Tea", "A pot of soothing tea. We usually serve Ceylon tea, but every now and then a bag of Earl Grey slips in", 1.50, "https://www.imore.com/sites/imore.com/files/styles/large/" +
                 "public/field/image/2020/07/tea-pot-milada-vigerova-unsplash-hero.jpg", true, true, true, false, "medium", 0);
         menuItemRepository.save(menuItem34);
 
-        MenuItem menuItem39 = new MenuItem(restaurant, hot_drink, "Hot chocolate", "Made with belgian chocolate", 1.20, "https://images.unsplash.com/" +
+        MenuItem menuItem39 = new MenuItem(restaurant, hot_drink, "Hot chocolate", "Made with belgian chocolate and fresh Scottish milk and cream. Melt in your mouth", 1.20, "https://images.unsplash.com/" +
                 "photo-1546334169-864ef455d3f8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG90JTIwY2hvY29sYXRlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
                 true, true, true, false, "small", 0);
         menuItemRepository.save(menuItem39);
@@ -395,65 +400,65 @@ public class DataLoader implements ApplicationRunner {
                 true, true, true, false, "small", 0);
         menuItemRepository.save(menuItem40);
 
-        MenuItem menuItem41 = new MenuItem(restaurant, hot_drink, "Café latte", "Milky coffee", 1.20, "https://images.unsplash.com" +
+        MenuItem menuItem41 = new MenuItem(restaurant, hot_drink, "Café latte", "A french way of saying coffee with milk. We add a lot of frothy full cream milk - enjoy.", 1.20, "https://images.unsplash.com" +
                 "/photo-1528830639624-fc16697bb8e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
                 true, true, true, false, "small", 0);
         menuItemRepository.save(menuItem41);
 
 
-        MenuItem menuItem16 = new MenuItem(restaurant, soft_drink, "Coke", "Just a can of coke", 1.5,  "https" +
+        MenuItem menuItem16 = new MenuItem(restaurant, soft_drink, "Coke", "Just a can of coke to some, to others this is a drink made in heaven", 1.5,  "https" +
                 "://delivery.pret.co.uk/dw/image/v2/ABBI_PRD/on/demandware" +
                 ".static/-/Sites-pret-uk-master-catalog/default/dw97ca232d/products/Coke.jpg?sw=584&sh=584", false,
                 true, true, false, "330ml", 0);
         menuItemRepository.save(menuItem16);
 
-        MenuItem menuItem35 = new MenuItem(restaurant, soft_drink, "Lemonade", "Homemade lemonade", 1.5,
+        MenuItem menuItem35 = new MenuItem(restaurant, soft_drink, "Lemonade", "Homemade lemonade. Our chef picked up this recipe while travelling around the coast of Italy. Thirst quenching brilliance.", 1.5,
                 "https://images.unsplash.com/photo-1606943932434-2f21e1c54ef2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGVtb25hZGV8ZW5" +
                         "8MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", false,
                 true, true, false, "500ml", 0);
         menuItemRepository.save(menuItem35);
 
-        MenuItem menuItem36 = new MenuItem(restaurant, soft_drink, "`Pink lemonade", "Grapefruit infused lemonade, simply delcious", 1.5,
+        MenuItem menuItem36 = new MenuItem(restaurant, soft_drink, "`Pink lemonade", "Grapefruit infused lemonade, simply delicious", 1.5,
                 "https://images.unsplash.com" +
                         "/photo-1601912343940-b110df3f303d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fG9yYW5nZSUyMHNvZGF8ZW58MHx8MHx8&ixlib=rb-1" +
                         ".2.1&auto=format&fit=crop&w=800&q=60", false,
                 true, true, false, "330ml", 0);
         menuItemRepository.save(menuItem36);
 
-        MenuItem menuItem42 = new MenuItem(restaurant, soft_drink, "Jarritos", "Jarritos Pineapple soda", 2.5,  "https://images." +
+        MenuItem menuItem42 = new MenuItem(restaurant, soft_drink, "Jarritos", "Jarritos is a Mexican thirst buster. Try this pineapple soda. Tropical paradise in a glass.", 2.5,  "https://images." +
                 "unsplash.com/photo-1613509891877-d0b5adcde63b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fG9yYW5nZSUyMHNvZGF8ZW58MHx8MHx8&ixlib=rb-1.2." +
                 "1&auto=format&fit=crop&w=800&q=60", false,
                 true, true, false, "370ml", 0);
         menuItemRepository.save(menuItem42);
 
-        MenuItem menuItem43 = new MenuItem(restaurant, soft_drink, "Pepsi", "Why not have a Pepsi?", 1.5,  "https:" +
+        MenuItem menuItem43 = new MenuItem(restaurant, soft_drink, "Pepsi", "Why not have a Pepsi? It is a drink unlike any other. The sugar content is low on this one.", 1.5,  "https:" +
                 "//images.unsplash.com/photo-1571114865995-9545aedcd241?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njd8fHNvZGF8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=" +
                 "format&fit=crop&w=800&q=60", false,
                 true, true, false, "330ml", 0);
         menuItemRepository.save(menuItem43);
 
-        MenuItem menuItem44 = new MenuItem(restaurant, soft_drink, "Iced Coffee", "Why not have a Pepsi?", 2.5,  "https://images.unsplash." +
+        MenuItem menuItem44 = new MenuItem(restaurant, soft_drink, "Iced coffee", "A favuorite hot drink transformed into a icy surprise. Try it with whipped cream on top.", 2.5,  "https://images.unsplash." +
                 "com/photo-1542674817-7c03d278561a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fGljZWQlMjBjb2ZmZWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", false,
                 true, true, false, "400ml", 0);
         menuItemRepository.save(menuItem44);
 
 
-        MenuItem menuItem17 = new MenuItem(restaurant, hard_drink, "Tennent's Lager", "Yellow garbage juice", 3.5, "https://images.unsplash.com/photo-1579106391617-bf9edae36907?ixid=" +
+        MenuItem menuItem17 = new MenuItem(restaurant, hard_drink, "Tennent's lager", "Yellow garbage juice some may call it, for others this is lager made for the gods.", 3.5, "https://images.unsplash.com/photo-1579106391617-bf9edae36907?ixid=" +
                 "MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z2xhc3MlMjBvZiUyMGJlZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
                 false, true, true, true, "pint", 4);
         menuItemRepository.save(menuItem17);
 
-        MenuItem menuItem37 = new MenuItem(restaurant, hard_drink, "BrewDog Ale", "Vermont Vacation special lager", 3.5, "https://images.unsplash.com/photo-1579106391617" +
+        MenuItem menuItem37 = new MenuItem(restaurant, hard_drink, "BrewDog ale", "Scotland's own brewery brings you this delicious craft ale. Go on, give it a try.", 3.5, "https://images.unsplash.com/photo-1579106391617" +
                 "-bf9edae36907?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z2xhc3MlMjBvZiUyMGJlZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
                 false, true, true, true, "pint", 4);
         menuItemRepository.save(menuItem37);
 
-        MenuItem menuItem38 = new MenuItem(restaurant, hard_drink, "House Red", "A special wine chosen by the chef", 3.5, "https://freestocks.org/fs/wp-content/uploads/2019/03/" +
+        MenuItem menuItem38 = new MenuItem(restaurant, hard_drink, "House red", "A special wine chosen by the chef. From the top wine yards in the world. Our chef knows best.", 3.5, "https://freestocks.org/fs/wp-content/uploads/2019/03/" +
                 "glass_of_red_wine.jpg",
                 false, true, true, true, "pint", 6);
         menuItemRepository.save(menuItem38);
 
-        MenuItem menuItem45 = new MenuItem(restaurant, hard_drink, "House White", "A special white wine chosen by the chef", 3.5, "https://images.unsplash.com/" +
+        MenuItem menuItem45 = new MenuItem(restaurant, hard_drink, "House white", "A special white wine chosen by the chef", 3.5, "https://images.unsplash.com/" +
                 "photo-1601924376620-fac275e571b3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2hpdGUlMjB3aW5lfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
                 false, true, true, true, "pint", 6);
         menuItemRepository.save(menuItem45);

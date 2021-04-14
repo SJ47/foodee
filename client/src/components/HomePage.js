@@ -2,7 +2,11 @@ import TopNavBar from '../components/TopNavBar';
 import '../css/homePage.css';
 import { Link } from 'react-router-dom';
 
-const HomePage = ({ handleCategoryNavClick }) => {
+const HomePage = ({ handleCategoryNavClick, handleCustomerLogIn }) => {
+
+    // Ensure customer is logged in as they are in the app now
+    handleCustomerLogIn();
+
     return (
         <>
             <div id="home-page-container">
