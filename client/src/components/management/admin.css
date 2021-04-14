@@ -55,6 +55,11 @@ margin-top: 2%;
   /* justify-content: center; */
 }
 
+#add-item-title {
+  padding: 5%;
+
+}
+
 .add-new-item-form {
   max-width: 95vw;
   overflow: scroll;

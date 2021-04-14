@@ -75,7 +75,10 @@ if (!restaurants.length === 0){
     return <p>Loading...</p>
     }
   return(
+    <>
+   
     <div className="menu-form-container">
+    <h1 id="add-item-title">Add an Item</h1>
        <form className="add-new-item-form" onSubmit={handleSubmit}>
        <select name="restaurant" onChange={handleRestaurant} defaultValue="select-restaurant">
        <option disabled value='select-restaurant'>Select a restaurant</option>
@@ -102,6 +105,7 @@ if (!restaurants.length === 0){
        <Link to="/management/menu"><button type="submit">Save</button></Link>
        </form>
     </div>
+    </>
   )
 }
 
