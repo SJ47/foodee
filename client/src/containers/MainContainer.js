@@ -15,6 +15,7 @@ import '../components/management/admin.css'
 import MHomePage from '../components/management/MHomePage';
 import MLoginPage from '../components/management/MLoginPage';
 import MMenu from '../components/management/MMenu';
+import MMenuForm from '../components/management/MMenuForm';
 import MTableList from '../components/management/MTableList';
 import MCustomerList from '../components/management/MCustomerList';
 import MOrderList from '../components/management/MOrderList';
@@ -252,6 +253,16 @@ const MainContainer = () => {
                     return (
                         <MMenu
                             menu={menu}
+                            restaurants={restaurants} 
+                        />
+                    )
+                }} />
+
+                <Route exact path="/management/menu/new" render={() => {
+                    return (
+                        <MMenuForm
+                            menu={menu}
+                            restaurants={restaurants} 
                         />
                     )
                 }} />
