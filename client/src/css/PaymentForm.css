@@ -54,11 +54,11 @@ td {
     background-color: var(--secondary-color);
     border: 0;
     color: var(--primary-color);
-    font-weight: bold;
+    font-weight: 200;
     cursor: pointer;
     margin: auto;
-    margin-bottom: 1em;
-    margin-top: 0.5em;
+    margin-bottom: 3em;
+    margin-top: 2em;
     width: fit-content;
 }
 
