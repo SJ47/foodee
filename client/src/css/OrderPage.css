@@ -1,9 +1,20 @@
 .order-page {
-    /* border: solid red; */
     min-height: 100vh;
     padding-top: 20vh;
     background: var(--primary-color);
     text-align: center;
     font-size: larger;
     color: var(--secondary-color);
+}
+
+.order-page h2 {
+    font-weight: 100;
+    margin-bottom: 60px;
+}
+
+.order-page button {
+    margin-top: 150px;
+    width: 50vw;
+    font-size: 1.5em;
+    font-weight: 100;
 }

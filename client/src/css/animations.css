@@ -75,3 +75,19 @@
         animation-iteration-count: 1;
         animation-name: SlideInFromBottomLeft;
       }
+
+/* Washing Machine */
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+#washing-machine {
+  animation: rotation 8s infinite linear;
+}

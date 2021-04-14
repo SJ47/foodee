@@ -1,6 +1,7 @@
 .thank-you-page {
+    display: flex;
+    flex-direction: column;
     background: var(--primary-color);
-    /* border: solid yellow; */
     text-align: center;
     margin-top: 5%;
 }
@@ -10,7 +11,7 @@
     height: 20vh; 
     padding: 1%; 
     font-size: 1em;
-    /* border-radius: 2%; */
+
 }
 
 /* .order-btn {
@@ -28,6 +29,10 @@
     background-color: var(--secondary-color);
     border: 0;
     color: var(--primary-color);
-    /* font-weight: bold; */
     cursor: pointer;
+}
+
+#washing-machine {
+    margin-top: 5vh;
+    height: 300px;
 }

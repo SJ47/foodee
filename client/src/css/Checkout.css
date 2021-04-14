@@ -54,7 +54,8 @@
 #checkout-button {
     width: 50vw;
     margin: 0;
-    font-weight: 200;
+    font-size: 1.5em;
+    font-weight: 100;
 }
 
 #button-basket {
