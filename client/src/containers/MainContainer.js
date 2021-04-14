@@ -20,6 +20,7 @@ import MCustomerList from '../components/management/MCustomerList';
 import MOrderList from '../components/management/MOrderList';
 import MFinancePage from '../components/management/MFinancePage';
 import TopNavBar from '../components/TopNavBar.js';
+import ErrorPage from '../components/ErrorPage.js';
 
 const MainContainer = () => {
 
@@ -300,6 +301,8 @@ const MainContainer = () => {
                         <ThankYouPage />
                     )
                 }} />
+
+                <Route component={ErrorPage} />
             </Switch>
         </>
     )
