@@ -1,6 +1,37 @@
 .about-page {
 background-color: var(--primary-color);
-        
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+.about-headline {
+  font-weight: 100;
+  font-size: 3em;
+  text-align: center;
+  border-bottom: var(--secondary-color) solid 1px;
+  width: 90vw;
+  padding: 0em 0em 0.5em 0em;
+
+}
+
+.about-page h2 {
+  font-weight: 100;
+  font-size: 1.6em;
+  text-align: center;
+  /* border-top: var(--secondary-color) solid 1px; */
+  padding: 1em 0em 0.5em 0em;
+  
+}
+
+.about-page h4 {
+  font-weight: 100;
+  font-size: 1.6em;
+  text-align: center;
+  /* border-bottom: var(--secondary-color) solid 1px; */
+  padding: 1em 0em 1em 0em;
+
 }
 
 .map-container {
@@ -10,30 +41,46 @@ background-color: var(--primary-color);
 
 .leaflet-container {
     /* border: solid red; */
-    width: 70vw;
-    height: 70vh;
-    margin: auto;
+    width: 80vw;
+    height: 30vh;
+    margin-bottom: 40px;
+    /* margin: auto; */
   }
 
-  .wrapper {
+  /* .wrapper {
     column-count: 2;
     column-gap: 50px;
     padding: 50px;
-  }
-  
-  /* p {
-    line-height: 1.4; 
-    font-family: Helvetica;
-    text-align: justify;
-    margin: -5;
-    font-size: 10px;
   } */
   
+  .about-page p {
+    text-align: justify;
+    font-size: 1em;
+    line-height: 2em;
+    margin: 7px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px var(--secondary-color);
+  }
+
+
   .brothers-image {
-    float: left;
-    width: 80px;
-    shape-margin:20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 300px;
+  
+  }
+
+  #address-popup {
+    font-size: 1.2em;
+    font-weight: 100;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+  
+  }
+
+  .leaflet-popup-content-wrapper {
+    background-color: var(--primary-color)
+
   }
   
