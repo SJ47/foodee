@@ -24,7 +24,7 @@ import java.util.Map;
 //
 
 @Repository
-public interface PaymentRepository_old extends JpaRepository<Payment, Long> {
+public interface PaymentRepository extends JpaRepository<Payment, Long> {
 
     default void processStripePayment(Payment payment){
         System.out.println("Processing stripe payment...");
