@@ -55,7 +55,7 @@ const PaymentForm = ({ basket, basketValue }) => {
     let orderTotal = 0;
     const orderList = basket.map((item, index) => {
         orderTotal = orderTotal + (item.price * item.quantity)
-        return <tr key={index}><td> {item.name}</td> <td>£{item.price}</td> <td>{item.quantity}</td></tr>
+        return <tr key={index}><td> {item.name}</td> <td>£{item.price.toFixed(2)}</td> <td>{item.quantity}</td></tr>
     })
 
     // if (basket.length > 0) {
@@ -78,7 +78,7 @@ const PaymentForm = ({ basket, basketValue }) => {
 
                 </table>
                 {/* <table>{orderList}</table> */}
-                <h2 className="payment-total-text">Total: £{orderTotal}</h2>
+                <h2 className="payment-total-text">Total: £{orderTotal.toFixed(2)}</h2>
             </div>
 
             <div className="stripe-checkout-form payment-form">
