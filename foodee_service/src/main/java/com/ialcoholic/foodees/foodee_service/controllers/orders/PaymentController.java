@@ -1,7 +1,9 @@
 package com.ialcoholic.foodees.foodee_service.controllers.orders;
 
+import com.google.gson.Gson;
 import com.ialcoholic.foodees.foodee_service.models.orders.Payment;
 import com.ialcoholic.foodees.foodee_service.repositories.orders.PaymentRepository;
+import com.stripe.exception.StripeException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,18 +22,29 @@ public class PaymentController {
         return new ResponseEntity<>(paymentRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value="/payments/{id}")
-    public ResponseEntity getPayment(@PathVariable Long id){
-        return new ResponseEntity<>(paymentRepository.findById(id), HttpStatus.OK);
+//    @GetMapping(value="/payments/{id}")
+//    public ResponseEntity getPayment(@PathVariable Long id){
+//        return new ResponseEntity<>(paymentRepository.findById(id), HttpStatus.OK);
+//    }
+
+//    @PostMapping(value = "/payments")
+//    public ResponseEntity<Payment> postPayment_temp(@RequestBody Payment payment) throws StripeException {
+//        paymentRepository.save(payment);
+//
+////        System.out.println("Payment Details - orders included: " + payment.getOrder().getOrderItems());
+//
+//        paymentRepository.processStripePaymentIntent(payment);
+//        return new ResponseEntity<>(payment, HttpStatus.CREATED);
+//    }
+
+    @PostMapping(value="/create-payment-intent")
+    public ResponseEntity<Payment> postPayment(@RequestBody Double payment) throws StripeException {
+//        paymentRepository.save(payment);
+        System.out.println("totalPayment: " + payment);
+
+        PaymentRepository.CreatePaymentResponse paymentResponse = paymentRepository.processStripePaymentIntent(payment);
+        Gson gson = new Gson();
+        return new ResponseEntity(gson.toJson(paymentResponse), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/payments")
-    public ResponseEntity<Payment> postPayment(@RequestBody Payment payment){
-        paymentRepository.save(payment);
-
-//        System.out.println("Payment Details - orders included: " + payment.getOrder().getOrderItems());
-
-        paymentRepository.processStripePayment(payment);
-        return new ResponseEntity<>(payment, HttpStatus.CREATED);
-    }
 }

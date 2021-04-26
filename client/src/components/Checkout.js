@@ -21,7 +21,7 @@ const Checkout = ({ basketCounter, basket, basketValue, handlePayment }) => {
 
     return (
         <>
-        
+
             {/* <Link to="/order">
             <div className="checkout-container">
                 <img id="basket-logo-checkout" src={BasketYellow} alt="basket logo" />
@@ -31,20 +31,15 @@ const Checkout = ({ basketCounter, basket, basketValue, handlePayment }) => {
             <button id="checkout-button">CHECKOUT</button>
             </div>
             </Link> */}
-        
+
             <div className="checkout-container">
-    
-             
-
-
-                <div className="checkout-total">£{basketValue}</div>
-
+                <div className="checkout-total">£{basketValue.toFixed(2)}</div>
                 <div id="button-basket">
                     <img id="basket-logo-checkout" src={BasketYellow} alt="basket logo" />
                     <div className="basket-item-count">{basketCounter}</div>
-                <Link to="/order">
-                <button id="checkout-button">CHECKOUT</button>
-                </Link>
+                    <Link to="/order">
+                        <button id="checkout-button">CHECKOUT</button>
+                    </Link>
                 </div>
             </div>
 
