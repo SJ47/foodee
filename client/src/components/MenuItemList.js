@@ -30,7 +30,7 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
                 </div>
 
                 <div className="menu-item-attributes">
-                    <h3>£{item.price}</h3>
+                    <h3>£{item.price.toFixed(2)}</h3>
                     <i onClick={() => { handleSelectedItemRemove(item) }} className="fa fa-minus-circle" aria-hidden="true"></i>
 
                     <div className="item-quantity"><span className="item-quantity-value">{item.quantity ? item.quantity : 0}</span></div>
