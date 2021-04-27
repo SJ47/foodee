@@ -27,19 +27,15 @@ public class PaymentController {
 //        return new ResponseEntity<>(paymentRepository.findById(id), HttpStatus.OK);
 //    }
 
-//    @PostMapping(value = "/payments")
-//    public ResponseEntity<Payment> postPayment_temp(@RequestBody Payment payment) throws StripeException {
-//        paymentRepository.save(payment);
-//
-////        System.out.println("Payment Details - orders included: " + payment.getOrder().getOrderItems());
-//
-//        paymentRepository.processStripePaymentIntent(payment);
-//        return new ResponseEntity<>(payment, HttpStatus.CREATED);
-//    }
+    @PostMapping(value = "/payments")
+    public ResponseEntity<Payment> postPayment(@RequestBody Payment payment) {
+        paymentRepository.save(payment);
+        System.out.println("payment to save is: " + payment.getTotalPayment());
+        return new ResponseEntity<>(payment, HttpStatus.CREATED);
+    }
 
     @PostMapping(value="/create-payment-intent")
     public ResponseEntity<Payment> postPayment(@RequestBody Double payment) throws StripeException {
-//        paymentRepository.save(payment);
         System.out.println("totalPayment: " + payment);
 
         PaymentRepository.CreatePaymentResponse paymentResponse = paymentRepository.processStripePaymentIntent(payment);

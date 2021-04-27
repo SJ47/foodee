@@ -76,6 +76,16 @@ const CheckoutForm = ({ basketValue, basket }) => {
             setError(null);
             setProcessing(false);
             setSucceeded(true);
+            // make a post to backend to say payment successful and save it?
+            const request = new Request();
+            request.post("/payments", { totalPayment: basketValue.toFixed(2) })  // I would likely pass my basket of items here was basketValue before
+                .then(res => {
+                    console.log("Payment saved")
+                    return res.json()
+                })
+                .then(data => {
+                    console.log("2nd part of payment saved");
+                })
         }
     };
 
