@@ -21,11 +21,11 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
     default CreatePaymentResponse processStripePaymentIntent(Double payment) throws StripeException {
         Gson gson = new Gson();
         port(4242);
-        System.out.println("Payment amount: " + payment);
+//        System.out.println("Payment amount: " + payment);
 
 //        staticFiles.externalLocation(Paths.get("").toAbsolutePath().toString());
 
-        System.out.println("Processing stripe paymentRepository...");
+//        System.out.println("Processing stripe paymentRepository...");
 
         Dotenv dotenv = Dotenv.load();
         final String STRIPE_SECRET=dotenv.get("STRIPE_SECRET");
@@ -42,7 +42,7 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
 
         PaymentIntent intent = PaymentIntent.create(createParams);
         CreatePaymentResponse paymentResponse = new CreatePaymentResponse(intent.getClientSecret());
-        System.out.println("Payment response: " + paymentResponse.clientSecret);
+//        System.out.println("Payment response: " + paymentResponse.clientSecret);
 
         return paymentResponse;
 

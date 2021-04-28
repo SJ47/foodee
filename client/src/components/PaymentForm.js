@@ -17,16 +17,6 @@ const promise = loadStripe(STRIPE_PUBLISHABLE_KEY);
 
 const PaymentForm = ({ basket, basketValue }) => {
 
-    // const [cardDetails, setCardDetails] = useState(
-    //     {
-    //         cardHolder: "",
-    //         cardNumber: "4242424242424242",
-    //         cardExpiryMonth: "",
-    //         cardExpiryYear: "",
-    //         cardCvv: ""
-    //     }
-    // )
-
     // Handle payment
     const handlePaymentPost = (payment) => {
         payment.totalPayment = basketValue;

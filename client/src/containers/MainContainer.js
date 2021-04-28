@@ -41,7 +41,7 @@ const MainContainer = () => {
 
 
     useEffect(() => {
-        console.log("Fetching menu items and restaurant info...")
+        // console.log("Fetching menu items and restaurant info...")
         const request = new Request();
         const allItemsPromise = request.get(selectedCategory)
         const restaurantPromise = request.get('/restaurants')
@@ -119,12 +119,12 @@ const MainContainer = () => {
     }
 
     const handleCustomerLogIn = () => {
-        console.log("handle customer login triggered");
+        // console.log("handle customer login triggered");
         setLoggedIn(true);
     }
 
     const handleAmdinLoginIn = () => {
-        console.log("admin is logged in");
+        // console.log("admin is logged in");
         setAdminLoggedIn(true);
     }
 
@@ -138,7 +138,7 @@ const MainContainer = () => {
 
     //////Handle Order Post 
     const handleOrderPost = function (order) {
-        console.log("what is an order", order)
+        // console.log("what is an order", order)
         const request = new Request();
         request.post('/orders', order)
         // .then(() => window.location = '/paymentform')
@@ -147,7 +147,7 @@ const MainContainer = () => {
 
     // Handle payment
     const handlePayment = () => {
-        console.log("PAYMENT");
+        // console.log("PAYMENT");
 
     }
     // const handlePayment = (payment) => {
@@ -254,7 +254,7 @@ const MainContainer = () => {
                     return (
                         <MMenu
                             menu={menu}
-                            restaurants={restaurants} 
+                            restaurants={restaurants}
                         />
                     )
                 }} />
@@ -263,7 +263,7 @@ const MainContainer = () => {
                     return (
                         <MMenuForm
                             menu={menu}
-                            restaurants={restaurants} 
+                            restaurants={restaurants}
                         />
                     )
                 }} />

@@ -30,13 +30,13 @@ public class PaymentController {
     @PostMapping(value = "/payments")
     public ResponseEntity<Payment> postPayment(@RequestBody Payment payment) {
         paymentRepository.save(payment);
-        System.out.println("payment to save is: " + payment.getTotalPayment());
+//        System.out.println("payment to save is: " + payment.getTotalPayment());
         return new ResponseEntity<>(payment, HttpStatus.CREATED);
     }
 
     @PostMapping(value="/create-payment-intent")
     public ResponseEntity<Payment> postPayment(@RequestBody Double payment) throws StripeException {
-        System.out.println("totalPayment: " + payment);
+//        System.out.println("totalPayment: " + payment);
 
         PaymentRepository.CreatePaymentResponse paymentResponse = paymentRepository.processStripePaymentIntent(payment);
         Gson gson = new Gson();

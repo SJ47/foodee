@@ -26,11 +26,11 @@ const CheckoutForm = ({ basketValue, basket }) => {
         // request.post("/create-payment-intent", { items: [{ id: "xl-tshirt" }] })  // I would likely pass my basket of items here
         request.post("/create-payment-intent", basketValue)  // I would likely pass my basket of items here was basketValue before
             .then(res => {
-                console.log("First promise")
+                // console.log("First promise")
                 return res.json()
             })
             .then(data => {
-                console.log("Second promise with clientSecret: ", data.clientSecret);
+                // console.log("Second promise with clientSecret: ", data.clientSecret);
                 setClientSecret(data.clientSecret)
             })
     }, []);
@@ -80,21 +80,14 @@ const CheckoutForm = ({ basketValue, basket }) => {
             const request = new Request();
             request.post("/payments", { totalPayment: basketValue.toFixed(2) })  // I would likely pass my basket of items here was basketValue before
                 .then(res => {
-                    console.log("Payment saved")
+                    // console.log("Payment saved")
                     return res.json()
                 })
-                .then(data => {
-                    console.log("2nd part of payment saved");
-                })
+            // .then(data => {
+            //     console.log("2nd part of payment saved");
+            // })
         }
     };
-
-    // Check what basket contains
-    // if (basket.length > 0) {
-    //     basket.map((item) => {
-    //         console.log("Item in basket: ", item);
-    //     })
-    // }
 
     return (
         <form id="payment-form" onSubmit={handleSubmit}>
