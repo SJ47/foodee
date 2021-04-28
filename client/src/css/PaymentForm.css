@@ -206,8 +206,8 @@ button:disabled {
 }
 
 .spinner:before {
-    width: 5.4px;
-    height: 10.2px;
+    /* width: 5.4px;
+    height: 10.2px; */
     background: #5469d4;
     border-radius: 20.4px 0 0 20.4px;
     top: -0.2px;
@@ -219,8 +219,8 @@ button:disabled {
 }
 
 .spinner:after {
-    width: 5.4px;
-    height: 10.2px;
+    width: 1.4px;
+    height: 20.4px;
     background: #5469d4;
     border-radius: 0 10.2px 10.2px 0;
     top: -0.1px;
