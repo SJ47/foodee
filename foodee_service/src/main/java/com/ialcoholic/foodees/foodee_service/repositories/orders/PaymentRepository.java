@@ -1,79 +1,79 @@
 package com.ialcoholic.foodees.foodee_service.repositories.orders;
 
+
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.ialcoholic.foodees.foodee_service.models.orders.Payment;
+import com.stripe.Stripe;
+import com.stripe.exception.StripeException;
+import com.stripe.model.PaymentIntent;
+import com.stripe.param.PaymentIntentCreateParams;
 import org.springframework.data.jpa.repository.JpaRepository;
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.stereotype.Repository;
 
-//
-
-import com.stripe.Stripe;
-import com.stripe.model.Charge;
-import com.stripe.model.Token;
-import io.github.cdimascio.dotenv.Dotenv;
-import com.stripe.param.CustomerRetrieveParams;
-import com.stripe.model.Customer;
-import com.stripe.model.Card;
-import com.stripe.exception.StripeException;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.HashMap;
-import java.util.Map;
-
-//
+import static spark.Spark.port;
+//import static spark.Spark.staticFiles;
 
 @Repository
 public interface PaymentRepository extends JpaRepository<Payment, Long> {
 
-    default void processStripePayment(Payment payment){
-        System.out.println("Processing stripe payment...");
+    default CreatePaymentResponse processStripePaymentIntent(Double payment) throws StripeException {
+        Gson gson = new Gson();
+        port(4242);
+//        System.out.println("Payment amount: " + payment);
+
+//        staticFiles.externalLocation(Paths.get("").toAbsolutePath().toString());
+
+//        System.out.println("Processing stripe paymentRepository...");
 
         Dotenv dotenv = Dotenv.load();
         final String STRIPE_SECRET=dotenv.get("STRIPE_SECRET");
 
+        String clientSecret;
         Stripe.apiKey = STRIPE_SECRET;
 
-        //
-        //    How to charge a non stripe customer in stripe using a token meaning not using a card stored in their account, so taking card details each time
-        Map<String, Object> cardParam = new HashMap<String, Object>();
-//        cardParam.put("number", "4242424242424242");
-        cardParam.put("number", payment.getCardNumber());
-        cardParam.put("exp_month", payment.getCardExpiryMonth());
-        cardParam.put("exp_year", payment.getCardExpiryYear());
-        cardParam.put("cvc", payment.getCardCvv());
+//        CreatePayment postBody = gson.fromJson(String.valueOf(payment), CreatePayment.class);
 
-        // Get token *** Note you can only use a token once.  used for one time only payment??  If you get customer ID, then it gets payment on file?
-        Map <String, Object> tokenParam = new HashMap<String, Object>();
-        tokenParam.put("card", cardParam);
-        Token token = null;
-        try {
-            token = Token.create(tokenParam);
-        } catch (StripeException e) {
-            e.printStackTrace();
+        PaymentIntentCreateParams createParams = new PaymentIntentCreateParams.Builder()
+                .setCurrency("gbp")
+                .setAmount((long) (payment*100))
+                .build();
+
+        PaymentIntent intent = PaymentIntent.create(createParams);
+        CreatePaymentResponse paymentResponse = new CreatePaymentResponse(intent.getClientSecret());
+//        System.out.println("Payment response: " + paymentResponse.clientSecret);
+
+        return paymentResponse;
+
+    }
+
+    //
+//    static Gson gson = new Gson();
+
+    class CreatePayment {
+        @SerializedName("items")
+        Object[] items;
+
+        public Object[] getItems() {
+            return items;
         }
-        Map <String, Object> source = new HashMap<String, Object>();
+    }
 
-        // Now make the charge
-        Map<String, Object> chargeParam = new HashMap<String, Object>();
+    static class CreatePaymentResponse {
+        private String clientSecret;
 
-        // Convert double * 100 to pence and convert to int then string
-        int tempTotal = (int) (payment.getTotalPayment()*100);
-        String stringTotalPayment = String.valueOf(tempTotal);
-        System.out.println("totalPayment: " + stringTotalPayment);
-
-        chargeParam.put("amount", stringTotalPayment);  // Remember price in lowest denomination (so 1p or 1c for example, so multiply by 100)
-//        chargeParam.put("amount", "1999");  // Remember price in lowest denomination (so 1p or 1c for example, so multiply by 100)
-        chargeParam.put("currency", "gbp");
-        chargeParam.put("source", token.getId());  // will use Token for one time payment instead of customer card stored on file
-        try {
-            Charge.create(chargeParam);
-        } catch (StripeException e) {
-            e.printStackTrace();
+        public CreatePaymentResponse(String clientSecret) {
+            this.clientSecret = clientSecret;
         }
+    }
+
+    static int calculateOrderAmount(Object[] items) {
+        // Replace this constant with a calculation of the order's amount
+        // Calculate the order total on the server to prevent
+        // users from directly manipulating the amount on the client
+        return 1400;
+    }
 
 
-        //
-
-    };
 }

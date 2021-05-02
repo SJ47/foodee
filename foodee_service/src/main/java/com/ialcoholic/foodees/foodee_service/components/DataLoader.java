@@ -376,31 +376,31 @@ public class DataLoader implements ApplicationRunner {
 
 
         // DRINKS
-        MenuItem menuItem15 = new MenuItem(restaurant, hot_drink, "Espresso", "As dark as your heart. This wake-me-up is a perfect shot of caffeine to get you going.", 1.20, "https" +
+        MenuItem menuItem15 = new MenuItem(restaurant, hot_drink, "Espresso", "As dark as your heart. This wake-me-up is a perfect shot of caffeine to get you going.", 1, "https" +
                 "://i2" +
                 "-prod.mirror.co.uk/incoming/article17203196" +
                 ".ece/ALTERNATES/s1200c/3_Tiny-glass-cup-of-espresso-coffee.jpg", true, true, true, false, "small", 0);
         menuItemRepository.save(menuItem15);
 
-        MenuItem menuItem33 = new MenuItem(restaurant, hot_drink, "Cappucino", "Also called breakfast in Italy. Try our creamy cappucinos with chocolate sprinkles made with organic coffee.", 1.50, "https://static01." +
+        MenuItem menuItem33 = new MenuItem(restaurant, hot_drink, "Cappucino", "Also called breakfast in Italy. Try our creamy cappucinos with chocolate sprinkles made with organic coffee.", 1.5, "https://static01." +
                 "nyt.com/images/2015/10/02/fashion/02CAPP3SUB/02CAPP3SUB-superJumbo.jpg", true, true, true, false, "medium", 0);
         menuItemRepository.save(menuItem33);
 
-        MenuItem menuItem34 = new MenuItem(restaurant, hot_drink, "Tea", "A pot of soothing tea. We usually serve Ceylon tea, but every now and then a bag of Earl Grey slips in", 1.50, "https://www.imore.com/sites/imore.com/files/styles/large/" +
+        MenuItem menuItem34 = new MenuItem(restaurant, hot_drink, "Tea", "A pot of soothing tea. We usually serve Ceylon tea, but every now and then a bag of Earl Grey slips in", 1.5, "https://www.imore.com/sites/imore.com/files/styles/large/" +
                 "public/field/image/2020/07/tea-pot-milada-vigerova-unsplash-hero.jpg", true, true, true, false, "medium", 0);
         menuItemRepository.save(menuItem34);
 
-        MenuItem menuItem39 = new MenuItem(restaurant, hot_drink, "Hot chocolate", "Made with belgian chocolate and fresh Scottish milk and cream. Melt in your mouth", 1.20, "https://images.unsplash.com/" +
+        MenuItem menuItem39 = new MenuItem(restaurant, hot_drink, "Hot chocolate", "Made with belgian chocolate and fresh Scottish milk and cream. Melt in your mouth", 1.2, "https://images.unsplash.com/" +
                 "photo-1546334169-864ef455d3f8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG90JTIwY2hvY29sYXRlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
                 true, true, true, false, "small", 0);
         menuItemRepository.save(menuItem39);
 
-        MenuItem menuItem40 = new MenuItem(restaurant, hot_drink, "Rooibos tea", "A soothing tea made from Red Bush in South Africa", 1.20, "https:" +
+        MenuItem menuItem40 = new MenuItem(restaurant, hot_drink, "Rooibos tea", "A soothing tea made from Red Bush in South Africa", 1.2, "https:" +
                 "//images.unsplash.com/photo-1598099968270-f7a302af6d50?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTN8fHRlYXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
                 true, true, true, false, "small", 0);
         menuItemRepository.save(menuItem40);
 
-        MenuItem menuItem41 = new MenuItem(restaurant, hot_drink, "Café latte", "A french way of saying coffee with milk. We add a lot of frothy full cream milk - enjoy.", 1.20, "https://images.unsplash.com" +
+        MenuItem menuItem41 = new MenuItem(restaurant, hot_drink, "Café latte", "A french way of saying coffee with milk. We add a lot of frothy full cream milk - enjoy.", 1.2, "https://images.unsplash.com" +
                 "/photo-1528830639624-fc16697bb8e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
                 true, true, true, false, "small", 0);
         menuItemRepository.save(menuItem41);

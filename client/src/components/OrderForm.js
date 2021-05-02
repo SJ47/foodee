@@ -30,7 +30,7 @@ const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
     }
 
     const handleSubmit = function (event) {
-        console.log("handleSubmit called")
+        // console.log("handleSubmit called")
         event.preventDefault();
         handleOrderPost(stateOrder);
     }

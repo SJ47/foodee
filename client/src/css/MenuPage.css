@@ -1,4 +1,3 @@
-
 .menu-list-item {
     list-style: none;
     padding: 0em 0em 0em 0em;
@@ -7,7 +6,6 @@
     grid-template-columns: 2fr 1fr;
     border-bottom: solid 1px var(--line-color);
     color: var(--primary-color);
-
 }
 
 .item-info-container {
@@ -22,8 +20,6 @@
     border-radius: 5px;
     width: 80px;
     height: 80px;
- 
-
 }
 
 .item-quantity {
@@ -37,14 +33,10 @@
     font-size: 1em;
 }
 
-
 .menu-item-attributes {
     display: flex;
     flex-direction: row;
-
 }
-
-
 
 .menu-list-item-container {
     position: relative;
@@ -58,14 +50,11 @@ h3 {
     display: inline;
     font-size: 1rem;
     font-weight: 300;
-
-
 }
 
 p {
     font-size: 0.8rem;
     font-weight: 100;
-
 }
 
 .fa {
@@ -74,7 +63,7 @@ p {
 }
 
 .fa-minus-circle {
-    margin-left: 1em;
+    margin-left: 1.5em;
 }
 
 .item-quantity {
@@ -86,11 +75,10 @@ p {
     color: #39b449;
 }
 
-.food-req-icons #vegan{
+.food-req-icons #vegan {
     color: #166a39;
-
 }
 
-.food-req-icons #gluten-free{
-    color: #727296;  
+.food-req-icons #gluten-free {
+    color: #727296;
 }
