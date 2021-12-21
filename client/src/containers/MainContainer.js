@@ -20,7 +20,6 @@ import MTableList from '../components/management/MTableList';
 import MCustomerList from '../components/management/MCustomerList';
 import MOrderList from '../components/management/MOrderList';
 import MFinancePage from '../components/management/MFinancePage';
-import TopNavBar from '../components/TopNavBar.js';
 import ErrorPage from '../components/ErrorPage.js';
 
 const MainContainer = () => {
@@ -60,17 +59,6 @@ const MainContainer = () => {
 
     }, [selectedCategory])
 
-
-    // useEffect to update cart value when cart items change
-    // useEffect(() => {
-    //     console.log("Basket has changed contents")
-    //     let total = 0;
-    //     total = basket.map((basketItem) => {
-    //         return total -= basketItem.price
-    //     })
-    //     // console.log("Basket total: ", basketValue);
-    // }, [basket])
-
     if (!currentItems) {
         return <p>nothing</p>
     }
@@ -82,7 +70,6 @@ const MainContainer = () => {
     const handleSelectedItemAdd = (item) => {
         // Update contents of the basket
         // Add a quantity field to the object and append by 1 if already exist and > 0
-        // console.log("ITEM QTY: ", item.quantity + 1);
         if (item.quantity > 0) {
             item.quantity += 1;
         } else {
@@ -96,7 +83,6 @@ const MainContainer = () => {
     }
 
     const handleSelectedItemRemove = (item) => {
-
         // // Remove item from basket
         const updatedBasket = basket.filter((basketItem) => {
             if (basketItem === item && item.quantity > 0) {
@@ -119,12 +105,10 @@ const MainContainer = () => {
     }
 
     const handleCustomerLogIn = () => {
-        // console.log("handle customer login triggered");
         setLoggedIn(true);
     }
 
-    const handleAmdinLoginIn = () => {
-        // console.log("admin is logged in");
+    const handleAdminLogIn = () => {
         setAdminLoggedIn(true);
     }
 
@@ -132,190 +116,168 @@ const MainContainer = () => {
         const request = new Request();
         request.post("/customers", customer)
         setActiveCustomer(customer);
-        // .then(() => window.location = '/home')
-        // change '/' to whichever route the home page is called
     }
 
     //////Handle Order Post 
     const handleOrderPost = function (order) {
-        // console.log("what is an order", order)
         const request = new Request();
         request.post('/orders', order)
-        // .then(() => window.location = '/paymentform')
     }
-    ////////////
-
-    // Handle payment
-    const handlePayment = () => {
-        // console.log("PAYMENT");
-
-    }
-    // const handlePayment = (payment) => {
-    //     console.log("PAYMENT", payment);
-
-    //     const request = new Request();
-    //     request.post("/payments", payment)
-    //     // .then(() => window.location = '/home')
-    //     // change '/' to whichever route the home page is called
-    // }
 
     return (
-        <>
-            {/* <TopNavBar basketCounter={basketCounter} /> */}
-            <Switch>
-                <Route exact path="/" render={() => {
-                    return (
-                        loggedIn ?
-                            <Redirect to="/home" /> :
-                            <Redirect to="/login" />
-                    )
-                }} />
-                <Route exact path="/login" render={() => {
-                    return (
-                        loggedIn ?
-                            <Redirect to="/home" /> :
-                            <LoginPage handleCustomerLogIn={handleCustomerLogIn} handleCustomerPost={handleCustomerPost} />
-                    )
-                }} />
-                <Route exact path="/home" render={() => {
-                    return (
-                        <HomePage handleCategoryNavClick={handleCategoryNavClick} handleCustomerLogIn={handleCustomerLogIn} />
-                    )
-                }} />
-                <Route exact path="/menu" render={() => {
-                    return (
-                        <MenuPage currentItems={currentItems}
-                            handleCategoryNavClick={handleCategoryNavClick}
-                            category={selectedCategory}
-                            handleSelectedItemAdd={handleSelectedItemAdd}
-                            handleSelectedItemRemove={handleSelectedItemRemove}
-                            basket={basket}
-                            basketValue={basketValue}
-                            handlePayment={handlePayment}
-                            basketCounter={basketCounter}
+        <Switch>
+            <Route exact path="/" render={() => {
+                return (
+                    loggedIn ?
+                        <Redirect to="/home" /> :
+                        <Redirect to="/login" />
+                )
+            }} />
+            <Route exact path="/login" render={() => {
+                return (
+                    loggedIn ?
+                        <Redirect to="/home" /> :
+                        <LoginPage handleCustomerLogIn={handleCustomerLogIn} handleCustomerPost={handleCustomerPost} />
+                )
+            }} />
+            <Route exact path="/home" render={() => {
+                return (
+                    <HomePage handleCategoryNavClick={handleCategoryNavClick} handleCustomerLogIn={handleCustomerLogIn} />
+                )
+            }} />
+            <Route exact path="/menu" render={() => {
+                return (
+                    <MenuPage currentItems={currentItems}
+                        handleCategoryNavClick={handleCategoryNavClick}
+                        category={selectedCategory}
+                        handleSelectedItemAdd={handleSelectedItemAdd}
+                        handleSelectedItemRemove={handleSelectedItemRemove}
+                        basket={basket}
+                        basketValue={basketValue}
+                        basketCounter={basketCounter}
+                    />
+                )
+            }} />
+
+            <Route exact path="/order" render={() => {
+                return (
+                    <OrderPage
+                        customer={activeCustomer}
+                        basket={basket}
+                        basketValue={basketValue}
+                        handleOrderPost={handleOrderPost}
+                    />
+                )
+            }} />
+
+            <Route exact path="/about" render={() => {
+                return (
+                    <AboutPage restaurants={restaurants} />
+                )
+            }} />
+
+            {/* Render payment page  */}
+            <Route exact path="/paymentform" render={() => {
+                return (
+                    <PaymentForm
+                        basket={basket}
+                        basketValue={basketValue}
+                        customer={activeCustomer}
+                    />
+                )
+            }} />
+
+            <Route exact path="/management" render={() => {
+                return (
+                    adminLoggedIn ?
+                        <Redirect to="/management/home" /> :
+                        <Redirect to="/management/login" />
+                )
+            }} />
+
+            <Route exact path="/management/login" render={() => {
+                return (
+                    adminLoggedIn ?
+                        <Redirect to="/management/home" /> :
+                        <MLoginPage
+                            handleAdminLogIn={handleAdminLogIn}
                         />
-                    )
-                }} />
+                )
+            }} />
 
-                <Route exact path="/order" render={() => {
-                    return (
-                        <OrderPage
-                            customer={activeCustomer}
-                            basket={basket}
-                            basketValue={basketValue}
-                            handleOrderPost={handleOrderPost}
-                        />
-                    )
-                }} />
+            <Route exact path="/management/home" render={() => {
+                return (
+                    <MHomePage
+                        restaurants={restaurants}
+                    />
+                )
+            }} />
 
-                <Route exact path="/about" render={() => {
-                    return (
-                        <AboutPage restaurants={restaurants} />
-                    )
-                }} />
+            <Route exact path="/management/menu" render={() => {
+                return (
+                    <MMenu
+                        menu={menu}
+                        restaurants={restaurants}
+                    />
+                )
+            }} />
 
-                {/* Render payment page  */}
-                <Route exact path="/paymentform" render={() => {
-                    return (
-                        <PaymentForm
-                            basket={basket}
-                            basketValue={basketValue}
-                        />
-                    )
-                }} />
+            <Route exact path="/management/menu/new" render={() => {
+                return (
+                    <MMenuForm
+                        menu={menu}
+                        restaurants={restaurants}
+                    />
+                )
+            }} />
 
-                <Route exact path="/management" render={() => {
-                    return (
-                        adminLoggedIn ?
-                            <Redirect to="/management/home" /> :
-                            <Redirect to="/management/login" />
-                    )
-                }} />
+            <Route exact path="/management/tables" render={() => {
+                return (
+                    <MTableList
+                        tables={tables}
+                    />
+                )
+            }} />
 
-                <Route exact path="/management/login" render={() => {
-                    return (
-                        adminLoggedIn ?
-                            <Redirect to="/management/home" /> :
-                            <MLoginPage
-                                handleAdminLogIn={handleAmdinLoginIn}
-                            />
-                    )
-                }} />
+            <Route exact path="/management/customers" render={() => {
+                return (
+                    <MCustomerList
+                        customers={allCustomers}
+                    />
+                )
+            }} />
 
-                <Route exact path="/management/home" render={() => {
-                    return (
-                        <MHomePage
-                            restaurants={restaurants}
-                        />
-                    )
-                }} />
+            <Route exact path="/management/orders" render={() => {
+                return (
+                    <MOrderList
+                        orders={allOrders}
+                        tables={tables}
+                    />
+                )
+            }} />
 
-                <Route exact path="/management/menu" render={() => {
-                    return (
-                        <MMenu
-                            menu={menu}
-                            restaurants={restaurants}
-                        />
-                    )
-                }} />
+            <Route exact path="/management/finance" render={() => {
+                return (
+                    <MFinancePage
+                        orders={allOrders}
+                    />
+                )
+            }} />
 
-                <Route exact path="/management/menu/new" render={() => {
-                    return (
-                        <MMenuForm
-                            menu={menu}
-                            restaurants={restaurants}
-                        />
-                    )
-                }} />
+            <Route exact path="/hamburger" render={() => {
+                return (
+                    <HamburgerMenu />
+                )
+            }} />
 
-                <Route exact path="/management/tables" render={() => {
-                    return (
-                        <MTableList
-                            tables={tables}
-                        />
-                    )
-                }} />
+            <Route exact path="/thankyou" render={() => {
+                return (
+                    <ThankYouPage />
+                )
+            }} />
 
-                <Route exact path="/management/customers" render={() => {
-                    return (
-                        <MCustomerList
-                            customers={allCustomers}
-                        />
-                    )
-                }} />
-
-                <Route exact path="/management/orders" render={() => {
-                    return (
-                        <MOrderList
-                            orders={allOrders}
-                            tables={tables}
-                        />
-                    )
-                }} />
-
-                <Route exact path="/management/finance" render={() => {
-                    return (
-                        <MFinancePage
-                            orders={allOrders}
-                        />
-                    )
-                }} />
-
-                <Route exact path="/hamburger" render={() => {
-                    return (
-                        <HamburgerMenu />
-                    )
-                }} />
-
-                <Route exact path="/thankyou" render={() => {
-                    return (
-                        <ThankYouPage />
-                    )
-                }} />
-
-                <Route component={ErrorPage} />
-            </Switch>
-        </>
+            <Route component={ErrorPage} />
+        </Switch>
     )
 }
 

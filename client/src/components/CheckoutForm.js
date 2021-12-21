@@ -9,9 +9,7 @@ import {
 import Request from "../helpers/request"
 import "../css/PaymentForm.css"
 
-
-const CheckoutForm = ({ basketValue, basket }) => {
-
+const CheckoutForm = ({ basketValue, customer }) => {
     const [succeeded, setSucceeded] = useState(false);
     const [error, setError] = useState(null);
     const [processing, setProcessing] = useState('');
@@ -23,7 +21,6 @@ const CheckoutForm = ({ basketValue, basket }) => {
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
         const request = new Request();
-        // request.post("/create-payment-intent", { items: [{ id: "xl-tshirt" }] })  // I would likely pass my basket of items here
         request.post("/create-payment-intent", basketValue)  // I would likely pass my basket of items here was basketValue before
             .then(res => {
                 // console.log("First promise")
@@ -33,7 +30,9 @@ const CheckoutForm = ({ basketValue, basket }) => {
                 // console.log("Second promise with clientSecret: ", data.clientSecret);
                 setClientSecret(data.clientSecret)
             })
-    }, []);
+    }, [basketValue]);
+
+    // console.log("Customer: ", customer);
 
     const cardStyle = {
         style: {
@@ -49,9 +48,10 @@ const CheckoutForm = ({ basketValue, basket }) => {
             invalid: {
                 color: "#fa755a",
                 iconColor: "#fa755a"
-            },
+            }
         }
     };
+
     const handleChange = async (event) => {
         // Listen for changes in the CardElement
         // and display any errors as the customer types their card details
@@ -65,7 +65,11 @@ const CheckoutForm = ({ basketValue, basket }) => {
 
         const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
-                card: elements.getElement(CardElement)
+                card: elements.getElement(CardElement),
+                billing_details: {
+                    name: customer.firstName + " " + customer.lastName,
+                    email: customer.email
+                }
             }
         });
 
@@ -76,23 +80,19 @@ const CheckoutForm = ({ basketValue, basket }) => {
             setError(null);
             setProcessing(false);
             setSucceeded(true);
-            // make a post to backend to say payment successful and save it?
+            // make a post to backend to say payment successful and save it
             const request = new Request();
             request.post("/payments", { totalPayment: basketValue.toFixed(2) })  // I would likely pass my basket of items here was basketValue before
                 .then(res => {
                     // console.log("Payment saved")
                     return res.json()
                 })
-            // .then(data => {
-            //     console.log("2nd part of payment saved");
-            // })
         }
     };
 
     return (
         <form id="payment-form" onSubmit={handleSubmit}>
-            <CardElement id="card-element" options={cardStyle, { hidePostalCode: true }} onChange={handleChange} />
-            {/* <CardExpiryElement id="card-element" options={cardStyle} onChange={handleChange} /> */}
+            <CardElement id="card-element" options={cardStyle, { hidePostalCode: true }} onChange={handleChange} className="test" />
             <button
                 disabled={processing || disabled || succeeded}
                 id="submit"
@@ -121,7 +121,6 @@ const CheckoutForm = ({ basketValue, basket }) => {
                     Continue.
                 </a>
             </p>
-            {/* window.location = '/thankyou'; */}
         </form>
     )
 }

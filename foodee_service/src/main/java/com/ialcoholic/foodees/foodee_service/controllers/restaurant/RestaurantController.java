@@ -44,5 +44,4 @@ public class RestaurantController {
         restaurantRepository.delete(found);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
-
 }

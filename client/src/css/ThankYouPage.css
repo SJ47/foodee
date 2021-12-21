@@ -7,20 +7,11 @@
 }
 
 .large-text {
-    width: 80vw; 
-    height: 20vh; 
-    padding: 1%; 
+    width: 80vw;
+    height: 20vh;
+    padding: 1%;
     font-size: 1em;
-
 }
-
-/* .order-btn {
-    font-size: 1em;
-    background: var(--primary-color);
-    color: var(--secondary-color);
-    border: 0;
-    border-radius: 10px;
-} */
 
 .thank-you-page > button {
     margin: 1em;

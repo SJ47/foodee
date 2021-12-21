@@ -6,16 +6,15 @@
 
     overflow: hidden;
     position: sticky;
+    position: -webkit-sticky;
     top: 0em;
     z-index: 100;
 }
 
 .top-navbar-container-all > img {
     padding-top: 20px;
-    height: 60px;  
+    height: 60px;
 }
-
-
 
 #hamburger-menu-logo {
     margin-right: 2px;

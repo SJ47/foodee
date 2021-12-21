@@ -64,6 +64,7 @@ td {
     margin: auto;
     margin-bottom: 3em;
     margin-top: 2em;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -71,49 +72,9 @@ td {
     margin: 0.5em 0em;
 }
 
-/* :root {
-    --primary-color: #143d59;
-    --secondary-color: #f4b41a;
-    --tertiary-color: antiquewhite;
-    --quadary-color: white;
-} */
-/* #root {
-    display: flex;
-    align-items: center;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    height: 100vh;
-    width: 100vw;
-} */
-
 form {
-    /* width: 30vw;
-    align-self: center;
-    box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
-        0px 2px 5px 0px rgba(50, 50, 93, 0.1),
-        0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
-    border-radius: 7px; */
     padding: 40px;
 }
-
-/* input {
-    border-radius: 6px;
-    margin-bottom: 6px;
-    padding: 12px;
-    border: 1px solid rgba(50, 50, 93, 0.1);
-    max-height: 44px;
-    font-size: 16px;
-    width: 100%;
-    background: white;
-    box-sizing: border-box;
-} */
 
 .result-message {
     line-height: 22px;
@@ -242,8 +203,73 @@ button:disabled {
     }
 }
 
-/* @media only screen and (max-width: 600px) {
-    form {
-        width: 80vw;
+.fa-clipboard {
+    color: grey;
+    font-size: 1.2em;
+    margin-left: 1em;
+}
+
+.fa-clipboard:hover {
+    cursor: copy;
+    color: #5469d4;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-} */
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

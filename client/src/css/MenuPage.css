@@ -2,6 +2,7 @@
     list-style: none;
     padding: 0em 0em 0em 0em;
     margin: 0.6em 0.5em 0em 0.5em;
+    display: -ms-grid;
     display: grid;
     grid-template-columns: 2fr 1fr;
     border-bottom: solid 1px var(--line-color);
@@ -9,6 +10,7 @@
 }
 
 .item-info-container {
+    display: -ms-grid;
     display: grid;
     place-items: top;
     padding: 0em 0 0 2.1em;

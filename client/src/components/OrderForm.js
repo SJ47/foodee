@@ -6,11 +6,6 @@ import { Link } from "react-router-dom"
 
 const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
 
-    // const totalValue = basket.map((item) => {
-    //     let total = 0;
-    //     return total += item.price
-    // })
-
     const [stateOrder, setStateOrder] = useState(
         {
             customer: customer,
@@ -39,7 +34,6 @@ const OrderForm = ({ customer, basket, basketValue, handleOrderPost }) => {
         <div className="order-form">
             <form onSubmit={handleSubmit}>
                 <textarea className="large-text" placeholder="Special notes..." name="specialNotes" onChange={handleChange} value={stateOrder.specialNotes} />
-                {/* <input className="large-text" type="textarea" placeholder="Special notes..." name="specialNotes" onChange={handleChange} value={stateOrder.specialNotes} /> */}
                 <br></br>
                 <Link to="/paymentform">
                     <button className="order-btn" type="submit">SUBMIT</button>

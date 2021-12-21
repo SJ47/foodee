@@ -4,6 +4,7 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
 
     const copiedCurrentItems = [...currentItems]
 
+    // Iterate through current category items matching basket items and re-apply quantity already in basket 
     for (let currentItemCount = 0; currentItemCount < copiedCurrentItems.length; currentItemCount++) {
 
         for (let count = 0; count < basket.length; count++) {
@@ -11,7 +12,6 @@ const MenuItemList = ({ currentItems, category, handleSelectedItemAdd, handleSel
                 copiedCurrentItems[currentItemCount] = basket[count]
             }
         }
-
     }
 
     const menuListItems = copiedCurrentItems.map((item, index) => {

@@ -43,6 +43,13 @@ public class MenuItemController {
         return new ResponseEntity<>(menuItemRepository.findById(id), HttpStatus.OK);
     }
 
+    // Get one menu item by name STRING
+    @GetMapping(value="/menu_items/name/{name}")
+    public ResponseEntity getMenuItemByName(@PathVariable String name){
+        return new ResponseEntity<>(menuItemRepository.findByName(name), HttpStatus.OK);
+
+    }
+
     // Get ALL VEGETARIAN menu items
     @GetMapping(value="/menu_items/vegetarian")
     public ResponseEntity<List<MenuItem>> getAllVegetarianItems(){
@@ -105,40 +112,4 @@ public class MenuItemController {
         menuItemRepository.delete(found);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
-
-
-//    @GetMapping(value="/menu_items/params")
-//    public ResponseEntity<List<MenuItem>> getMenuItems(
-//            @RequestParam(name="name", required = false) String name,
-//            @RequestParam(name="category", required = false) String category,
-//            @RequestParam(name="vegetarian", required = false) boolean isVegetarian
-//    ){
-//
-//        // Return all vegetarian for a specific category
-//        if (category!=null && isVegetarian) {
-//
-//            String upperCaseCategory = category.toUpperCase();
-//            Category foundCategory = Category.valueOf(upperCaseCategory);
-//            return new ResponseEntity<>(menuItemRepository.findAllByCategoryAndVegetarian(foundCategory), HttpStatus.OK);
-//        }
-//
-//        if (name!=null){
-//            return new ResponseEntity(menuItemRepository.findByName(name), HttpStatus.OK);
-//        }
-//
-//        if (category!=null){
-//            String upperCaseCategory = category.toUpperCase();
-//            Category foundCategory = Category.valueOf(upperCaseCategory);
-//            return new ResponseEntity<>(menuItemRepository.findAllByCategory(foundCategory), HttpStatus.OK);
-//        }
-//
-//        if (isVegetarian){
-//            return new ResponseEntity(menuItemRepository.findAllVegetariansNative(), HttpStatus.OK);
-//        }
-//
-//        // Default return all foods
-//        return new ResponseEntity<>(menuItemRepository.findAll(), HttpStatus.OK);
-//    }
-
-
 }

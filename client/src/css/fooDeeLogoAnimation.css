@@ -1,25 +1,18 @@
-/* body {
-    font-family: 'Raleway', sans-serif;
-    background-color: #143D59;
-    color: #F4B41A;
-    font-size: 5rem;
-    margin: 0;
-} */
-
 #foodee-container {
     display: flex;
     justify-content: center;
     background-color: var(--primary-color);
 }
 
-
-#foo h1, #dee h1 {
+#foo h1,
+#dee h1 {
     font-size: 6.5em;
     font-weight: 900;
     margin: 0;
 }
 
-#knife, #fork {
+#knife,
+#fork {
     margin-top: 6vh;
     height: 20vh;
     position: absolute;

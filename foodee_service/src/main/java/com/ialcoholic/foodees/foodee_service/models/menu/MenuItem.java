@@ -25,11 +25,6 @@ public class MenuItem {
     @Column(name = "category")
     private Category category;
 
-//    @ManyToOne
-////    @JsonIgnoreProperties({"menu_items"})
-//    @JoinColumn(name = "order_id")
-//    private Order order;
-
     @JsonIgnoreProperties(value = "menu_items")
     @ManyToMany
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
